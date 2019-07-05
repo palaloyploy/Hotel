@@ -2,3 +2,5 @@ log.html
 output.xml
 report.html
 *.png
+HotelRoomService/db.sqlite3
+HotelRoomService/HotelRoomService/__pycache__
