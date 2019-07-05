@@ -4,3 +4,5 @@ report.html
 *.png
 HotelRoomService/db.sqlite3
 HotelRoomService/HotelRoomService/__pycache__
+HotelRoomService/Hotelapp/migrations/__pycache__
+HotelRoomService/Hotelapp/__pycache__
