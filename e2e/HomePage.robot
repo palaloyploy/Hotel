@@ -1,4 +1,32 @@
+*** Settings ***
+Library          Selenium2Library
+Test Setup       เปิดหน้าหลัก
+Test Teardown    Close All Browsers
+Resource         ${EXECDIR}/e2e/Keywords.robot
 
+
+*** Variable ***
+${BROWSER}       chrome
+${URL}           http://127.0.0.1:8000/
+
+
+
+
+*** Test Case ***
+
+
+
+Test1 ทดสอบการเข้าหน้าหลัก
+    # ExpectResult
+    Title Should Be                     หน้าหลัก
+    Wait Until Page Contains Element    id:tabmenu     #พบแถบเมนู
+    Wait Until Page Contains Element    id:footer      #พบฟุตเตอร์
+    Wait Until Page Contains Element    id:banner      #พบแบนเนอร์โฆษณา
+    Wait Until Page Contains Element    id:service     #พบบริการต่างๆ
+    Wait Until Page Contains            บริการต่างๆ    #พบบริการต่างๆ
+    Wait Until Element Contains         id:service     ห้องพัก       #พบบริการ ห้องพัก ในบริการต่างๆ
+    Wait Until Element Contains         id:service     คาราโอเกะ     #พบบริการ คาราโอเกะ ในบริการต่างๆ
+    Wait Until Element Contains         id:service     เช่าเรือ      #พบบริการ เช่าเรือ ในบริการต่างๆ
     Wait Until Element Contains         id:service     ฟิตเนส        #พบบริการ ฟิตเนส ในบริการต่างๆ
     Wait Until Element Contains         id:service     สปา           #พบบริการ สปา ในบริการต่างๆ
     Wait Until Element Contains         id:service     สวนน้ำ        #พบบริการ สวนน้ำ ในบริการต่างๆ
