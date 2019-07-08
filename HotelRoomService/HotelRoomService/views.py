@@ -16,3 +16,5 @@ def room(request):
     return render(request,'Roompage.html')
 def roomdetail(request):
     return render(request,'Roomdetail.html')
+def fitness(request):
+    return render(request,'Fitness.html')
