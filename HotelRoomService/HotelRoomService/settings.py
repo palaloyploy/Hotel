@@ -55,7 +55,7 @@ ROOT_URLCONF = 'HotelRoomService.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
+        'DIRS': ['HotelRoomService/Hotelapp/templates'],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
