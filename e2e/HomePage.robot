@@ -28,7 +28,17 @@ Test1 ทดสอบการเข้าหน้าหลัก
     Wait Until Element Contains         id:service     ฟิตเนส        #พบบริการ ฟิตเนส ในบริการต่างๆ
     Wait Until Element Contains         id:service     สปา           #พบบริการ สปา ในบริการต่างๆ
     Wait Until Element Contains         id:service     สวนน้ำ        #พบบริการ สวนน้ำ ในบริการต่างๆ
-
+Test2 ทดสอบการแสดงผลแถบเมนู
+    # ExpectResult
+    Wait Until Page Contains Element    id:tabmenu     #พบแถบเมนู
+    Wait Until Element Contains         id:tabmenu     ห้องพัก         #พบบริการ ห้องพัก ในบริการต่างๆ
+    Wait Until Element Contains         id:tabmenu     คาราโอเกะ      #พบบริการ คาราโอเกะ ในบริการต่างๆ
+    Wait Until Element Contains         id:tabmenu     เช่าเรือ         #พบบริการ เช่าเรือ ในบริการต่างๆ
+    Wait Until Page Contains Element    id:logo                     #พบโลโก้โรงแรม
+    Wait Until Element Contains         id:tabmenu     Hotel         #พบชื่อโรงแรม
+    Wait Until Element Contains         id:tabmenu     ฟิตเนส        #พบบริการ ฟิตเนส ในบริการต่างๆ
+    Wait Until Element Contains         id:tabmenu     สปา           #พบบริการ สปา ในบริการต่างๆ
+    Wait Until Element Contains         id:tabmenu     สวนน้ำ        #พบบริการ สวนน้ำ ในบริการต่างๆ
 
 *** Keywords ***
 เปิดหน้าหลัก
