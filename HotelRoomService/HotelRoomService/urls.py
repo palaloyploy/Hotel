@@ -21,5 +21,6 @@ from HotelRoomService import views
 urlpatterns = [
     path('', views.index),
     path('room/',views.room, name = 'room'),
+    path('detail/',views.roomdetail, name = 'roomdetail'),
     path('admin/', admin.site.urls),
 ]
