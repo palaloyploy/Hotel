@@ -29,8 +29,17 @@ Test1 ทดสอบการเข้าหน้าห้องพัก
     Wait Until Page Contains Element    id:roomimage    #พบรูปห้องพัก
     Wait Until Page Contains Element    id:bookingnow  #พบปุ่มจองเลย
 
-Test2-2 ทดสอบการเข้าหน้ารายละเอียดห้องพัก
+Test2-1 ทดสอบการเข้าหน้ารายละเอียดห้องพัก
     # ExpectResult
+    Title Should Be             DetailRoom
+    Wait Until Page Contains Element    id:roomname     #พบชื่อห้อง
+    Wait Until Page Contains Element    id:navbutton    #พบปุ่มนำทาง
+    Wait Until Page Contains Element    id:roomimage    #พบรูปห้องพัก
+    Wait Until Page Contains    รายละเอียด                #พบข้อความ รายละเอียด
+    Wait Until Page Contains Element    id:roomdescription  #พบรายละเอียดห้องพัก
+    Wait Until Page Contains    สิ่งอำนวยความสะดวก         #พบข้อความ สิ่งอำนวยความสะดวก
+    Wait Until Page Contains Element    id:suportdetail  #พบสิ่งอำนวยความสะดวก
+
     Wait Until Element Contains         id:detail    ข้อมูลติดต่อ          #พบข้อความ ข้อมูลติดต่อ
     Wait Until Element Contains         id:detail      ชื่อ-นามสกุล       #พบข้อความ ชื่อ-นามสกุล
     Wait Until Page Contains Element    id:name                         #พบอินพุต ชื่อ-นามสกุล
