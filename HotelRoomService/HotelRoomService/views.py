@@ -12,3 +12,5 @@ def index(request):
       
     }
     return HttpResponse(template.render(context, request))
+def room(request):
+    return render(request,'Roompage.html')
