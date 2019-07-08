@@ -1,15 +1,11 @@
 *** Settings ***
-Library            Selenium2Library
-
-
-*** Variable ***
-Library            Selenium2Library
-Test Setup         เปิดหน้าหลัก
-# Test Teardown    Close All Browsers
+Library          Selenium2Library
+Test Setup       เปิดหน้าหลัก
+Test Teardown    Close All Browsers
 
 *** Variable ***
-${BROWSER}         chrome
-${URL}             http://127.0.0.1:8000/
+${BROWSER}       chrome
+${URL}           http://127.0.0.1:8000/
 
 
 
@@ -17,7 +13,6 @@ ${URL}             http://127.0.0.1:8000/
 *** Test Case ***
 
 
-*** Keywords ***
 
 Test1 ทดสอบการเข้าหน้าหลัก
     # ExpectResult
