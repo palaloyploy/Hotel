@@ -21,10 +21,10 @@ Test1 ทดสอบการเข้าหน้าสปา
     เลือกเมนูห้องพัก
     # ExpectResult
     Title Should Be             สปา
-    Wait Until Page Contains            id:spa            สปาของโรงแรม    #พบข้อความ สปาของโรงแรม
+    Wait Until Element Contains            id:spa          สปาของโรงแรม    #พบข้อความ สปาของโรงแรม
     Wait Until Page Contains Element    id:spabanner    #พบแบนเนอร์
     Wait Until Page Contains Element    id:spaimage    #พบรูปบรรยากาศสปา
-    Wait Until Page Contains            id:spa            service    #พบข้อความ service
+    Wait Until Element Contains            id:spa            service    #พบข้อความ service
     Wait Until Page Contains Element    id:spaservice    #พบบริการต่างๆของสปา
     Wait Until Element Contains         id:spaservice     นวดหน้า        #พบบริการนวดหน้า
     Wait Until Element Contains         id:spaservice     อบซาวน่า        #พบบริการอบซาวน่า
