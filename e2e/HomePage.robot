@@ -20,6 +20,7 @@ Test1 ทดสอบการเข้าหน้าหลัก
     Wait Until Page Contains Element    id:tabmenu     #พบแถบเมนู
     Wait Until Page Contains Element    id:footer      #พบฟุตเตอร์
     Wait Until Page Contains Element    id:banner      #พบแบนเนอร์โฆษณา
+    Wait Until Element Contains         id:hotel       Hotel         #พบชื่อโรงแรม
     Wait Until Page Contains Element    id:service     #พบบริการต่างๆ
     Wait Until Page Contains            บริการต่างๆ    #พบบริการต่างๆ
     Wait Until Element Contains         id:service     ห้องพัก       #พบบริการ ห้องพัก ในบริการต่างๆ
@@ -28,6 +29,8 @@ Test1 ทดสอบการเข้าหน้าหลัก
     Wait Until Element Contains         id:service     ฟิตเนส        #พบบริการ ฟิตเนส ในบริการต่างๆ
     Wait Until Element Contains         id:service     สปา           #พบบริการ สปา ในบริการต่างๆ
     Wait Until Element Contains         id:service     สวนน้ำ        #พบบริการ สวนน้ำ ในบริการต่างๆ
+
+
 
 
 *** Keywords ***
