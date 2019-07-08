@@ -2,6 +2,8 @@
 Library          Selenium2Library
 Test Setup       เปิดหน้าหลัก
 Test Teardown    Close All Browsers
+Resource         ${EXECDIR}/e2e/Keywords.robot
+
 
 *** Variable ***
 ${BROWSER}       chrome
@@ -53,6 +55,3 @@ Test3 ทดสอบการแสดงผลฟุตเตอร์
 
 
 *** Keywords ***
-เปิดหน้าหลัก
-    Open Browser                        ${URL}         ${BROWSER}
-
