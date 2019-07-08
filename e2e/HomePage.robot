@@ -1,10 +1,8 @@
 *** Settings ***
-<<<<<<< Updated upstream
-Library          Selenium2Library
+Library            Selenium2Library
 
 
 *** Variable ***
-=======
 Library            Selenium2Library
 Test Setup         เปิดหน้าหลัก
 # Test Teardown    Close All Browsers
@@ -12,18 +10,15 @@ Test Setup         เปิดหน้าหลัก
 *** Variable ***
 ${BROWSER}         chrome
 ${URL}             http://127.0.0.1:8000/
->>>>>>> Stashed changes
 
 
 
 
 *** Test Case ***
 
-<<<<<<< Updated upstream
 
 *** Keywords ***
 
-=======
 Test1 ทดสอบการเข้าหน้าหลัก
     # ExpectResult
     Title Should Be                     หน้าหลัก
@@ -43,4 +38,4 @@ Test1 ทดสอบการเข้าหน้าหลัก
 *** Keywords ***
 เปิดหน้าหลัก
     Open Browser                        ${URL}         ${BROWSER}
->>>>>>> Stashed changes
+
