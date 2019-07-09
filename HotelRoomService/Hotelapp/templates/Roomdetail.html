@@ -4,7 +4,35 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+    <link href="https://fonts.googleapis.com/css?family=Kanit" rel="stylesheet">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+
+    <!-- fontawe -->
+    <link rel="mask-icon" type="" href="https://static.codepen.io/assets/favicon/logo-pin-8f3771b1072e3c38bd662872f6b673a722f4b3ca2421637d5596661b4e2132cc.svg"
+        color="#111" />
+
+    <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css'>
+    
+
     <title>DetailRoom</title>
+
+    <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+  <link rel="stylesheet" href="/resources/demos/style.css">
+  <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+  <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+  <script>
+  $( function() {
+    $( "#datepickercheckin" ).datepicker();
+    $( "#datepickercheckout" ).datepicker();
+  } );
+    $('#amountpeople').chainedTo('#amountroom');
+</script>
+
+  </script>
 </head>
 <body>
     <div id="roomname"></div>
@@ -18,23 +46,55 @@
     </div>
     <div id="detail">
         <div>ข้อมูลติดต่อ</div>
-        <div>ชื่อ-นามสกุล</div>
-        <input id= "name">
-        <div>อีเมล</div>
-        <input id= "email">
-        <div>เบอร์โทรติดต่อ</div>
-        <input id="phonenumber">
-        <div>check-in</div>
-        <div id="checkin"></div>
-        <div>check-out</div>
-        <div id="checkout"></div>
-        <div>จำนวนห้อง</div>
-        <div id="amountroom"></div>
-        <div>จำนวนคน</div>
-        <div id="amountpeople"></div>
-        <button id="booking">จอง</button>
+        <form>
+            <div class="form-group" style="padding-left: 20px">
+                <label>ชื่อ-นามสกุล</label>
+                <input class="form-control" id="name" placeholder="ชื่อ-นามสกุล" style="width:40%">
+              </div>
+              <div class="form-group" style="padding-left: 20px">
+                <label>อีเมล</label>
+                <input class="form-control" id="email" placeholder="อีเมล" style="width:40%">
+              </div>
+              <div class="form-group" style="padding-left: 20px">
+                <label>เบอร์โทรติดต่อ</label>
+                <input class="form-control" id="phonenumber" placeholder="เบอร์โทรติดต่อ" style="width:40%">
+              </div>
+            <div class="row" style="padding-left: 20px; margin-bottom: 20px">
+                <div class="col-md-6 mt-md-0 mt-3">
+                    <div id="checkin">
+                        <h5>check-in</h5>
+                        <input type="text" id="datepickercheckin" placeholder="Start-Date">
+                    </div>
+                </div>
+                <div class="col-md-6 mt-md-0 mt-3">
+                    <div id="checkout">
+                        <h5>check-out</h5>
+                        <input type="text" id="datepickercheckout" placeholder="End-Date">
+                    </div>
+                </div>
+            </div>
+            <div class="row" style="padding-left: 20px;margin-bottom: 20px">
+                <div class="col-md-6 mt-md-0 mt-3">
+                    <div>จำนวนห้อง</div>
+                <select class="form-control" id="amountroom" style="width:30%">
+                    <option value=1>1</option>
+                    <option value=2>2</option>
+                    <option value=3>3</option>
+                    <option value=4>4</option>
+                    <option value=5>5</option>
+              </select>
+                </div>
+                <div class="col-md-6 mt-md-0 mt-3">
+                        <div>จำนวนคน</div>
+                        <select class="form-control" id="amountpeople" style="width:30%">
+                            <option>1</option>
+                            <option>2</option>
+                    </select>
+                </div>
+            </div>
 
-
+        </form>
+        <button id="booking" style="float:right; margin-right: 50px">จอง</button>
     </div>
 
 </body>
