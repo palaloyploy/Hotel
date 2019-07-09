@@ -19,7 +19,7 @@ from django.urls import path
 from HotelRoomService import views
 
 urlpatterns = [
-    path('', views.index),
+    path('', views.index, name='home'),
     path('room/',views.room, name = 'room'),
     path('detail/',views.roomdetail, name = 'roomdetail'),
     path('fitness/',views.fitness, name = 'fitness'),
