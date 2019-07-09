@@ -21,14 +21,14 @@ Test1 ทดสอบการเข้าหน้าฟิตเนส
     เลือกเมนูฟิตเนส
     # ExpectResult
     Title Should Be                     ฟิตเนส
-    Wait Until Page Contains Element    id:banner                   #พบแบนเนอร์โฆษณา
-    Wait Until Page Contains Element    id:banner      ฟิตเนส      #พบชื่อฟิตเนสแบนเนอร์
-    Wait Until Element Contains         id:listadvantage            #พบจุดเด่นของฟิตเนส
-    Wait Until Element Contains         id:fitnessimage             #พบรูปฟิตเนส
+    Wait Until Page Contains Element    id:banner                           #พบแบนเนอร์โฆษณา
+    Wait Until Element Contains         id:banner           ฟิตเนส          #พบชื่อฟิตเนสแบนเนอร์
+    Wait Until Page Contains Element    id:listadvantage                    #พบจุดเด่นของฟิตเนส
+    Wait Until Page Contains Element    id:fitnessimage                     #พบรูปฟิตเนส
     Wait Until Element Contains         id:fitnessclass     Class เรียน    #พบclassเรียน
-    Wait Until Element Contains         id:listfitnessclass          #พบการ์ด class เรียน
-    Wait Until Element Contains         id:time     เวลาเปิด-ปิด        #พบเวลาเปิด-ปิด
-    Wait Until Element Contains         id:location     สถานที่           #พบสถานที่
+    Wait Until Page Contains Element    id:listfitnessclass                 #พบการ์ด class เรียน
+    Wait Until Element Contains         id:time             เวลาเปิด-ปิด        #พบเวลาเปิด-ปิด
+    Wait Until Element Contains         id:location         สถานที่           #พบสถานที่
 
 *** Keywords ***
 เลือกเมนูฟิตเนส
