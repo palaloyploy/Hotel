@@ -60,8 +60,8 @@ Test2 ทดสอบการเข้าหน้ารายละเอี�
     Wait Until Page Contains Element    id:amountpeople                 #พบดรอปดาวจำนวนคน
     Wait Until Element Contains         id:booking     จอง                #พบปุ่มจอง
 
-
 *** Keywords ***
 เลือกเมนูห้องพัก
     Wait Until Page Contains Element        id:room
     Click Element           id:room     #เลือกเมนูห้องพัก
+
