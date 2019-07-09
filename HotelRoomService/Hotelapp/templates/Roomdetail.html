@@ -117,62 +117,89 @@
     }
     .clickable { cursor: pointer; }
 </style>
-    <div id="roomname"></div>
-    <div id="navbutton"></div>
-    <div id="roomimage"></div>
-    <div id="roomdescription">
-        <div>รายละเอียด</div>
+    <div id="navbutton" class="list-group text-center" style="right: 0; top: 0; width:130px; float: right;position: fixed;">
+            <a class="list-group-item list-group-item-action" href="#roomname">รายละเอียด</a>
+            <a class="list-group-item list-group-item-action" href="#detail">จอง</a>
     </div>
-    <div id="suportdetail">
-        <div>สิ่งอำนวยความสะดวก</div>
-    </div>
-    <div id="detail">
-        <h5>ข้อมูลติดต่อ</h5>
-        <form style="padding-left: 10%">
-            <div class="form-group">
-                <label>ชื่อ-นามสกุล</label>
-                <input class="form-control" id="name" placeholder="ชื่อ-นามสกุล" style="width:40%">
-            </div>
-            <div class="form-group">
-                <label>อีเมล</label>
-                <input class="form-control" id="email" placeholder="อีเมล" style="width:40%">
-            </div>
-            <div class="form-group">
-                <label>เบอร์โทรติดต่อ</label>
-                <input class="form-control" id="phonenumber" placeholder="เบอร์โทรติดต่อ" style="width:40%">
-            </div>
-            <div class="row" style="margin-bottom: 20px">
-                <div class="col-md-5 mt-md-0 mt-3">
-                    <div id="checkin">
-                        <label>check-in</label>
-                        <div id="datepickercheckin" class="input-group date" data-date-format="dd-mm-yyyy">
-                            <input class="form-control form-control clickable input-md" type="text" readonly/>
-                            <span class="input-group-addon"><i class="glyphicon glyphicon-calendar"></i></span>
+          <div data-spy="scroll" data-target="#navbutton" data-offset="0" class="scrollspy-example">
+                <div id="roomname">pp</div>
+                <div id="roomimage"></div>
+                <div id="roomdescription">
+                    <div>รายละเอียด</div>
+                    <p>xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx</p>
+                    <p>xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx</p>
+                    <p>xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx</p>
+                    <p>xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx</p>
+                    <p>xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx</p>
+                    <p>xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx</p>
+                    <p>xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx</p>
+                    <p>xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx</p>
+                    <p>xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx</p>
+                    <p>xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx</p>
+                    <p>xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx</p>
+                    <p>xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx</p>
+                    <p>xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx</p>
+                    <p>xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx</p>
+                    <p>xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx</p>
+                    <p>xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx</p>
+                    <p>xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx</p>
+                    <p>xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx</p>
+                    <p>xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx</p>
+                    <p>xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx</p>
+                    <p>xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx</p>
+
+                </div>
+                <div id="suportdetail">
+                    <div>สิ่งอำนวยความสะดวก</div>
+                </div>
+                <div id="detail">
+                    <h5>ข้อมูลติดต่อ</h5>
+                    <form style="padding-left: 10%">
+                        <div class="form-group">
+                            <label>ชื่อ-นามสกุล</label>
+                            <input class="form-control" id="name" placeholder="ชื่อ-นามสกุล" style="width:40%">
                         </div>
-                    </div>
-                </div>
-                <div class="col-md-5 mt-md-0 mt-3">
-                    <div id="checkout">
-                        <label>check-out</label>
-                        <div id="datepickercheckout" class="input-group date" data-date-format="dd-mm-yyyy">
-                            <input class="form-control form-control clickable input-md" type="text" readonly/>
-                            <span class="input-group-addon"><i class="glyphicon glyphicon-calendar"></i></span>
+                        <div class="form-group">
+                            <label>อีเมล</label>
+                            <input class="form-control" id="email" placeholder="อีเมล" style="width:40%">
                         </div>
-                    </div>
+                        <div class="form-group">
+                            <label>เบอร์โทรติดต่อ</label>
+                            <input class="form-control" id="phonenumber" placeholder="เบอร์โทรติดต่อ" style="width:40%">
+                        </div>
+                        <div class="row" style="margin-bottom: 20px">
+                            <div class="col-md-5 mt-md-0 mt-3">
+                                <div id="checkin">
+                                    <label>check-in</label>
+                                    <div id="datepickercheckin" class="input-group date" data-date-format="dd-mm-yyyy">
+                                        <input class="form-control form-control clickable input-md" type="text" readonly/>
+                                        <span class="input-group-addon"><i class="glyphicon glyphicon-calendar"></i></span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-5 mt-md-0 mt-3">
+                                <div id="checkout">
+                                    <label>check-out</label>
+                                    <div id="datepickercheckout" class="input-group date" data-date-format="dd-mm-yyyy">
+                                        <input class="form-control form-control clickable input-md" type="text" readonly/>
+                                        <span class="input-group-addon"><i class="glyphicon glyphicon-calendar"></i></span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row" style="margin-bottom: 20px">
+                            <div class="col-md-5 mt-md-0 mt-3">
+                                <label>จำนวนห้อง</label>
+                                <div id="room"></div>
+                            </div>
+                            <div class="col-md-5 mt-md-0 mt-3">
+                                <label>จำนวนคน</label>
+                                <div id="people"></div>
+                            </div>
+                        </div>
+                        <button id="booking" class="btn btn-dark" style="float:right; margin-right: 50px">จอง</button>
+                    </form>
                 </div>
-            </div>
-            <div class="row" style="margin-bottom: 20px">
-                <div class="col-md-5 mt-md-0 mt-3">
-                    <label>จำนวนห้อง</label>
-                    <div id="room"></div>
-                </div>
-                <div class="col-md-5 mt-md-0 mt-3">
-                    <label>จำนวนคน</label>
-                    <div id="people"></div>
-                </div>
-            </div>
-            <button id="booking" class="btn btn-dark" style="float:right; margin-right: 50px">จอง</button>
-        </form>
-    </div>
+          </div>   
 </body>
 </html>
