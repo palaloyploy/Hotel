@@ -17,13 +17,17 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path
 from HotelRoomService import views
+from django.conf import settings
+from django.conf.urls.static import static
 
 urlpatterns = [
     path('', views.index, name='home'),
     path('room/',views.room, name = 'room'),
-    path('detail/',views.roomdetail, name = 'roomdetail'),
+    path('^(?P<room_id>[0-9]+)/detail/',views.roomdetail, name = 'roomdetail'),
     path('fitness/',views.fitness, name = 'fitness'),
     path('spa/',views.spa, name = 'spa'),
     path('waterpark/',views.waterpark, name = 'waterpark'),
     path('admin/', admin.site.urls),
 ]
+
+urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

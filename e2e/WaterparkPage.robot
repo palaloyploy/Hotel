@@ -16,7 +16,7 @@ ${URL}           http://127.0.0.1:8000/
 
 
 
-Test1 ทดสอบการเข้าหน้าห้องพัก
+Test1 ทดสอบการเข้าหน้าสวนน้ำ
     # TestStep
     เลือกเมนูสวนน้ำ
     # ExpectResult
@@ -24,7 +24,7 @@ Test1 ทดสอบการเข้าหน้าห้องพัก
     Wait Until Page Contains Element    id:banner    #พบแบนเนอร์
     Wait Until Element Contains         id:banner           สวนน้ำ   #พบชื่อสวนน้ำในแบนเนอร์
     Wait Until Element Contains         id:waterparkdetail   สวนน้ำ  #พบช้อมูลสวนน้ำ
-    Wait Until Element Contains         id:waterparkimage        #พบรูปภาพสวนน้ำ
+    Wait Until Page Contains Element         id:waterparkimage        #พบรูปภาพสวนน้ำ
     Wait Until Page Contains Element    id:listplay  #พบรายการเครื่องเล่น
     Wait Until Page Contains Element    id:playname  #พบชื่อเครื่องเล่น
     Wait Until Page Contains Element    id:playdescription  #พบรายละเอียดเครื่องเล่น
