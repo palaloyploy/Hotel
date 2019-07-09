@@ -18,7 +18,7 @@ def roomdetail(request):
     return render(request,'Roomdetail.html')
 def fitness(request):
     return render(request,'Fitness.html')
-def waterpark(request):
-    return render(request,'Waterpark.html')
 def spa(request):
     return render(request,'spa.html')
+def waterpark(request):
+    return render(request,'Waterpark.html')
