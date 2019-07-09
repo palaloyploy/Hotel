@@ -52,21 +52,40 @@
 </head>
 
 <body>
-    <nav id ="tabmenu">
-        <div>
-            <a id = "room" href="{% url 'room'%}">ห้องพัก</a>
-            <a>คาราโอเกะ</a>
-            <a>เช่าเรือ</a>
-            <a>
-                <i id ="logo">
+    <!-- navbar -->
+    <nav id ="tabmenu" class="navbar navbar-dark bg-info d-flex flex-row" style="flex:100%; flex-direction: row">
+        <ul class="navbar-nav text-center" style="flex:100%; flex-direction: row"">
+            <li class="nav-item active" style="flex:100%;"">
+                <a id = "room" class="nav-link" href="{% url 'room'%}">ห้องพัก
+                <span class="sr-only">(current)</span>
+                </a>
+            </li>
+            <li class="nav-item" style="flex:100%;">
+                <a class="nav-link">คาราโอเกะ</a>
+            </li>
+            <li class="nav-item" style="flex:100%;">
+                <a class="nav-link">เช่าเรือ</a>
+            </li>
+            <li style="flex:100%;">
+                <a class="navbar-brand" href="{% url 'home'%}">
+                    <img src="https://image.flaticon.com/icons/svg/99/99903.svg" width="30" height="30" alt="" class="d-inline-block align-top" alt="">
                     Hotel
-            </a>
-            <a id = "spa" href="{% url 'spa'%}">สปา</a>
-            <a id = "fitness" href="{% url 'fitness'%}">ฟิตเนส</a>
-            <a id = "waterpark" href="{% url 'waterpark'%}">สวนน้ำ</a>
-        </div>
+                </a>    
+            </li>
+            <li class="nav-item" style="flex:100%;">
+                <a id = "spa" class="nav-link" href="{% url 'spa'%}">สปา</a>
+            </li>
+            <li class="nav-item" style="flex:100%;">
+                <a id = "fitness" class="nav-link" href="{% url 'fitness'%}">ฟิตเนส</a>
+            </li>
+            <li class="nav-item" style="flex:100%;">
+                <a id = "waterpark" class="nav-link" href="{% url 'waterpark'%}">สวนน้ำ</a>
+            </li>
+        </ul>
     </nav>
+   
 
+    
     <!-- HomePage -->
 
     
