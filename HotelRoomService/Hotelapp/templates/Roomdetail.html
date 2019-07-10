@@ -219,7 +219,7 @@
 
 </head>
 <body>
-    {% include 'navbar.html' %}
+
 
 
 <style>
@@ -235,7 +235,10 @@
     </div>
           <div data-spy="scroll" data-target="#navbutton" data-offset="0" class="scrollspy-example">
                 <div style="margin: 0px 0px 0px">
-                    <h1 id="roomname" class="card-header" style="background-color:#F5F5F5; padding: 20px;">{{room.name}}</h1>
+                    <h1 id="roomname" class="card-header" style="background-color:#F5F5F5; padding: 20px;">{{room.name}} 
+                        <a style="box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.27);flex: 20%;margin: 3rem" class="btn btn-dark"  type="button" id="bookingnow{{room.id}}" href="{% url 'room'%}">ย้อนกลับ</a>
+                        
+                 </h1> 
                 </div>
                 <div id="roomimage" class="bd-example" style="width: 50%;margin-left: auto;margin-right: auto; margin-top:20px;margin-bottom:20px;  "  >
                     <div id="banner" class="carousel slide text-center">

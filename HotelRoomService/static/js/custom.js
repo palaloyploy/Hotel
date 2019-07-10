@@ -22,3 +22,9 @@ $(document).ready(function () {
         $("#banner").carousel("next");
     });
 });
+
+
+
+
+
+
