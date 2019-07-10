@@ -24,7 +24,7 @@
   <script>
   $( function() {
     var name , email , phonenumber
-    var peopleperroom = 3
+    var peopleperroom = "{{room.peple}}"
     var rooms = [1, 2, 3, 4, 5]
     var peoples = []
     for (i=1;i<=peopleperroom;i++){
@@ -54,7 +54,7 @@
     })
 
     $('#phonenumber').change(function(){
-        phonenumber = $('#phonnumber').val()
+        phonenumber = $('#phonenumber').val()
     })
 
     $('#amountroom').click(function(){ 
@@ -91,7 +91,6 @@
     $('#datepickercheckout')[0].focus();
     });
 
-
     var checkout = $('#datepickercheckout').datepicker({
         beforeShowDay: function(date) {
         if (!checkin.datepicker("getDate").valueOf()) {
@@ -103,6 +102,7 @@
         autoclose: true
 
         }).on('changeDate', function(ev) {});
+
 
     });
 </script>
@@ -119,85 +119,94 @@
     }
     .clickable { cursor: pointer; }
 </style>
-
-    <div id="navbutton" class="list-group text-center" style="right: 0; top: 0; width:130px; float: right;position: fixed;">
-            <a class="list-group-item list-group-item-action" href="#roomname">รายละเอียด</a>
-            <a class="list-group-item list-group-item-action" href="#detail">จอง</a>
+    <div id="navbutton" class="list-group text-center" style="right: 50px; top:50px; width:130px; float: right; position: fixed;">
+            <a id="des_button" class="list-group-item list-group-item-action" href="#roomname">รายละเอียด</a>
+            <a id="booking_button" class="list-group-item list-group-item-action" href="#detail">จอง</a>
     </div>
           <div data-spy="scroll" data-target="#navbutton" data-offset="0" class="scrollspy-example">
-                <div id="roomname"><h2>{{room.name}}</h2></div>
-                <div id="roomimage">
-                    <!-- The slideshow -->
-                <div class="carousel-inner">
-                    <div class="carousel-item active text-center ">
-                        <img src="{{room.image1.url}}" alt="Los Angeles" width="50%" height="380px">
-                    </div>
-                    <div class="carousel-item text-center">
-                        <img src="{{room.image2.url}}" alt="Chicago" width="50%" height="380px">
-                    </div>
+                <div id="roomname"  style="margin: 0px 0px 0px">
+                    <h1 id = "roomname" style="background-color:#F5F5F5; margin: 20px; padding: 20px">{{room.name}}</h1>
                 </div>
-        
-                <!-- Left and right controls -->
-                <a class="carousel-control-prev" href="#banner" style="height: 380px">
-                    <span class="carousel-control-prev-icon"></span>
-                </a>
-                <a class="carousel-control-next" href="#banner style="height: 380px">
-                    <span class="carousel-control-next-icon"></span>
-                </a>
+                <div id="roomimage" style="padding:40px;">
+                    <!-- The slideshow -->
+                    <div class="carousel-inner">
+                        <div class="carousel-item active text-center ">
+                            <img src="{{room.image1.url}}" alt="Los Angeles" width="50%" height="380px">
+                            </div>
+                            <div class="carousel-item text-center">
+                            <img src="{{room.image2.url}}" alt="Chicago" width="50%" height="380px">
+                        </div>
                     </div>
+                <!-- Left and right controls -->
+                    <a class="carousel-control-prev" href="#banner" style="height: 380px; top: 63px;left: 395px; width: 8%">
+                        <span class="carousel-control-prev-icon"></span>
+                    </a>
+                    <a class="carousel-control-next" href="#banner" style="height: 380px; top: 63px; right: 395px; width: 8%;" >
+                        <span class="carousel-control-next-icon"></span>
+                    </a>
+                </div>
                 <div id="roomdescription">
-                    <div><h2>รายละเอียด</h2></div>
+                    <h3 class="card-header" style="background-color:#F5F5F5; margin: 20px; padding: 20px">รายละเอียด</h3>
                     {{room.des}}
-
                 </div>
                 <div id="suportdetail">
                     <div>สิ่งอำนวยความสะดวก</div>
-                    <h3>{{room.option}}</h3>
-                </div>
-                <div id="detail">
-                    <h5>ข้อมูลติดต่อ</h5>
-                    <form style="padding-left: 10%">
-                        <div class="form-group">
-                            <label>ชื่อ-นามสกุล</label>
-                            <input class="form-control" id="name" placeholder="ชื่อ-นามสกุล" style="width:40%">
+                    <p>{% for option in option %}
+                        <ul>
+                            <li class="nav-item">
+                                <a class="nav-link active">{{option.optionname}}</a>
+                            </li>
+                        </ul>
+                        {% endfor %}
+                    </p>
                         </div>
-                        <div class="form-group">
-                            <label>อีเมล</label>
-                            <input class="form-control" id="email" placeholder="อีเมล" style="width:40%">
-                        </div>
-                        <div class="form-group">
-                            <label>เบอร์โทรติดต่อ</label>
-                            <input class="form-control" id="phonenumber" placeholder="เบอร์โทรติดต่อ" style="width:40%">
-                        </div>
-                        <div class="row" style="margin-bottom: 20px">
-                            <div class="col-md-5 mt-md-0 mt-3">
-                                <div id="checkin">
-                                    <label>check-in</label>
-                                    <div id="datepickercheckin" class="input-group date" data-date-format="dd-mm-yyyy">
-                                        <input class="form-control form-control clickable input-md" type="text" readonly/>
-                                        <span class="input-group-addon"><i class="glyphicon glyphicon-calendar"></i></span>
+                        <div id="detail">
+                            <h>ข้อมูลติดต่อ</h>
+                            <form style="padding-left: 10%">
+                                <div class="form-group">
+                                    <label>ชื่อ-นามสกุล</label>
+                                    <input class="form-control" id="name" placeholder="ชื่อ-นามสกุล" style="width:40%">
+                                </div>
+                                <div class="form-group">
+                                    <label>อีเมล</label>
+                                    <input class="form-control" id="email" placeholder="อีเมล" style="width:40%">
+                                </div>
+                                <div class="form-group">
+                                    <label>เบอร์โทรติดต่อ</label>
+                                    <input class="form-control" id="phonenumber" placeholder="เบอร์โทรติดต่อ" style="width:40%">
+                                </div>
+                                <div class="row" style="margin-bottom: 20px">
+                                    <div class="col-md-5 mt-md-0 mt-3">
+                                        <div id="checkin">
+                                            <label>check-in</label>
+                                            <div id="datepickercheckin" class="input-group date" data-date-format="dd-mm-yyyy">
+                                                <input class="form-control form-control clickable input-md" type="text" readonly/>
+                                                <span class="input-group-addon"><i class="glyphicon glyphicon-calendar"></i></span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-5 mt-md-0 mt-3">
+                                        <div id="checkout">
+                                            <label>check-out</label>
+                                            <div id="datepickercheckout" class="input-group date" data-date-format="dd-mm-yyyy">
+                                                <input class="form-control form-control clickable input-md" type="text" readonly/>
+                                                <span class="input-group-addon"><i class="glyphicon glyphicon-calendar"></i></span>
+                                            </div>
+                                        </div>
                                     </div>
                                 </div>
-                            </div>
-                            <div class="col-md-5 mt-md-0 mt-3">
-                                <div id="checkout">
-                                    <label>check-out</label>
-                                    <div id="datepickercheckout" class="input-group date" data-date-format="dd-mm-yyyy">
-                                        <input class="form-control form-control clickable input-md" type="text" readonly/>
-                                        <span class="input-group-addon"><i class="glyphicon glyphicon-calendar"></i></span>
+                                <div class="row" style="margin-bottom: 20px">
+                                    <div class="col-md-5 mt-md-0 mt-3">
+                                        <label>จำนวนห้อง</label>
+                                        <div id="room"></div>
+                                    </div>
+                                    <div class="col-md-5 mt-md-0 mt-3">
+                                        <label>จำนวนคน</label>
+                                        <div id="people"></div>
                                     </div>
                                 </div>
-                            </div>
-                        </div>
-                        <div class="row" style="margin-bottom: 20px">
-                            <div class="col-md-5 mt-md-0 mt-3">
-                                <label>จำนวนห้อง</label>
-                                <div id="room"></div>
-                            </div>
-                            <div class="col-md-5 mt-md-0 mt-3">
-                                <label>จำนวนคน</label>
-                                <div id="people"></div>
-                            </div>
+                                <button id="booking" class="btn btn-dark" style="float:right; margin-right: 50px">จอง</button>
+                            </form>
                         </div>
                         <button id="booking" type="button"  data-toggle="modal" data-target="#popupbooking" class="btn btn-dark" style="float:right; margin-right: 50px">จอง</button>
 
