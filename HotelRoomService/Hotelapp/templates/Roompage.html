@@ -37,6 +37,9 @@
 }
 </style>   
 
+
+
+
         <div id="banner"  style="margin-top: 3rem;width: 100%;">
                 <img src="https://assets.hyatt.com/content/dam/hyatt/hyattdam/images/2018/12/07/0900/Grand-Hyatt-Erawan-Bangkok-P425-Grand-Room.jpg/Grand-Hyatt-Erawan-Bangkok-P425-Grand-Room.jpg?imwidth=1920" alt="Snow" style="width:100%;height: 450px;">
 
@@ -52,18 +55,22 @@
               </div>
 
 
-        
 
 
+          
+              
+              {% for room in room %}
+          
+{% if room.id == 1 %}
 <div class="d-flex flex-row text-center" style="width: 100%;height: 650px;">
         <div class="card" style="flex: 50%">
             <div class="d-flex flex-column" style="height: 100%">
                   
-                            <p  style="font-size: 2rem;flex: 200%;margin-top: 2rem"> ห้อง ธรรมดา </p>
+                            <p  style="font-size: 2rem;flex: 200%;margin-top: 2rem">{{room.name}}{{room.id}}</p>
                        
-                             <h5 style="margin: 2rem;margin-top: 0%;flex: 200%">xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx</h5>
+                             <h5 style="margin: 2rem;margin-top: 0%;flex: 200%">{{room.des}}</h5>                                                                                   
                         
-                                <button style="flex: 20%;margin: 3rem" class="btn btn-dark"  type="button" id="bookingnow" onclick="window.location.href={% url 'roomdetail'%}">จองเลย</button>
+                                <a style="flex: 20%;margin: 3rem" class="btn btn-dark"  type="button" id="bookingnow{{room.id}}" href="{% url 'roomdetail' room.id %}">จองเลย</a>
                         
                        
              
@@ -73,12 +80,12 @@
             <div class="card" style="flex: 100%">
                 <div>    
                     <div >
-                            <img style="width: 100%;height: 350px;"  src="https://assets.hyatt.com/content/dam/hyatt/hyattdam/images/2018/12/07/0900/Grand-Hyatt-Erawan-Bangkok-P425-Grand-Room.jpg/Grand-Hyatt-Erawan-Bangkok-P425-Grand-Room.jpg?imwidth=1920" alt="Snow" style="width:100%;height: 450px;">
+                            <img style="width: 100%;height: 350px;"  src="{{room.image1.url}}" alt="Snow" style="width:100%;height: 450px;">
 
                     </div>
                     <div class="d-flex flex-row">
-                            <img style="width: 50%" src="https://assets.hyatt.com/content/dam/hyatt/hyattdam/images/2018/12/07/0900/Grand-Hyatt-Erawan-Bangkok-P425-Grand-Room.jpg/Grand-Hyatt-Erawan-Bangkok-P425-Grand-Room.jpg?imwidth=1920" alt="Snow" style="width:100%;height: 450px;">
-                            <img style="width: 50%"  src="https://assets.hyatt.com/content/dam/hyatt/hyattdam/images/2018/12/07/0900/Grand-Hyatt-Erawan-Bangkok-P425-Grand-Room.jpg/Grand-Hyatt-Erawan-Bangkok-P425-Grand-Room.jpg?imwidth=1920" alt="Snow" style="width:100%;height: 450px;">
+                            <img style="width: 50%" src="{{room.image2.url}}" alt="Snow" style="width:100%;height: 450px;">
+                            <img style="width: 50%"  src="{{room.image3.url}}" alt="Snow" style="width:100%;height: 450px;">
 
                     </div>
                 </div>
@@ -86,23 +93,21 @@
                 
                 
 </div>
+{% endif %}  
 
 
-
-
-
-
+{% if room.id == 2 %}
 <div class="d-flex flex-row text-center" style="width: 100%;height: 650px;">
 
         <div class="card" style="flex: 100%">
                 <div>    
                     <div >
-                            <img style="width: 100%;height:350px;"  src="https://assets.hyatt.com/content/dam/hyatt/hyattdam/images/2018/12/07/0900/Grand-Hyatt-Erawan-Bangkok-P425-Grand-Room.jpg/Grand-Hyatt-Erawan-Bangkok-P425-Grand-Room.jpg?imwidth=1920" alt="Snow" style="width:100%;height: 450px;">
+                            <img style="width: 100%;height:350px;"  src="{{room.image1.url}}" alt="Snow" style="width:100%;height: 450px;">
 
                     </div>
                     <div class="d-flex flex-row">
-                            <img style="width: 50%" src="https://assets.hyatt.com/content/dam/hyatt/hyattdam/images/2018/12/07/0900/Grand-Hyatt-Erawan-Bangkok-P425-Grand-Room.jpg/Grand-Hyatt-Erawan-Bangkok-P425-Grand-Room.jpg?imwidth=1920" alt="Snow" style="width:100%;height: 450px;">
-                            <img style="width: 50%"  src="https://assets.hyatt.com/content/dam/hyatt/hyattdam/images/2018/12/07/0900/Grand-Hyatt-Erawan-Bangkok-P425-Grand-Room.jpg/Grand-Hyatt-Erawan-Bangkok-P425-Grand-Room.jpg?imwidth=1920" alt="Snow" style="width:100%;height: 450px;">
+                            <img style="width: 50%" src="{{room.image1.url}}" alt="Snow" style="width:100%;height: 450px;">
+                            <img style="width: 50%"  src="{{room.image1.url}}" alt="Snow" style="width:100%;height: 450px;">
 
                     </div>
                 </div>
@@ -111,12 +116,11 @@
         <div class="card" style="flex: 50%">
             <div class="d-flex flex-column" style="height: 100%">
                   
-                            <p  style="font-size: 2rem;flex: 200%;margin-top: 2rem"> ห้อง ธรรมดา </p>
+                            <p  style="font-size: 2rem;flex: 200%;margin-top: 2rem">{{room.name}}</p>
                        
-                             <h5 style="margin: 2rem;margin-top: 0%;flex: 200%">xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx</h5>
+                             <h5 style="margin: 2rem;margin-top: 0%;flex: 200%">{{room.des}}</h5>
                         
-                                <button style="flex: 20%;margin: 3rem" class="btn btn-dark"  type="button" id="bookingnow" onclick="window.location.href={% url 'roomdetail'%}">จองเลย</button>
-                        
+                             <a style="flex: 20%;margin: 3rem" class="btn btn-dark"  type="button" id="bookingnow{{room.id}}" href="{% url 'roomdetail' room.id %}">จองเลย</a>
                        
              
             </div>
@@ -126,23 +130,17 @@
                 
                 
 </div>
+{% endif %}
 
-
-
-
-
-
-
-<div class="d-flex flex-row text-center" style="width: 100%;">
+{% if room.id == 3 %}
+<div class="d-flex flex-row text-center" style="width: 100%;height: 650px;">
         <div class="card" style="flex: 50%">
             <div class="d-flex flex-column" style="height: 100%">
                   
-                            <p  style="font-size: 2rem;flex: 200%;margin-top: 2rem"> ห้อง ธรรมดา </p>
+                            <p  style="font-size: 2rem;flex: 200%;margin-top: 2rem">{{room.name}}{{room.id}}</p>
                        
-                             <h5 style="margin: 2rem;margin-top: 0%;flex: 200%">xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx</h5>
-                        
-                                <button style="flex: 20%;margin: 3rem" class="btn btn-dark"  type="button" id="bookingnow" onclick="window.location.href={% url 'roomdetail'%}">จองเลย</button>
-                        
+                             <h5 style="margin: 2rem;margin-top: 0%;flex: 200%">{{room.des}}</h5>
+                             <a style="flex: 20%;margin: 3rem" class="btn btn-dark"  type="button" id="bookingnow{{room.id}}" href="{% url 'roomdetail' room.id %}">จองเลย</a>
                        
              
             </div>
@@ -151,12 +149,12 @@
             <div class="card" style="flex: 100%">
                 <div>    
                     <div >
-                            <img style="width: 100%;height: 350px;"  src="https://assets.hyatt.com/content/dam/hyatt/hyattdam/images/2018/12/07/0900/Grand-Hyatt-Erawan-Bangkok-P425-Grand-Room.jpg/Grand-Hyatt-Erawan-Bangkok-P425-Grand-Room.jpg?imwidth=1920" alt="Snow" style="width:100%;height: 450px;">
+                            <img style="width: 100%;height: 350px;"  src="{{room.image1.url}}" alt="Snow" style="width:100%;height: 450px;">
 
                     </div>
                     <div class="d-flex flex-row">
-                            <img style="width: 50%" src="https://assets.hyatt.com/content/dam/hyatt/hyattdam/images/2018/12/07/0900/Grand-Hyatt-Erawan-Bangkok-P425-Grand-Room.jpg/Grand-Hyatt-Erawan-Bangkok-P425-Grand-Room.jpg?imwidth=1920" alt="Snow" style="width:100%;height: 450px;">
-                            <img style="width: 50%"  src="https://assets.hyatt.com/content/dam/hyatt/hyattdam/images/2018/12/07/0900/Grand-Hyatt-Erawan-Bangkok-P425-Grand-Room.jpg/Grand-Hyatt-Erawan-Bangkok-P425-Grand-Room.jpg?imwidth=1920" alt="Snow" style="width:100%;height: 450px;">
+                            <img style="width: 50%" src="{{room.image2.url}}" alt="Snow" style="width:100%;height: 450px;">
+                            <img style="width: 50%"  src="{{room.image3.url}}" alt="Snow" style="width:100%;height: 450px;">
 
                     </div>
                 </div>
@@ -164,8 +162,43 @@
                 
                 
 </div>
+{% endif %}  
 
+{% if room.id == 4 %}
+<div class="d-flex flex-row text-center" style="width: 100%;height: 650px;">
 
+        <div class="card" style="flex: 100%">
+                <div>    
+                    <div >
+                            <img style="width: 100%;height:350px;"  src="{{room.image1.url}}" alt="Snow" style="width:100%;height: 450px;">
+
+                    </div>
+                    <div class="d-flex flex-row">
+                            <img style="width: 50%" src="{{room.image1.url}}" alt="Snow" style="width:100%;height: 450px;">
+                            <img style="width: 50%"  src="{{room.image1.url}}" alt="Snow" style="width:100%;height: 450px;">
+
+                    </div>
+                </div>
+            </div>
+
+        <div class="card" style="flex: 50%">
+            <div class="d-flex flex-column" style="height: 100%">
+                  
+                            <p  style="font-size: 2rem;flex: 200%;margin-top: 2rem">{{room.name}}</p>
+                       
+                             <h5 style="margin: 2rem;margin-top: 0%;flex: 200%">{{room.des}}</h5>
+                             <a style="flex: 20%;margin: 3rem" class="btn btn-dark"  type="button" id="bookingnow{{room.id}}" href="{% url 'roomdetail' room.id %}">จองเลย</a>
+             
+            </div>
+           
+            </div>
+        
+                
+                
+</div>
+{% endif %}
+
+{% endfor %}  
 
 
 

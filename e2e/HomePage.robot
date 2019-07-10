@@ -1,5 +1,7 @@
 *** Settings ***
 Library          Selenium2Library
+Library          OperatingSystem
+Suite Setup      SetUpdb
 Test Setup       เปิดหน้าหลัก
 Test Teardown    Close All Browsers
 Resource         ${EXECDIR}/e2e/Keywords.robot
@@ -8,7 +10,6 @@ Resource         ${EXECDIR}/e2e/Keywords.robot
 *** Variable ***
 ${BROWSER}       chrome
 ${URL}           http://127.0.0.1:8000/
-
 
 
 
