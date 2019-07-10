@@ -17,7 +17,6 @@
 
     <title>DetailRoom</title>
 
-    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css" rel="stylesheet" type="text/css" />
     <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.3.0/css/datepicker.css" rel="stylesheet" type="text/css" />
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.3.0/js/bootstrap-datepicker.js"></script>
@@ -110,6 +109,9 @@
 
 </head>
 <body>
+
+
+
 <style>
     .form-control {
         border-radius: 0 !important;
@@ -117,16 +119,7 @@
     }
     .clickable { cursor: pointer; }
 </style>
-    {% for option in option %}
-    <ul class="nav justify-content-center">
-        <li class="nav-item">
-            <a class="nav-link active" href="#">{{option.optionname}}</a>
-        </li>
-  
-        
-    </ul>
-   
-    {% endfor %}
+
     <div id="navbutton" class="list-group text-center" style="right: 0; top: 0; width:130px; float: right;position: fixed;">
             <a class="list-group-item list-group-item-action" href="#roomname">รายละเอียด</a>
             <a class="list-group-item list-group-item-action" href="#detail">จอง</a>
@@ -206,9 +199,61 @@
                                 <div id="people"></div>
                             </div>
                         </div>
-                        <button id="booking" class="btn btn-dark" style="float:right; margin-right: 50px">จอง</button>
+                        <button id="booking" type="button"  data-toggle="modal" data-target="#exampleModal" class="btn btn-dark" style="float:right; margin-right: 50px">จอง</button>
+
+
+
+
+              
+
+
+
+
+<!-- 
+      
+    
+      <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title" id="exampleModalLabel">ยืนยันการจอง</h5>
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+            <div class="modal-body">
+              วันที่เข้า : xxxxx
+              
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+              <button type="button" class="btn btn-primary">Save changes</button>
+            </div>
+          </div>
+        </div>
+      </div> -->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                        
                     </form>
                 </div>
           </div>   
+
+
+
+
 </body>
 </html>
