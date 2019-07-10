@@ -106,6 +106,7 @@
     $('#booking').click(function(){
         checkname(name)
         checkemail(email)
+        checkphonenumber(phonenumber)
     });
     function checkname(name){
         document.getElementById("alertname").innerHTML = ""
@@ -119,6 +120,13 @@
         if(email=== undefined || email === ''){
             //$('#alertname').val('กรุณากรอกชื่อ-นามสกุล')
             document.getElementById("alertemail").innerHTML = "กรุณากรอกอีเมล"
+        }
+    }
+    function checkphonenumber(phonenumber){
+        document.getElementById("alertphonenumber").innerHTML = ""
+        if(phonenumber=== undefined || phonenumber === ''){
+            //$('#alertname').val('กรุณากรอกชื่อ-นามสกุล')
+            document.getElementById("alertphonenumber").innerHTML = "กรุณากรอกอีเมล"
         }
     }
     });
@@ -193,6 +201,7 @@
                                 <div class="form-group">
                                     <label>เบอร์โทรติดต่อ</label>
                                     <input class="form-control" id="phonenumber" placeholder="เบอร์โทรติดต่อ" style="width:40%">
+                                    <p id="alertphonenumber" style="color: red"></p>
                                 </div>
                                 <div class="row" style="margin-bottom: 20px">
                                     <div class="col-md-5 mt-md-0 mt-3">
