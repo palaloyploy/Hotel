@@ -199,7 +199,7 @@
                                 <div id="people"></div>
                             </div>
                         </div>
-                        <button id="booking" type="button"  data-toggle="modal" data-target="#exampleModal" class="btn btn-dark" style="float:right; margin-right: 50px">จอง</button>
+                        <button id="booking" type="button"  data-toggle="modal" data-target="#popupbooking" class="btn btn-dark" style="float:right; margin-right: 50px">จอง</button>
 
 
 
@@ -208,11 +208,10 @@
 
 
 
-
-<!-- 
-      
+                        <form  method="POST">
+                                {% csrf_token %}
     
-      <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+      <div class="modal fade" id="popupbooking" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
         <div class="modal-dialog" role="document">
           <div class="modal-content">
             <div class="modal-header">
@@ -221,8 +220,16 @@
                 <span aria-hidden="true">&times;</span>
               </button>
             </div>
-            <div class="modal-body">
-              วันที่เข้า : xxxxx
+            <div class="modal-body" style="flex-direction: column;">
+                    <h1>ประเภทห้อง : xxxxx</h1>
+                    <h1>ชื่อ-นามสกุล : xxxxx</h1>
+                    <h1>อีเมล : xxxxx</h1>
+                    <h1>เบอร์โทรศัพท์ : xxxxx</h1>
+                <h1>วันที่check-in : xxxxx</h1>
+              <h1>วันที่check-out : xxxxx</h1>
+              <h1>จำนวนห้อง : xx</h1>
+              <h1>จำนวนคน : xx</h1>
+              <h1>ราคา : xx</h1>
               
             </div>
             <div class="modal-footer">
@@ -231,11 +238,10 @@
             </div>
           </div>
         </div>
-      </div> -->
+      </div> 
 
 
-
-
+    </form>
 
 
 

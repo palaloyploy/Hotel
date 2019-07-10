@@ -73,7 +73,22 @@ Test11 ทดสอบการเข้าหน้ายืนยันกา�
     Select From List By Index           id:amountroom                  1
     Select From List By Index           id:amountpeople                1
     Click Element                       booking
-
+    # ExpectResult
+    Wait Until Element Is Visible       id:popupbooking
+    Wait Until Element Contains         id:popupbooking         ยืนยันการจอง
+    Wait Until Element Contains         id:popupbooking         ประเภทห้อง
+    Wait Until Element Contains         id:popupbooking         ชื่อ-นามสกุล
+    Wait Until Element Contains         id:popupbooking         อีเมล
+    Wait Until Element Contains         id:popupbooking         เบอร์โทรศัพท์
+    Wait Until Element Contains         id:popupbooking         วันที่check-in
+    Wait Until Element Contains         id:popupbooking         วันที่check-out
+    Wait Until Element Contains         id:popupbooking         จำนวนห้อง
+    Wait Until Element Contains         id:popupbooking         จำนวนคน
+    Wait Until Element Contains         id:popupbooking         ราคารวม
+    Wait Until Page Contains Element            id:cancelbooking
+    Wait Until Page Contains Element            id:confirmbooking
+    
+    
 
 *** Keywords ***
 เลือกเมนูห้องพัก
