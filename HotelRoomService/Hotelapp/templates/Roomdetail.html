@@ -107,26 +107,30 @@
         checkname(name)
         checkemail(email)
         checkphonenumber(phonenumber)
+        checkdatecheckin()
     });
     function checkname(name){
         document.getElementById("alertname").innerHTML = ""
         if(name === undefined || name === ''){
-            //$('#alertname').val('กรุณากรอกชื่อ-นามสกุล')
             document.getElementById("alertname").innerHTML = "กรุณากรอกชื่อ-นามสกุล"
         }
     }
     function checkemail(email){
         document.getElementById("alertemail").innerHTML = ""
         if(email=== undefined || email === ''){
-            //$('#alertname').val('กรุณากรอกชื่อ-นามสกุล')
             document.getElementById("alertemail").innerHTML = "กรุณากรอกอีเมล"
         }
     }
     function checkphonenumber(phonenumber){
         document.getElementById("alertphonenumber").innerHTML = ""
         if(phonenumber=== undefined || phonenumber === ''){
-            //$('#alertname').val('กรุณากรอกชื่อ-นามสกุล')
-            document.getElementById("alertphonenumber").innerHTML = "กรุณากรอกอีเมล"
+            document.getElementById("alertphonenumber").innerHTML = "กรุณากรอกเบอร์โทรติดต่อ"
+        }
+    }
+    function checkdatecheckin(phonenumber){
+        document.getElementById("alertcheckin").innerHTML = ""
+        if(checkin.datepicker("getDate") == 'Invalid Date'){
+            document.getElementById("alertcheckin").innerHTML = "กรุณาเลือกวันcheck-in"
         }
     }
     });
@@ -211,6 +215,7 @@
                                                 <input class="form-control form-control clickable input-md" type="text"/>
                                                 <span class="input-group-addon"><i class="glyphicon glyphicon-calendar"></i></span>
                                             </div>
+                                            <p id="alertcheckin" style="color: red"></p>
                                         </div>
                                     </div>
                                     <div class="col-md-5 mt-md-0 mt-3">
