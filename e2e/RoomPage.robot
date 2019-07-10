@@ -1,7 +1,7 @@
 *** Settings ***
 Library          Selenium2Library
 Test Setup       เปิดหน้าหลัก
-#Test Teardown    Close All Browsers
+Test Teardown    Close All Browsers
 Resource         ${EXECDIR}/e2e/Keywords.robot
 
 
@@ -97,6 +97,25 @@ Test6 ทดสอบการจองไม่สำเร็จเมื่�
     Wait Until Page Contains Element    id:booking
     Click Element                       id:booking
     Wait Until Element Contains         id:alertemail      กรุณากรอกอีเมล          #พบข้อความ กรุณากรอกชื่อ-นามสกุล
+
+Test7 ทดสอบการจองไม่สำเร็จเมื่อไม่กรอกเบอร์โทรศัพท์ เพียงอย่างเดียว
+    # TestStep
+    เลือกเมนูห้องพัก
+    Wait Until Page Contains Element    id:bookingnow1
+    Click Element                       id:bookingnow1  #เลือกห้อง
+    Wait Until Page Contains Element    id:booking_button
+    Click Element                       id:booking_button   #กดปุ่มนำทางจอง     
+    Input Text                          //*[@id="name"]          สมชาย นคร    #กรอกชื่อ-นามสกุล
+    Input Text                          //*[@id="email"]         email@email.com     #กรอกอีเมล
+    Wait Until Page Contains Element    //*[@id="datepickercheckin"]/input
+    Input Text    //*[@id="datepickercheckin"]/input       18-07-2019
+    Wait Until Page Contains Element    //*[@id="amountroom"]/option[1]
+    Click Element                       //*[@id="amountroom"]/option[1]
+    Wait Until Page Contains Element    //*[@id="amountpeople"]/option[1]
+    Click Element                       //*[@id="amountpeople"]/option[1]
+    Wait Until Page Contains Element    id:booking
+    Click Element                       id:booking
+    Wait Until Element Contains         id:alertphonenumber      กรุณากรอกเบอร์โทรติดต่อ          #พบข้อความ กรุณากรอกชื่อ-นามสกุล
 
 
 Test11 ทดสอบการเข้าหน้ายืนยันการจองสำเร็จ
