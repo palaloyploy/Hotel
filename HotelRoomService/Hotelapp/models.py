@@ -7,7 +7,7 @@ from django.db import models
 class Room(models.Model):
     name = models.CharField(max_length=250)
     des = models.CharField(max_length=1000)
-    peple = models.IntegerField(default=1)
+    people = models.IntegerField(default=1)
     price = models.CharField(max_length=250)
     image1 = models.ImageField(upload_to='imageroom', blank=True, null=True)
     image2 = models.ImageField(upload_to='imageroom', blank=True, null=True)
