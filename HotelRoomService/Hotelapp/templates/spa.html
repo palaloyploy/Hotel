@@ -1,63 +1,20 @@
-<!DOCTYPE html>
-<html lang="en">
+{% extends "base.html" %}
+{% load staticfiles %}
+{% block metadescription %}
 
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+{% endblock %}
+{% block title %}
 
+สปา
 
-    <link href="https://fonts.googleapis.com/css?family=Kanit" rel="stylesheet">
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+{% endblock %}
+{% block content %}
 
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+    
 
-    <!-- fontawe -->
-    <link rel="mask-icon" type="" href="https://static.codepen.io/assets/favicon/logo-pin-8f3771b1072e3c38bd662872f6b673a722f4b3ca2421637d5596661b4e2132cc.svg"
-        color="#111" />
+    
 
-    <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css'>
-    <script>
-        $(document).ready(function () {
-            // Activate Carousel with a specified interval
-            $("#banner").carousel({ interval: 5000 });
-
-            // Enable Carousel Indicators
-            $(".item1").click(function () {
-                $("#banner").carousel(0);
-            });
-            $(".item2").click(function () {
-                $("#banner").carousel(1);
-            });
-            $(".item3").click(function () {
-                $("#banner").carousel(2);
-            });
-
-            // Enable Carousel Controls
-            $(".carousel-control-prev").click(function () {
-                $("#banner").carousel("prev");
-            });
-            $(".carousel-control-next").click(function () {
-                $("#banner").carousel("next");
-            });
-        });
-    </script>
-
-    <title>สปา</title>
-
-</head>
-
-<body>
-    <style>
-        .centered {
-            position: absolute;
-            top: 160px;
-            left: 50%;
-
-            transform: translate(-50%, -50%);
-        }
-    </style>
+   
     <div id="spa">
         <div id="spabanner" class="container-fluid p-0">
             <img src="https://www.shangri-la.com/uploadedImages/Shangri-la_Hotels/New_Website/SLM-EXPERIENCE-SPA.jpg"
@@ -199,6 +156,4 @@
                     </div>
             </div>
         </div>
-</body>
-
-</html>
+        {% endblock %}

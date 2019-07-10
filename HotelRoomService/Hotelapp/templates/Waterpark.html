@@ -1,43 +1,21 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>สวนน้ำ</title>
+{% extends "base.html" %}
+{% load staticfiles %}
+{% block metadescription %}
 
+{% endblock %}
+{% block title %}
 
+สวนน้ำ
 
-    <link href="https://fonts.googleapis.com/css?family=Kanit" rel="stylesheet">
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
-
-    <!-- fontawe -->
-    <link rel="mask-icon" type=""
-    href="https://static.codepen.io/assets/favicon/logo-pin-8f3771b1072e3c38bd662872f6b673a722f4b3ca2421637d5596661b4e2132cc.svg"
-    color="#111" />
-
-  <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css'>
+{% endblock %}
+{% block content %}
 
 
 
 
-</head>
-<body>
 
-        <style>
-                .centered {
-                  position: absolute;
-                  top: 270px;
-                  left: 50%;
-                 
-                  transform: translate(-50%, -50%);
-                }
-                </style>   
                 
-                        <div id="banner"  style="margin-top: 3rem;width: 100%;">
+                        <div id="banner"  style="width: 100%;">
                                 <img src="https://www.mushroomtravel.com/page/wp-content/uploads/2018/05/1-1-1024x533.jpg" alt="Snow" style="width:100%;height: 450px;">
                 
                                 
@@ -60,16 +38,27 @@
             <div class="d-flex flex-column" style="height: 100%">
                   
                             <p  style="font-size: 2rem;flex: 200%;margin-top: 2rem"> สวนน้ำ </p>
+                         
+                            <img id="playimage"   src="http://www.pororoaquapark.com/images/character/about-rules/slider-1.png" alt="Snow" style="width:50%;height: auto;margin: 2rem">
+
+                            
                        
-                             <h5 style="margin: 2rem;margin-top: 0%;flex: 200%">xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx</h5>
+                             <h5 style="margin: 2rem;margin-top: 0%;flex: 200%">ยินดีต้อนรับสู่สวนน้ำที่ใหญ่ที่สุดในภูมิภาคเอเชีย ที่รายล้อมไปด้วย
+                                        ต้นไม้ร่มครึ้ม เหมาะสำหรับการพักผ่อนอย่างสนุกสนานกับทุกคนในครอบครัว
+                                        พบกับความสนุกในสวนน้ำโซนใหม่อย่างไซ-แอมลากูน เครื่องเล่นที่
+                                        เหมาะกับทุกคนในครอบครัว เพลิดเพลินกับทะเลเทียมที่ใหญ่ที่สุดในโลก
+                                        รับรองโดยกินเนสส์ เวิลด์ เรคคอร์ดส ธารน้ำวนสุดสนุก หวาดเสียวได้ใจ
+                                        กับสไลเดอร์ยักษ์ และซูเปอร์สไปรัลรางน้ำคดเคี้ยว ผ่อนคลายกับบ่อสปา
+                                        เพื่อสุขภาพ หรือแม้แต่คุณจะเอนกายบนเตียงผ้าใบใต้ร่มไม้ ก็จะทำให้
+                                        วันหยุดของคุณสุขสดชื่นคุ้มค่าที่สุด</h5>
  
             </div>
            
             </div>
             <div class="card" style="flex: 100%">
                 
-                            <img id="waterparkimage" style="width: 100%;"  src="https://40plus.posttoday.com/media/content/2018/06/21/2278E8204782422FA2A11157ABF4AB02.jpg" alt="Snow" style="width:100%;height: 450px;">
-
+                            
+                            <iframe width="1088" height="612" src="https://www.youtube.com/embed/8tWujDVtoXI?controls=0&showinfo=0&autoplay=1&rel=0" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen ></iframe>
                     
                    
             </div>
@@ -85,7 +74,7 @@
         
             <div class="card" style="flex: 100%">
                
-                            <img id="playimage" style="width: 100%;"  src="https://40plus.posttoday.com/media/content/2018/06/21/2278E8204782422FA2A11157ABF4AB02.jpg" alt="Snow" style="width:100%;height: 450px;">
+                            <img id="playimage" style="width: 100%;"  src="https://www.dreamworld.co.th/uploaded/images/15390787052018100910GrandCanyon_3.jpg" alt="Snow" style="width:100%;height: 450px;">
 
               
             </div>
@@ -93,9 +82,12 @@
             <div class="card" style="flex: 50%">
                     <div class="d-flex flex-column" style="height: 100%">
                           
-                                    <p id="playname"  style="font-size: 2rem;flex: 200%;margin-top: 2rem"> สวนน้ำ </p>
-                               
-                                     <h5 id="playdescription" style="margin: 2rem;margin-top: 0%;flex: 200%">xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx</h5>
+                                    <p id="playname"  style="font-size: 2rem;flex: 200%;margin-top: 2rem"> แกรนด์แคนยอน</p>
+                                
+                            <img id="playimage"   src="http://www.pororoaquapark.com/images/character/about-rules/slider-1.png" alt="Snow" style="width:50%;height: auto;margin: 2rem">
+
+                         
+                                     <h5 id="playdescription" style="margin: 2rem;margin-top: 0%;flex: 200%">ผจญภัยกลางสายน้ำเชี่ยว ไหลล่องผ่านโขดหิน น้ำตก วังน้ำวน ฯลฯ</h5>
          
                     </div>
                    
@@ -108,16 +100,19 @@
         <div class="card" style="flex: 50%">
             <div class="d-flex flex-column" style="height: 100%">
                   
-                            <p  style="font-size: 2rem;flex: 200%;margin-top: 2rem"> สวนน้ำ </p>
-                       
-                             <h5 style="margin: 2rem;margin-top: 0%;flex: 200%">xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx</h5>
+                            <p  style="font-size: 2rem;flex: 200%;margin-top: 2rem"> วอเตอร์ฟัน</p>
+                        
+                            <img id="playimage"   src="http://www.pororoaquapark.com/images/character/about-rules/slider-1.png" alt="Snow" style="width:50%;height: auto;margin: 2rem">
+
+                         
+                             <h5 style="margin: 2rem;margin-top: 0%;flex: 200%">สนามเล่นน้ำมหาสนุกสำหรับครอบครัว ...เปียกเย็น เล่นสนุก</h5>
  
             </div>
            
             </div>
             <div class="card" style="flex: 100%">
                 
-                            <img style="width: 100%;"  src="https://40plus.posttoday.com/media/content/2018/06/21/2278E8204782422FA2A11157ABF4AB02.jpg" alt="Snow" style="width:100%;height: 450px;">
+                            <img   src="https://www.dreamworld.co.th/uploaded/images/1540787713201810297IMG_5259.jpg" alt="Snow" style="width:100%;height: auto;">
 
                     
                    
@@ -134,7 +129,7 @@
         
         <div class="card" style="flex: 100%">
            
-                        <img style="width: 100%;"  src="https://40plus.posttoday.com/media/content/2018/06/21/2278E8204782422FA2A11157ABF4AB02.jpg" alt="Snow" style="width:100%;height: 450px;">
+                        <img   src="https://www.dreamworld.co.th/uploaded/images/1539077513201810097SuperSpace_2.jpg" alt="Snow" style="width:100%;height: auto">
 
           
         </div>
@@ -142,9 +137,12 @@
         <div class="card" style="flex: 50%">
                 <div class="d-flex flex-column" style="height: 100%">
                       
-                                <p  style="font-size: 2rem;flex: 200%;margin-top: 2rem"> สวนน้ำ </p>
-                           
-                                 <h5 style="margin: 2rem;margin-top: 0%;flex: 200%">xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx</h5>
+                                <p  style="font-size: 2rem;flex: 200%;margin-top: 2rem">ซูเปอร์สแปลช </p>
+                            
+                                <img id="playimage"   src="http://www.pororoaquapark.com/images/character/about-rules/slider-1.png" alt="Snow" style="width:50%;height: auto;margin: 2rem">
+
+                         
+                                 <h5 style="margin: 2rem;margin-top: 0%;flex: 200%">เรือลำใหญ่ที่ไต่ขึ้นฟ้า ทะยานลงมาเจอคลื่นยักษ์ ซู่ซ่าส์ ..เย็นสะใจ</h5>
      
                 </div>
                
@@ -154,8 +152,10 @@
 </div>
     
 <div>
-<p>เวลาเปิด-ปิด</p>
-<p>สถานที่</p>
+<p style="margin: 2rem">เวลาเปิด-ปิด  08.00 - 18.00 น  สถานที่ ชั้นดาดฟ้าของโรงแรม</p>
+
 </div>
-</body>
-</html>
+
+
+
+{% endblock %}
