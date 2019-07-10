@@ -155,6 +155,26 @@ Test9 ทดสอบการกรอกอีเมลผิดรูปแ�
     Click Element                       id:booking
     Wait Until Element Contains         id:alertemail      กรุณากรอกอีเมลให้ถูกต้อง          #พบข้อความ กรุณากรอกอีเมลให้ถูกต้อง
 
+Test10 ทดสอบการกรอกเบอร์โทรศัพท์ผิดรูปแบบ
+    # TestStep
+    เลือกเมนูห้องพัก
+    Wait Until Page Contains Element    id:bookingnow1
+    Click Element                       id:bookingnow1  #เลือกห้อง
+    Wait Until Page Contains Element    id:booking_button
+    Click Element                       id:booking_button   #กดปุ่มนำทางจอง     
+    Input Text                          //*[@id="name"]          สมชาย นคร    #กรอกชื่อ-นามสกุล
+    Input Text                          //*[@id="email"]         email@email.com     #กรอกอีเมล
+    Input Text                          //*[@id="phonenumber"]          1234567891011    #กรอกเบอร์โทรติดต่อ
+    Wait Until Page Contains Element    //*[@id="datepickercheckin"]/input
+    Input Text    //*[@id="datepickercheckin"]/input       18-07-2019
+    Wait Until Page Contains Element    //*[@id="amountroom"]/option[1]
+    Click Element                       //*[@id="amountroom"]/option[1]
+    Wait Until Page Contains Element    //*[@id="amountpeople"]/option[1]
+    Click Element                       //*[@id="amountpeople"]/option[1]
+    Wait Until Page Contains Element    id:booking
+    Click Element                       id:booking
+    Wait Until Element Contains         id:alertemail      กรุณากรอกเบอร์โทรติดต่อให้ถูกต้อง          #พบข้อความ กรุณากรอกเบอร์โทรติดต่อให้ถูกต้อง
+
 
 Test11 ทดสอบการเข้าหน้ายืนยันการจองสำเร็จ
     เลือกเมนูห้องพัก
