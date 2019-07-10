@@ -104,10 +104,23 @@
 
         }).on('changeDate', function(ev) {});
     $('#booking').click(function(){
+        checkname(name)
+        checkemail(email)
+    });
+    function checkname(name){
+        document.getElementById("alertname").innerHTML = ""
         if(name === undefined || name === ''){
+            //$('#alertname').val('กรุณากรอกชื่อ-นามสกุล')
             document.getElementById("alertname").innerHTML = "กรุณากรอกชื่อ-นามสกุล"
         }
-    });
+    }
+    function checkemail(email){
+        document.getElementById("alertemail").innerHTML = ""
+        if(email=== undefined || email === ''){
+            //$('#alertname').val('กรุณากรอกชื่อ-นามสกุล')
+            document.getElementById("alertemail").innerHTML = "กรุณากรอกอีเมล"
+        }
+    }
     });
 </script>
 
@@ -170,11 +183,12 @@
                                 <div class="form-group">
                                     <label>ชื่อ-นามสกุล</label>
                                     <input class="form-control" id="name" placeholder="ชื่อ-นามสกุล" style="width:40%">
-                                    <div id="alertname"></div>
+                                    <p id="alertname" style="color: red"></p>
                                 </div>
                                 <div class="form-group">
                                     <label>อีเมล</label>
                                     <input class="form-control" id="email" placeholder="อีเมล" style="width:40%">
+                                    <p id="alertemail" style="color: red"></p>
                                 </div>
                                 <div class="form-group">
                                     <label>เบอร์โทรติดต่อ</label>
