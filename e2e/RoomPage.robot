@@ -60,6 +60,25 @@ Test2 ทดสอบการเข้าหน้ารายละเอี�
     Wait Until Page Contains Element    id:amountpeople                 #พบดรอปดาวจำนวนคน
     Wait Until Element Contains         id:booking     จอง                #พบปุ่มจอง
 
+TesT3 ทดสอบการกดปุ่มนำทาง รายละเอียด
+    # TestStep
+    เลือกเมนูห้องพัก
+    Wait Until Page Contains Element    id:bookingnow1
+    Click Element                       id:bookingnow1  #เลือกห้อง
+    Wait Until Page Contains Element    id:des_button
+    Click Element                       id:des_button   #กดปุ่มนำทางจอง
+    ${url}=   Get Location
+    Should Be Equal     ${url}      http://127.0.0.1:8000/1/detail/#roomname
+
+TesT4 ทดสอบการกดปุ่มนำทาง จอง
+    # TestStep
+    เลือกเมนูห้องพัก
+    Wait Until Page Contains Element    id:bookingnow1
+    Click Element                       id:bookingnow1  #เลือกห้อง
+    Wait Until Page Contains Element    id:booking_button
+    Click Element                       id:booking_button   #กดปุ่มนำทางจอง
+    ${url}=   Get Location
+    Should Be Equal     ${url}      http://127.0.0.1:8000/1/detail/#detail
 Test5 ทดสอบการจองไม่สำเร็จหากไม่กรอกชื่อ-นามสกุล เพียงอย่างเดียว
     # TestStep
     เลือกเมนูห้องพัก
@@ -69,8 +88,8 @@ Test5 ทดสอบการจองไม่สำเร็จหากไ�
     Click Element                       id:booking_button   #กดปุ่มนำทางจอง
     Input Text                          //*[@id="email"]                email@email.com     #กรอกอีเมล 
     Input Text                          //*[@id="phonenumber"]          0812345678    #กรอกเบอร์โทรติดต่อ
-    Wait Until Page Contains Element    //*[@id="datepickercheckin"]/input
-    Input Text    //*[@id="datepickercheckin"]/input       18-07-2019
+    Wait Until Page Contains Element    //*[@id="datepickercheckin"]
+    Input Text    //*[@id="datepickercheckin"]       18-07-2019
     Wait Until Page Contains Element    //*[@id="amountroom"]/option[1]
     Click Element                       //*[@id="amountroom"]/option[1]
     Wait Until Page Contains Element    //*[@id="amountpeople"]/option[1]
@@ -88,8 +107,8 @@ Test6 ทดสอบการจองไม่สำเร็จเมื่�
     Click Element                       id:booking_button   #กดปุ่มนำทางจอง     
     Input Text                          //*[@id="name"]          สมชาย นคร    #กรอกชื่อ-นามสกุล
     Input Text                          //*[@id="phonenumber"]          0812345678    #กรอกเบอร์โทรติดต่อ
-    Wait Until Page Contains Element    //*[@id="datepickercheckin"]/input
-    Input Text    //*[@id="datepickercheckin"]/input       18-07-2019
+    Wait Until Page Contains Element    //*[@id="datepickercheckin"]
+    Input Text    //*[@id="datepickercheckin"]       18-07-2019
     Wait Until Page Contains Element    //*[@id="amountroom"]/option[1]
     Click Element                       //*[@id="amountroom"]/option[1]
     Wait Until Page Contains Element    //*[@id="amountpeople"]/option[1]
@@ -107,8 +126,8 @@ Test7 ทดสอบการจองไม่สำเร็จเมื่�
     Click Element                       id:booking_button   #กดปุ่มนำทางจอง     
     Input Text                          //*[@id="name"]          สมชาย นคร    #กรอกชื่อ-นามสกุล
     Input Text                          //*[@id="email"]         email@email.com     #กรอกอีเมล
-    Wait Until Page Contains Element    //*[@id="datepickercheckin"]/input
-    Input Text    //*[@id="datepickercheckin"]/input       18-07-2019
+    Wait Until Page Contains Element    //*[@id="datepickercheckin"]
+    Input Text    //*[@id="datepickercheckin"]       18-07-2019
     Wait Until Page Contains Element    //*[@id="amountroom"]/option[1]
     Click Element                       //*[@id="amountroom"]/option[1]
     Wait Until Page Contains Element    //*[@id="amountpeople"]/option[1]
@@ -145,8 +164,8 @@ Test9 ทดสอบการกรอกอีเมลผิดรูปแ�
     Input Text                          //*[@id="name"]          สมชาย นคร    #กรอกชื่อ-นามสกุล
     Input Text                          //*[@id="email"]         email     #กรอกอีเมล
     Input Text                          //*[@id="phonenumber"]          0812345678    #กรอกเบอร์โทรติดต่อ
-    Wait Until Page Contains Element    //*[@id="datepickercheckin"]/input
-    Input Text    //*[@id="datepickercheckin"]/input       18-07-2019
+    Wait Until Page Contains Element    //*[@id="datepickercheckin"]
+    Input Text    //*[@id="datepickercheckin"]       18-07-2019
     Wait Until Page Contains Element    //*[@id="amountroom"]/option[1]
     Click Element                       //*[@id="amountroom"]/option[1]
     Wait Until Page Contains Element    //*[@id="amountpeople"]/option[1]
@@ -165,8 +184,8 @@ Test10 ทดสอบการกรอกเบอร์โทรศัพท�
     Input Text                          //*[@id="name"]          สมชาย นคร    #กรอกชื่อ-นามสกุล
     Input Text                          //*[@id="email"]         email@email.com     #กรอกอีเมล
     Input Text                          //*[@id="phonenumber"]          1234567891011    #กรอกเบอร์โทรติดต่อ
-    Wait Until Page Contains Element    //*[@id="datepickercheckin"]/input
-    Input Text    //*[@id="datepickercheckin"]/input       18-07-2019
+    Wait Until Page Contains Element    //*[@id="datepickercheckin"]
+    Input Text    //*[@id="datepickercheckin"]       18-07-2019
     Wait Until Page Contains Element    //*[@id="amountroom"]/option[1]
     Click Element                       //*[@id="amountroom"]/option[1]
     Wait Until Page Contains Element    //*[@id="amountpeople"]/option[1]
@@ -175,19 +194,19 @@ Test10 ทดสอบการกรอกเบอร์โทรศัพท�
     Click Element                       id:booking
     Wait Until Element Contains         id:alertphonenumber      กรุณากรอกเบอร์โทรติดต่อให้ถูกต้อง          #พบข้อความ กรุณากรอกเบอร์โทรติดต่อให้ถูกต้อง
 
-
 Test11 ทดสอบการเข้าหน้ายืนยันการจองสำเร็จ
     เลือกเมนูห้องพัก
     Wait Until Page Contains Element    id:bookingnow1
     Click Element                        id:bookingnow1         #เลือกห้อง
     Click Element                       id:booking_button       #กดปุ่มนำทางจอง
-    Input Text                          id:name
-    Input Text                          id:email
-    Input Text                          id:phonenumber
-    Click Element                       /html/body/div[3]/div[1]/table/tbody/tr[3]/td[5]
-    Click Element                       /html/body/div[3]/div[1]/table/tbody/tr[4]/td[4]
-    Select From List By Index           id:amountroom                  1
-    Select From List By Index           id:amountpeople                1
+    Input Text                          id:name         palaloy
+    Input Text                          id:email        admin@gmail.com
+    Input Text                          id:phonenumber      1234567890
+    Input Text                          //*[@id="datepickercheckin"]        10-07-2019
+    Input Text                          //*[@id="datepickercheckout"]         11-07-2019
+    Click Element                       //*[@id="amountroom"]/option[1]
+    Click Element                       //*[@id="amountpeople"]/option[1]
+    
     Click Element                       booking
     # ExpectResult
     Wait Until Element Is Visible       id:popupbooking
@@ -201,10 +220,71 @@ Test11 ทดสอบการเข้าหน้ายืนยันกา�
     Wait Until Element Contains         id:popupbooking         จำนวนห้อง
     Wait Until Element Contains         id:popupbooking         จำนวนคน
     Wait Until Element Contains         id:popupbooking         ราคารวม
-    Wait Until Page Contains Element            id:cancelbooking
-    Wait Until Page Contains Element            id:confirmbooking
+    Wait Until Element Is Visible            id:cancelbooking
+    Wait Until Element Is Visible            id:confirmbooking
     
+Test12 ทดสอบการยืนยันการจองไม่สำเร็จหากกดปุ่มยกเลิก
+    เลือกเมนูห้องพัก
+    Wait Until Page Contains Element    id:bookingnow1
+    Click Element                        id:bookingnow1         #เลือกห้อง
+    Click Element                       id:booking_button       #กดปุ่มนำทางจอง
+    Input Text                          id:name         palaloy
+    Input Text                          id:email        admin@gmail.com
+    Input Text                          id:phonenumber      1234567890
+    Input Text                          //*[@id="datepickercheckin"]        10-07-2019
+    Input Text                          //*[@id="datepickercheckout"]         11-07-2019
+    Click Element                       //*[@id="amountroom"]/option[1]
+    Click Element                       //*[@id="amountpeople"]/option[1]
     
+    Click Element                       booking
+    # ExpectResult
+    Wait Until Element Is Visible       id:popupbooking
+    Wait Until Element Contains         id:popupbooking         ยืนยันการจอง
+    Wait Until Element Contains         id:popupbooking         ประเภทห้อง
+    Wait Until Element Contains         id:popupbooking         ชื่อ-นามสกุล
+    Wait Until Element Contains         id:popupbooking         อีเมล
+    Wait Until Element Contains         id:popupbooking         เบอร์โทรศัพท์
+    Wait Until Element Contains         id:popupbooking         วันที่check-in
+    Wait Until Element Contains         id:popupbooking         วันที่check-out
+    Wait Until Element Contains         id:popupbooking         จำนวนห้อง
+    Wait Until Element Contains         id:popupbooking         จำนวนคน
+    Wait Until Element Contains         id:popupbooking         ราคารวม
+    Wait Until Element Is Visible            id:cancelbooking
+    Wait Until Element Is Visible            id:confirmbooking
+    Click Element                       id:cancelbooking
+    Wait Until Element Is Not Visible        id:popupbooking
+
+Test13 ทดสอบการยืนยันการจองสำเร็จหากกดปุ่มยืนยัน
+    เลือกเมนูห้องพัก
+    Wait Until Page Contains Element    id:bookingnow1
+    Click Element                        id:bookingnow1         #เลือกห้อง
+    Click Element                       id:booking_button       #กดปุ่มนำทางจอง
+    Input Text                          id:name         palaloy
+    Input Text                          id:email        admin@gmail.com
+    Input Text                          id:phonenumber      1234567890
+    Input Text                          //*[@id="datepickercheckin"]        10-07-2019
+    Input Text                          //*[@id="datepickercheckout"]         11-07-2019
+    Click Element                       //*[@id="amountroom"]/option[1]
+    Click Element                       //*[@id="amountpeople"]/option[1]
+    
+    Click Element                       booking
+    # ExpectResult
+    Wait Until Element Is Visible       id:popupbooking
+    Wait Until Element Contains         id:popupbooking         ยืนยันการจอง
+    Wait Until Element Contains         id:popupbooking         ประเภทห้อง
+    Wait Until Element Contains         id:popupbooking         ชื่อ-นามสกุล
+    Wait Until Element Contains         id:popupbooking         อีเมล
+    Wait Until Element Contains         id:popupbooking         เบอร์โทรศัพท์
+    Wait Until Element Contains         id:popupbooking         วันที่check-in
+    Wait Until Element Contains         id:popupbooking         วันที่check-out
+    Wait Until Element Contains         id:popupbooking         จำนวนห้อง
+    Wait Until Element Contains         id:popupbooking         จำนวนคน
+    Wait Until Element Contains         id:popupbooking         ราคารวม
+    Wait Until Element Is Visible            id:cancelbooking
+    Wait Until Element Is Visible            id:confirmbooking
+    Click Element                       id:confirmbooking
+    Sleep                               2
+    Title Should Be                     ห้องพัก
 
 *** Keywords ***
 เลือกเมนูห้องพัก
