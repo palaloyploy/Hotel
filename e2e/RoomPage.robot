@@ -27,13 +27,13 @@ Test1 ทดสอบการเข้าหน้าห้องพัก
     Wait Until Page Contains Element    id:roomname  #พบชื่อห้อง
     Wait Until Page Contains Element    id:roomdescription  #พบรายละเอียดห้อง
     Wait Until Page Contains Element    id:roomimage    #พบรูปห้องพัก
-    Wait Until Page Contains Element    id:bookingnow  #พบปุ่มจองเลย
+    Wait Until Page Contains Element    id:bookingnow1  #พบปุ่มจองเลย
 
 Test2 ทดสอบการเข้าหน้ารายละเอียดห้องพัก
     # TestStep
     เลือกเมนูห้องพัก
-    Wait Until Page Contains Element    id:bookingnow
-    Click Button                        id:bookingnow
+    Wait Until Page Contains Element    id:bookingnow1
+    Click Element                        id:bookingnow1
     # ExpectResult
     Title Should Be             DetailRoom
     Wait Until Page Contains Element    id:roomname                     #พบชื่อห้อง
@@ -60,8 +60,24 @@ Test2 ทดสอบการเข้าหน้ารายละเอี�
     Wait Until Page Contains Element    id:amountpeople                 #พบดรอปดาวจำนวนคน
     Wait Until Element Contains         id:booking     จอง                #พบปุ่มจอง
 
+Test11 ทดสอบการเข้าหน้ายืนยันการจองสำเร็จ
+    เลือกเมนูห้องพัก
+    Wait Until Page Contains Element    id:bookingnow1
+    Click Element                        id:bookingnow1         #เลือกห้อง
+    Click Element                       id:booking_button       #กดปุ่มนำทางจอง
+    Input Text                          id:name
+    Input Text                          id:email
+    Input Text                          id:phonenumber
+    Click Element                       /html/body/div[3]/div[1]/table/tbody/tr[3]/td[5]
+    Click Element                       /html/body/div[3]/div[1]/table/tbody/tr[4]/td[4]
+    Select From List By Index           id:amountroom                  1
+    Select From List By Index           id:amountpeople                1
+    Click Element                       booking
+
+
 *** Keywords ***
 เลือกเมนูห้องพัก
     Wait Until Page Contains Element        id:room
     Click Element           id:room     #เลือกเมนูห้องพัก
+ 
 

@@ -1,51 +1,25 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>ห้องพัก</title>
+{% extends "base.html" %}
+{% load staticfiles %}
+{% block metadescription %}
+
+{% endblock %}
+{% block title %}
+
+ห้องพัก
+
+{% endblock %}
+{% block content %}
 
 
 
+<div class="contentlax" style="box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.27);">
 
-    <link href="https://fonts.googleapis.com/css?family=Kanit" rel="stylesheet">
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
-
-    <!-- fontawe -->
-    <link rel="mask-icon" type=""
-    href="https://static.codepen.io/assets/favicon/logo-pin-8f3771b1072e3c38bd662872f6b673a722f4b3ca2421637d5596661b4e2132cc.svg"
-    color="#111" />
-
-  <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css'>
-
-
-
-
-</head>
-<body>
-<style>
-.centered {
-  position: absolute;
-  top: 270px;
-  left: 50%;
- 
-  transform: translate(-50%, -50%);
-}
-</style>   
-
-
-
-
-        <div id="banner"  style="margin-top: 3rem;width: 100%;">
+        <div id="banner"  style="width: 100%;">
                 <img src="https://assets.hyatt.com/content/dam/hyatt/hyattdam/images/2018/12/07/0900/Grand-Hyatt-Erawan-Bangkok-P425-Grand-Room.jpg/Grand-Hyatt-Erawan-Bangkok-P425-Grand-Room.jpg?imwidth=1920" alt="Snow" style="width:100%;height: 450px;">
 
                 
                 <div class="centered">
-                    <div class="card" style="background-color: darkgrey;opacity: 0.5">
+                    <div class="card" style="background-color: darkgrey;opacity: 0.9">
                         
                                 <p style="color: white;font-size: 5rem;margin-left: 2rem;margin-right: 2rem;">บริการห้องพัก</p>
                         
@@ -58,7 +32,9 @@
 
 
           
-              
+   <div id="listroom">
+
+           
               {% for room in room %}
           
 {% if room.id == 1 %}
@@ -66,9 +42,9 @@
         <div class="card" style="flex: 50%">
             <div class="d-flex flex-column" style="height: 100%">
                   
-                            <p  style="font-size: 2rem;flex: 200%;margin-top: 2rem">{{room.name}}{{room.id}}</p>
+                            <p id="roomname"  style="font-size: 2rem;flex: 200%;margin-top: 2rem">{{room.name}}{{room.id}}</p>
                        
-                             <h5 style="margin: 2rem;margin-top: 0%;flex: 200%">{{room.des}}</h5>                                                                                   
+                             <h5 id="roomdescription" style="margin: 2rem;margin-top: 0%;flex: 200%">{{room.des}}</h5>                                                                                   
                         
                                 <a style="flex: 20%;margin: 3rem" class="btn btn-dark"  type="button" id="bookingnow{{room.id}}" href="{% url 'roomdetail' room.id %}">จองเลย</a>
                         
@@ -78,7 +54,7 @@
            
             </div>
             <div class="card" style="flex: 100%">
-                <div>    
+                <div id="roomimage">    
                     <div >
                             <img style="width: 100%;height: 350px;"  src="{{room.image1.url}}" alt="Snow" style="width:100%;height: 450px;">
 
@@ -200,8 +176,12 @@
 
 {% endfor %}  
 
+</div>
+
+</div>  
 
 
+{% endblock %}
 
 
 
