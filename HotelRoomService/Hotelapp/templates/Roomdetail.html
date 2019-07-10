@@ -25,7 +25,7 @@
   <script>
   $( function() {
     var name , email , phonenumber
-    var peopleperroom = 3
+    var peopleperroom = "{{room.peple}}"
     var rooms = [1, 2, 3, 4, 5]
     var peoples = []
     for (i=1;i<=peopleperroom;i++){
@@ -55,7 +55,7 @@
     })
 
     $('#phonenumber').change(function(){
-        phonenumber = $('#phonnumber').val()
+        phonenumber = $('#phonenumber').val()
     })
 
     $('#amountroom').click(function(){ 
@@ -92,7 +92,6 @@
     $('#datepickercheckout')[0].focus();
     });
 
-
     var checkout = $('#datepickercheckout').datepicker({
         beforeShowDay: function(date) {
         if (!checkin.datepicker("getDate").valueOf()) {
@@ -104,6 +103,7 @@
         autoclose: true
 
         }).on('changeDate', function(ev) {});
+
 
     });
 </script>
