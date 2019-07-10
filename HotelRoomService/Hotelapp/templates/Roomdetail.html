@@ -117,40 +117,49 @@
     }
     .clickable { cursor: pointer; }
 </style>
+    {% for option in option %}
+    <ul class="nav justify-content-center">
+        <li class="nav-item">
+            <a class="nav-link active" href="#">{{option.optionname}}</a>
+        </li>
+  
+        
+    </ul>
+   
+    {% endfor %}
     <div id="navbutton" class="list-group text-center" style="right: 0; top: 0; width:130px; float: right;position: fixed;">
             <a class="list-group-item list-group-item-action" href="#roomname">รายละเอียด</a>
             <a class="list-group-item list-group-item-action" href="#detail">จอง</a>
     </div>
           <div data-spy="scroll" data-target="#navbutton" data-offset="0" class="scrollspy-example">
-                <div id="roomname">pp</div>
-                <div id="roomimage"></div>
+                <div id="roomname"><h2>{{room.name}}</h2></div>
+                <div id="roomimage">
+                    <!-- The slideshow -->
+                <div class="carousel-inner">
+                    <div class="carousel-item active text-center ">
+                        <img src="{{room.image1.url}}" alt="Los Angeles" width="50%" height="380px">
+                    </div>
+                    <div class="carousel-item text-center">
+                        <img src="{{room.image2.url}}" alt="Chicago" width="50%" height="380px">
+                    </div>
+                </div>
+        
+                <!-- Left and right controls -->
+                <a class="carousel-control-prev" href="#banner" style="height: 380px">
+                    <span class="carousel-control-prev-icon"></span>
+                </a>
+                <a class="carousel-control-next" href="#banner style="height: 380px">
+                    <span class="carousel-control-next-icon"></span>
+                </a>
+                    </div>
                 <div id="roomdescription">
-                    <div>รายละเอียด</div>
-                    <p>xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx</p>
-                    <p>xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx</p>
-                    <p>xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx</p>
-                    <p>xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx</p>
-                    <p>xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx</p>
-                    <p>xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx</p>
-                    <p>xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx</p>
-                    <p>xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx</p>
-                    <p>xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx</p>
-                    <p>xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx</p>
-                    <p>xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx</p>
-                    <p>xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx</p>
-                    <p>xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx</p>
-                    <p>xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx</p>
-                    <p>xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx</p>
-                    <p>xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx</p>
-                    <p>xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx</p>
-                    <p>xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx</p>
-                    <p>xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx</p>
-                    <p>xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx</p>
-                    <p>xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx</p>
+                    <div><h2>รายละเอียด</h2></div>
+                    {{room.des}}
 
                 </div>
                 <div id="suportdetail">
                     <div>สิ่งอำนวยความสะดวก</div>
+                    <h3>{{room.option}}</h3>
                 </div>
                 <div id="detail">
                     <h5>ข้อมูลติดต่อ</h5>

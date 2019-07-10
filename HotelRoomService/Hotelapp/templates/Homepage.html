@@ -1,89 +1,17 @@
-<!DOCTYPE html>
-<html lang="en">
+{% extends "base.html" %}
+{% load staticfiles %}
+{% block metadescription %}
 
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+{% endblock %}
+{% block title %}
 
+หน้าหลัก
 
-    <link href="https://fonts.googleapis.com/css?family=Kanit" rel="stylesheet">
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
-
-    <!-- fontawe -->
-    <link rel="mask-icon" type=""
-    href="https://static.codepen.io/assets/favicon/logo-pin-8f3771b1072e3c38bd662872f6b673a722f4b3ca2421637d5596661b4e2132cc.svg"
-    color="#111" />
-
-  <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css'>
+{% endblock %}
+{% block content %}
 
 
-    <script>
-        $(document).ready(function () {
-            // Activate Carousel with a specified interval
-            $("#banner").carousel({ interval: 5000 });
-
-            // Enable Carousel Indicators
-            $(".item1").click(function () {
-                $("#banner").carousel(0);
-            });
-            $(".item2").click(function () {
-                $("#banner").carousel(1);
-            });
-            $(".item3").click(function () {
-                $("#banner").carousel(2);
-            });
-
-            // Enable Carousel Controls
-            $(".carousel-control-prev").click(function () {
-                $("#banner").carousel("prev");
-            });
-            $(".carousel-control-next").click(function () {
-                $("#banner").carousel("next");
-            });
-        });
-    </script>
-
-<title>หน้าหลัก</title>
-
-</head>
-
-<body>
     <!-- navbar -->
-    <nav id ="tabmenu" class="navbar navbar-dark bg-info d-flex flex-row" style="flex:100%; flex-direction: row">
-        <ul class="navbar-nav text-center" style="flex:100%; flex-direction: row"">
-            <li class="nav-item active" style="flex:100%;"">
-                <a id = "room" class="nav-link" href="{% url 'room'%}">ห้องพัก
-                <span class="sr-only">(current)</span>
-                </a>
-            </li>
-            <li class="nav-item" style="flex:100%;">
-                <a class="nav-link">คาราโอเกะ</a>
-            </li>
-            <li class="nav-item" style="flex:100%;">
-                <a class="nav-link">เช่าเรือ</a>
-            </li>
-            <li style="flex:100%;">
-                <a class="navbar-brand" href="{% url 'home'%}">
-                    <img id="logo" src="https://image.flaticon.com/icons/svg/99/99903.svg" width="30" height="30" alt="" class="d-inline-block align-top" alt="">
-                    Hotel
-                </a>    
-            </li>
-            <li class="nav-item" style="flex:100%;">
-                <a id = "spa" class="nav-link" href="{% url 'spa'%}">สปา</a>
-            </li>
-            <li class="nav-item" style="flex:100%;">
-                <a id = "fitness" class="nav-link" href="{% url 'fitness'%}">ฟิตเนส</a>
-            </li>
-            <li class="nav-item" style="flex:100%;">
-                <a id = "waterpark" class="nav-link" href="{% url 'waterpark'%}">สวนน้ำ</a>
-            </li>
-        </ul>
-    </nav>
-   
 
     
     <!-- HomePage -->
@@ -214,28 +142,6 @@
 
     <!-- HomePage -->
 
-    <div id="footer">
-            <footer class="page-footer font-small teal pt-4">
-                    <div >
-                      <div class="row">
-                        <div class="col-md-3 mt-md-0 mt-3 text-center">
-                        <div >
-                                <p>ข้อมูลติดต่อ</p>
-                        </div>
-                        </div>
-                        <div class="col-md-3 mb-md-0 mb-3 text-center">
-                            <div >
-                                <p>ข้อมูลผู้สนับสนุน</p>
-                            </div>
-                        </div>
-                        <div id="map" class="col-md-6 mb-md-0 mb-3 text-center">
-                            <p>แผนที่</p>
-                        </div>
-                      </div>
-                    </div>
-                  </footer>
-    </div>
 
-</body>
 
-</html>
+    {% endblock %}
