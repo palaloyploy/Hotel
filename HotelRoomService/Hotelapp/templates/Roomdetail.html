@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
 
+
     <link href="https://fonts.googleapis.com/css?family=Kanit" rel="stylesheet">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
@@ -24,7 +25,7 @@
   <script>
   $( function() {
     var name , email , phonenumber
-    var peopleperroom = "{{room.peple}}"
+    var peopleperroom = "{{room.people}}"
     var rooms = [1, 2, 3, 4, 5]
     var peoples = []
     for (i=1;i<=peopleperroom;i++){
@@ -102,8 +103,45 @@
         autoclose: true
 
         }).on('changeDate', function(ev) {});
-
-
+    $('#booking').click(function(){
+        checkname(name)
+        checkemail(email)
+        checkphonenumber(phonenumber)
+        checkdatecheckin()
+    });
+    function checkname(name){
+        document.getElementById("alertname").innerHTML = ""
+        if(name === undefined || name === ''){
+            document.getElementById("alertname").innerHTML = "กรุณากรอกชื่อ-นามสกุล"
+        }
+    }
+    function checkemail(email){
+        document.getElementById("alertemail").innerHTML = ""
+        var str = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+        if(email=== undefined || email === ''){
+            document.getElementById("alertemail").innerHTML = "กรุณากรอกอีเมล"
+        }
+        else if(!str.test(String(email).toLowerCase())){
+            document.getElementById("alertemail").innerHTML = "กรุณากรอกอีเมลให้ถูกต้อง"
+        }
+        
+    }
+    function checkphonenumber(phonenumber){
+        document.getElementById("alertphonenumber").innerHTML = ""
+        var phoneno = /^\d{10}$/;
+        if(phonenumber=== undefined || phonenumber === ''){
+            document.getElementById("alertphonenumber").innerHTML = "กรุณากรอกเบอร์โทรติดต่อ"
+        }
+        else if(!phoneno.test(String(phonenumber).toLowerCase())){
+            document.getElementById("alertphonenumber").innerHTML = "กรุณากรอกเบอร์โทรติดต่อให้ถูกต้อง"
+        }
+    }
+    function checkdatecheckin(phonenumber){
+        document.getElementById("alertcheckin").innerHTML = ""
+        if(checkin.datepicker("getDate") == 'Invalid Date'){
+            document.getElementById("alertcheckin").innerHTML = "กรุณาเลือกวันcheck-in"
+        }
+    }
     });
 </script>
 
@@ -166,23 +204,27 @@
                                 <div class="form-group">
                                     <label>ชื่อ-นามสกุล</label>
                                     <input class="form-control" id="name" placeholder="ชื่อ-นามสกุล" style="width:40%">
+                                    <p id="alertname" style="color: red"></p>
                                 </div>
                                 <div class="form-group">
                                     <label>อีเมล</label>
                                     <input class="form-control" id="email" placeholder="อีเมล" style="width:40%">
+                                    <p id="alertemail" style="color: red"></p>
                                 </div>
                                 <div class="form-group">
                                     <label>เบอร์โทรติดต่อ</label>
                                     <input class="form-control" id="phonenumber" placeholder="เบอร์โทรติดต่อ" style="width:40%">
+                                    <p id="alertphonenumber" style="color: red"></p>
                                 </div>
                                 <div class="row" style="margin-bottom: 20px">
                                     <div class="col-md-5 mt-md-0 mt-3">
                                         <div id="checkin">
                                             <label>check-in</label>
                                             <div id="datepickercheckin" class="input-group date" data-date-format="dd-mm-yyyy">
-                                                <input class="form-control form-control clickable input-md" type="text" readonly/>
+                                                <input class="form-control form-control clickable input-md" type="text"/>
                                                 <span class="input-group-addon"><i class="glyphicon glyphicon-calendar"></i></span>
                                             </div>
+                                            <p id="alertcheckin" style="color: red"></p>
                                         </div>
                                     </div>
                                     <div class="col-md-5 mt-md-0 mt-3">
@@ -205,7 +247,7 @@
                                         <div id="people"></div>
                                     </div>
                                 </div>
-                                <button id="booking" class="btn btn-dark" style="float:right; margin-right: 50px">จอง</button>
+                                <button type="button" id="booking" class="btn btn-dark" style="float:right; margin-right: 50px">จอง</button>
                             </form>
                         </div>
                         <button id="booking" type="button"  data-toggle="modal" data-target="#popupbooking" class="btn btn-dark" style="float:right; margin-right: 50px">จอง</button>
@@ -266,9 +308,5 @@
                     </form>
                 </div>
           </div>   
-
-
-
-
 </body>
 </html>
