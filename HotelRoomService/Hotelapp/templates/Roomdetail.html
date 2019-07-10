@@ -103,8 +103,11 @@
         autoclose: true
 
         }).on('changeDate', function(ev) {});
-
-
+    $('#booking').click(function(){
+        if(name === undefined || name === ''){
+            document.getElementById("alertname").innerHTML = "กรุณากรอกชื่อ-นามสกุล"
+        }
+    });
     });
 </script>
 
@@ -167,6 +170,7 @@
                                 <div class="form-group">
                                     <label>ชื่อ-นามสกุล</label>
                                     <input class="form-control" id="name" placeholder="ชื่อ-นามสกุล" style="width:40%">
+                                    <div id="alertname"></div>
                                 </div>
                                 <div class="form-group">
                                     <label>อีเมล</label>
@@ -206,7 +210,7 @@
                                         <div id="people"></div>
                                     </div>
                                 </div>
-                                <button id="booking" class="btn btn-dark" style="float:right; margin-right: 50px">จอง</button>
+                                <button type="button" id="booking" class="btn btn-dark" style="float:right; margin-right: 50px">จอง</button>
                             </form>
                         </div>
           </div>   
