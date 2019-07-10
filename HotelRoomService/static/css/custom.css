@@ -1,0 +1,41 @@
+.centered {
+    position: absolute;
+    top: 270px;
+    left: 50%;
+   
+    transform: translate(-50%, -50%);
+  }
+
+
+
+
+  body {
+    margin: 0;
+    background-color: #ececec;
+  }
+
+  .contentlax {
+    height: 1200px;
+    width: 100%;
+    background-color: #FFF;
+    /* display: flex; */
+    justify-content: center;
+    align-items: center;
+    font-size: 1rem;
+    position: relative;
+    margin-bottom: 300px;
+  }
+
+  .footerlax {
+    height: 300px;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 3rem;
+    color: #f1f1f1;
+    background-color: #000;
+    position: fixed;
+    bottom: 0;
+    z-index: -1;
+  }
