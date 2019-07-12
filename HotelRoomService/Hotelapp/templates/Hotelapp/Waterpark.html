@@ -1,158 +1,727 @@
-{% extends "base.html" %}
-{% load staticfiles %}
-{% block metadescription %}
+<!DOCTYPE html>
+<html lang="en">
 
-{% endblock %}
-{% block title %}
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css"
+        integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous">
 
-สวนน้ำ
+    <link rel="mask-icon" type=""
+        href="https://static.codepen.io/assets/favicon/logo-pin-8f3771b1072e3c38bd662872f6b673a722f4b3ca2421637d5596661b4e2132cc.svg"
+        color="#111" />
 
-{% endblock %}
-{% block content %}
+    <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css'>
+
+    <link href="https://fonts.googleapis.com/css?family=Kanit&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+    <!-- <link rel="shortcut icon" type="image/x-icon"
+        href="https://static.codepen.io/assets/favicon/favicon-aec34940fbc1a6e787974dcd360f2c6b63348d4b1f4e06c77743096d55480f33.ico" /> -->
+    <!-- <link rel="mask-icon" type=""
+        href="https://static.codepen.io/assets/favicon/logo-pin-8f3771b1072e3c38bd662872f6b673a722f4b3ca2421637d5596661b4e2132cc.svg"
+        color="#111" /> -->
+    <title>สวนน้ำ</title>
+    <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css"> -->
+    <style>
+        @import url(https://fonts.googleapis.com/css?family=Montserrat);
+
+        html,
+        body {
+            overflow: hidden;
+            font-family: 'Kanit', sans-serif;
+        }
+
+        .centered {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            font-size: calc(0.3em + 1vmin);
+            transform: translate(-50%, -50%);
+        }
 
 
 
-<div style="margin-top: 55px;margin-bottom: 250px;background-color: white;box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.27);">
 
-                
-                        <div id="banner"  style="width: 100%;">
-                                <img src="https://www.mushroomtravel.com/page/wp-content/uploads/2018/05/1-1-1024x533.jpg" alt="Snow" style="width:100%;height: 450px;">
-                
-                                
-                                <div class="centered">
-                                    <div class="card" style="background-color: darkgrey;opacity: 0.9">
-                                        
-                                                <p style="color: white;font-size: 5rem;margin-left: 2rem;margin-right: 2rem;">สวนน้ำ</p>
-                                        
-                                    </div>
-                                    
-                                </div>
-                              </div>
-                
-                
+        .background {
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-position: center center;
+            overflow: hidden;
+            will-change: transform;
+            -webkit-backface-visibility: hidden;
+            backface-visibility: hidden;
+            height: 130vh;
+            position: fixed;
+            width: 100%;
+            -webkit-transform: translateY(30vh);
+            transform: translateY(30vh);
+            transition: all 1.2s cubic-bezier(0.22, 0.44, 0, 1);
+        }
+
+        .background:before {
+            content: "";
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            /* background-color: rgba(0, 0, 0, 0.3); */
+        }
+
+        .background:first-child {
+            /* background-image: url(https://s8.postimg.org/lf2udl5np/4_Aihmii.jpg); */
+            -webkit-transform: translateY(15vh);
+            transform: translateY(0);
+        }
+
+        .background:first-child .content-wrapper {
+            -webkit-transform: translateY(15vh);
+            transform: translateY(15vh);
+        }
+
+        .background:nth-child(2) {
+            /* background-image: url(https://s8.postimg.org/ow4wgk4px/ugqti_Lg.jpg); */
+        }
+
+        .background:nth-child(3) {
+            /* background-image: url(https://s8.postimg.org/grwsbtiat/x_ZMOBTj.jpg); */
+        }
+
+        /* Set stacking context of slides */
+        .background:nth-child(1) {
+            z-index: 3;
+            /* background-color: white; */
+            left: 0;
+            right: 0;
+            top: 0;
+            bottom: 0;
+            width: 100%;
+            height: 100%;
+            /* margin-top: 124px; */
+
+
+        }
+
+        .row {
+            height: 100%;
+        }
+
+        .background:nth-child(2) {
+            z-index: 2;
+            /* background-color: aquamarine; */
+            left: 0;
+            right: 0;
+            top: 0;
+            bottom: 0;
+            width: 100%;
+            height: 100%;
+            /* margin-top: 124px; */
+        }
+
+        .background:nth-child(3) {
+            z-index: 1;
+            /* background-color: green; */
+            left: 0;
+            right: 0;
+            top: 0;
+            bottom: 0;
+            width: 100%;
+            height: 100%;
+            /* margin-top: 124px; */
+        }
+
+        .background:nth-child(4) {
+            z-index: 0;
+            /* background-color: green; */
+            left: 0;
+            right: 0;
+            top: 0;
+            bottom: 0;
+            width: 100%;
+            height: 100%;
+            /* margin-top: 124px; */
+        }
+
+        .background:nth-child(5) {
+            z-index: -1;
+            /* background-color: green; */
+            left: 0;
+            right: 0;
+            top: 0;
+            bottom: 0;
+            width: 100%;
+            height: 100%;
+            /* margin-top: 124px; */
+        }
+
+        .content-wrapper {
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            text-align: center;
+            flex-flow: column nowrap;
+            color: #fff;
+            font-family: Montserrat;
+            text-transform: uppercase;
+            -webkit-transform: translateY(40vh);
+            transform: translateY(40vh);
+            will-change: transform;
+            -webkit-backface-visibility: hidden;
+            backface-visibility: hidden;
+            transition: all 1.7s cubic-bezier(0.22, 0.44, 0, 1);
+        }
+
+        .content-title {
+            font-size: 12vh;
+            line-height: 1.4;
+        }
+
+        .background.up-scroll {
+            -webkit-transform: translate3d(0, -15vh, 0);
+            transform: translate3d(0, 0, 0);
+        }
+
+        .background.up-scroll .content-wrapper {
+            -webkit-transform: translateY(15vh);
+            transform: translateY(15vh);
+        }
+
+        .background.up-scroll+.background {
+            -webkit-transform: translate3d(0, 30vh, 0);
+            transform: translate3d(0, 30vh, 0);
+        }
+
+        .background.up-scroll+.background .content-wrapper {
+            -webkit-transform: translateY(30vh);
+            transform: translateY(30vh);
+        }
+
+        .background.down-scroll {
+            -webkit-transform: translate3d(0, -130vh, 0);
+            transform: translate3d(0, -130vh, 0);
+        }
+
+        .background.down-scroll .content-wrapper {
+            -webkit-transform: translateY(40vh);
+            transform: translateY(40vh);
+        }
+
+        .background.down-scroll+.background:not(.down-scroll) {
+            -webkit-transform: translate3d(0, -15vh, 0);
+            transform: translate3d(0, 0, 0);
+        }
+
+        .background.down-scroll+.background:not(.down-scroll) .content-wrapper {
+            -webkit-transform: translateY(15vh);
+            transform: translateY(15vh);
+        }
+    </style>
+    <script>
+        window.console = window.console || function (t) { };
+    </script>
+    <script>
+        if (document.location.search.match(/type=embed/gi)) {
+            window.parent.postMessage("resize", "*");
+        }
+    </script>
+</head>
 
 
 
-<div id="waterparkdetail" class="d-flex flex-row text-center" style="width: 100%;height: 100%;">
-        <div class="card" style="flex: 50%">
-            <div class="d-flex flex-column" style="height: 100%">
-                  
-                            <p  style="font-size: 2rem;flex: 200%;margin-top: 2rem"> สวนน้ำ </p>
-                         
-                            <img id="playimage"   src="http://www.pororoaquapark.com/images/character/about-rules/slider-1.png" alt="Snow" style="width:50%;height: auto;margin: 2rem">
 
-                            
-                       
-                             <h5 style="margin: 2rem;margin-top: 0%;flex: 200%">ยินดีต้อนรับสู่สวนน้ำที่ใหญ่ที่สุดในภูมิภาคเอเชีย ที่รายล้อมไปด้วย
-                                        ต้นไม้ร่มครึ้ม เหมาะสำหรับการพักผ่อนอย่างสนุกสนานกับทุกคนในครอบครัว
-                                        พบกับความสนุกในสวนน้ำโซนใหม่อย่างไซ-แอมลากูน เครื่องเล่นที่
-                                        เหมาะกับทุกคนในครอบครัว เพลิดเพลินกับทะเลเทียมที่ใหญ่ที่สุดในโลก
-                                        รับรองโดยกินเนสส์ เวิลด์ เรคคอร์ดส ธารน้ำวนสุดสนุก หวาดเสียวได้ใจ
-                                        กับสไลเดอร์ยักษ์ และซูเปอร์สไปรัลรางน้ำคดเคี้ยว ผ่อนคลายกับบ่อสปา
-                                        เพื่อสุขภาพ หรือแม้แต่คุณจะเอนกายบนเตียงผ้าใบใต้ร่มไม้ ก็จะทำให้
-                                        วันหยุดของคุณสุขสดชื่นคุ้มค่าที่สุด</h5>
- 
-            </div>
-           
-            </div>
-            <div class="card" style="flex: 100%">
-                
-                            
-                            <iframe id="waterparkimage" width="1088" height="612" src="https://www.youtube.com/embed/8tWujDVtoXI?controls=0&showinfo=0&autoplay=1&rel=0" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen ></iframe>
-                    
-                   
-            </div>
-           
-                
-                
-</div>
-    
 
-<div id="listplay">
 
-<div class="d-flex flex-row text-center" style="width: 100%;height: 100%;">
-        
-            <div class="card" style="flex: 100%">
-               
-                            <img id="playimage" style="width: 100%;"  src="https://www.dreamworld.co.th/uploaded/images/15390787052018100910GrandCanyon_3.jpg" alt="Snow" style="width:100%;height: 450px;">
 
-              
-            </div>
-                
-            <div class="card" style="flex: 50%">
-                    <div class="d-flex flex-column" style="height: 100%">
-                          
-                                    <p id="playname"  style="font-size: 2rem;flex: 200%;margin-top: 2rem"> แกรนด์แคนยอน</p>
-                                
-                            <img id="playimage"   src="http://www.pororoaquapark.com/images/character/about-rules/slider-1.png" alt="Snow" style="width:50%;height: auto;margin: 2rem">
 
-                         
-                                     <h5 id="playdescription" style="margin: 2rem;margin-top: 0%;flex: 200%">ผจญภัยกลางสายน้ำเชี่ยว ไหลล่องผ่านโขดหิน น้ำตก วังน้ำวน ฯลฯ</h5>
-         
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<body translate="no">
+    <div class="container">
+
+
+
+        <section class="background" style="flex-direction: row;width: 100%;flex: 100%;">
+
+
+            <div class="row"
+                style="flex-direction: row;background-color: white;   ;width: 100%;box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.27);margin: 0">
+
+                <img style="height: 92%;width: 100%"
+                    src="https://poolsvilla.com/wp-content/uploads/2015/04/%E0%B8%AA%E0%B8%A7%E0%B8%99%E0%B8%99%E0%B9%89%E0%B8%B3%E0%B9%81%E0%B8%9A%E0%B8%A5%E0%B9%87%E0%B8%84%E0%B9%80%E0%B8%A1%E0%B8%B2%E0%B8%99%E0%B9%8C%E0%B9%80%E0%B8%97%E0%B8%99%E0%B8%AB%E0%B8%B1%E0%B8%A7%E0%B8%AB%E0%B8%B4%E0%B8%99.jpg"
+                    alt="">
+
+
+                <div class="centered">
+                    <div class="card" style="background-color: darkgrey;opacity: 0.9">
+
+                        <p style="color: white;font-size: calc(5.5em + 1vmin);margin-left: 2rem;margin-right: 2rem;">
+                            สวนน้ำ</p>
+
                     </div>
-                   
+
+                </div>
+
+            </div>
+            <div class="flex-column">
+                <div class="scrolldown"
+                    style="bottom: 0;position: fixed;width: 100%;text-align: center;margin-bottom: 1rem;z-index: 999;">
+                    <span style="font-size: calc(0.5em + 1vmin);">เลื่อนลง</span>
+                    <div class="scrolldown-icon flash animated infinite"><i class="fa fa-arrow-down"
+                            aria-hidden="true"></i>
                     </div>
-</div>
-
-
-
-<div class="d-flex flex-row text-center" style="width: 100%;height: 100%;">
-        <div class="card" style="flex: 50%">
-            <div class="d-flex flex-column" style="height: 100%">
-                  
-                            <p  style="font-size: 2rem;flex: 200%;margin-top: 2rem"> วอเตอร์ฟัน</p>
-                        
-                            <img id="playimage"   src="http://www.pororoaquapark.com/images/character/about-rules/slider-1.png" alt="Snow" style="width:50%;height: auto;margin: 2rem">
-
-                         
-                             <h5 style="margin: 2rem;margin-top: 0%;flex: 200%">สนามเล่นน้ำมหาสนุกสำหรับครอบครัว ...เปียกเย็น เล่นสนุก</h5>
- 
-            </div>
-           
-            </div>
-            <div class="card" style="flex: 100%">
-                
-                            <img   src="https://www.dreamworld.co.th/uploaded/images/1540787713201810297IMG_5259.jpg" alt="Snow" style="width:100%;height: auto;">
-
-                    
-                   
-            </div>
-           
-                
-                
-</div>
-    
-
-
-
-<div class="d-flex flex-row text-center" style="width: 100%;height: 100%;">
-        
-        <div class="card" style="flex: 100%">
-           
-                        <img   src="https://www.dreamworld.co.th/uploaded/images/1539077513201810097SuperSpace_2.jpg" alt="Snow" style="width:100%;height: auto">
-
-          
-        </div>
-            
-        <div class="card" style="flex: 50%">
-                <div class="d-flex flex-column" style="height: 100%">
-                      
-                                <p  style="font-size: 2rem;flex: 200%;margin-top: 2rem">ซูเปอร์สแปลช </p>
-                            
-                                <img id="playimage"   src="http://www.pororoaquapark.com/images/character/about-rules/slider-1.png" alt="Snow" style="width:50%;height: auto;margin: 2rem">
-
-                         
-                                 <h5 style="margin: 2rem;margin-top: 0%;flex: 200%">เรือลำใหญ่ที่ไต่ขึ้นฟ้า ทะยานลงมาเจอคลื่นยักษ์ ซู่ซ่าส์ ..เย็นสะใจ</h5>
-     
                 </div>
-               
+            </div>
+
+
+
+
+
+        </section>
+
+
+
+
+
+
+
+        <section class="background">
+
+
+
+            <div class="row"
+                style="flex-direction: row;background-color: white;   ;width: 100%;box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.27);margin: 0">
+                <div class="col-sm-3" style="  flex: 100%;  padding-left: 0px;
+                            padding-right: 0px;">
+                    <div class="d-flex flex-column text-center" style="height: 100%;width: 100%;">
+
+                        <p style="font-size: calc(1.75em + 1vmin);;flex: 00%;margin-top: 2rem"> สวนน้ำ </p>
+
+
+
+
+
+                        <h5 style="font-size: 2rem;margin: 2rem;flex: 200%">
+                            ยินดีต้อนรับสู่สวนน้ำที่ใหญ่ที่สุดในภูมิภาคเอเชีย ที่รายล้อมไปด้วย
+                            ต้นไม้ร่มครึ้ม เหมาะสำหรับการพักผ่อนอย่างสนุกสนานกับทุกคนในครอบครัว
+                            พบกับความสนุกในสวนน้ำโซนใหม่อย่างไซ-แอมลากูน เครื่องเล่นที่
+                            เหมาะกับทุกคนในครอบครัว</h5>
+
+                        <div class="row" style="font-size: calc(1.75em + 1vmin);margin: 2rem">
+                            <i style="margin: 2rem" class="fas fa-swimmer   "></i>
+                            <i style="margin: 2rem" class="fas fa-swimming-pool    "></i>
+                            <i style="margin: 2rem" class="fas fa-gamepad    "></i>
+
+                        </div>
+                        <div class="row" style="font-size: calc(1.75em + 1vmin);margin: 2rem">
+                            <div class="card" style="border: gray;
+                                position: relative;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    min-width: 0;
+    word-wrap: break-word;
+    background-color: #fff;
+    background-clip: border-box;
+    border: 2px solid rgba(0,0,0,.125);
+    border-radius: .25rem;
+    font-size: calc(0.2em + 1vmin);
+    ">
+                                มีเครื่องเล่นมากมาย
+                            </div>
+
+                        </div>
+
+
+                    </div>
+
+
+
+
+
                 </div>
-</div>
-<p  style="margin-left: 2rem;margin-right: 2rem;font-size: 1.5rem">เวลาเปิด-ปิด  08.00 - 18.00 น  สถานที่ ชั้นดาดฟ้าของโรงแรม</p>
-</div>
-    
+                <div class="col-sm-9" style="  flex: 100%;padding-left: 0px;padding-right: 0px;height:100%;">
+                    <div class="d-flex flex-column text-center" style="height: 100%;width: 100%;">
+                        <div class="embed-responsive embed-responsive-16by9">
+                            <iframe tabindex="-3" class="embed-responsive-item" id="waterparkimage" width="100%"
+                                height="100%"
+                                src="https://www.youtube.com/embed/8tWujDVtoXI?controls=0&showinfo=0&autoplay=1&rel=0&mute=1"
+                                frameborder="0"
+                                allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
+                                allowfullscreen></iframe>
+                        </div>
+                    </div>
+
+                </div>
 
 
-</div>
+            </div>
+            <div class="flex-column">
+                <div class="scrolldown"
+                    style="bottom: 0;position: fixed;width: 100%;text-align: center;margin-bottom: 1rem">
+                    <h1 style="font-size: calc(0.5em + 1vmin);">เลื่อนลง</h1>
+                    <div class="scrolldown-icon flash animated infinite"><i class="fa fa-arrow-down"
+                            aria-hidden="true"></i>
+                    </div>
+                </div>
+            </div>
 
-{% endblock %}
+
+
+        </section>
+
+
+
+
+
+
+        <section class="background">
+
+
+
+            <div class="row"
+                style="flex-direction: row;background-color: white;   ;width: 100%;box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.27);margin: 0">
+                <div class="col-sm-3" style="  flex: 100%;  padding-left: 0px;
+                            padding-right: 0px;">
+                    <div class="d-flex flex-column text-center" style="height: 100%;width: 100%;">
+
+                        <p style="font-size: calc(1.75em + 1vmin);;flex: 00%;margin-top: 2rem">แกรนด์แคนยอน </p>
+
+
+
+
+
+                        <h5 style="font-size: 2rem;margin: 2rem;flex: 200%">
+                            ผจญภัยกลางสายน้ำเชี่ยว ไหลล่องผ่านโขดหิน น้ำตก วังน้ำวน ฯลฯ</h5>
+
+                        <div class="row" style="font-size: calc(1.75em + 1vmin);margin: 2rem">
+                            <i class="fas fa-ship    "></i>
+
+                        </div>
+                        <div class="row" style="font-size: calc(1.75em + 1vmin);margin: 2rem">
+                            <div class="card" style="border: gray;
+                                position: relative;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    min-width: 0;
+    word-wrap: break-word;
+    background-color: #fff;
+    background-clip: border-box;
+    border: 2px solid rgba(0,0,0,.125);
+    border-radius: .25rem;
+    font-size: calc(0.2em + 1vmin);
+    ">
+                                มีเครื่องเล่นมากมาย
+                            </div>
+
+                        </div>
+
+
+                    </div>
+
+
+
+                </div>
+                <div class="col-sm-9" style="  flex: 100%;padding-left: 0px;padding-right: 0px;height:100%;">
+                    <div class="d-flex flex-column text-center" style="height: 100%;width: 100%;">
+                        <div class="embed-responsive embed-responsive-16by9">
+                            <img src="https://www.dreamworld.co.th/uploaded/images/15390787052018100910GrandCanyon_3.jpg"
+                                alt="Snow" style="width:100%;height: auto;">
+
+                        </div>
+                    </div>
+
+                </div>
+
+
+            </div>
+            <div class="flex-column">
+                <div class="scrolldown"
+                    style="bottom: 0;position: fixed;width: 100%;text-align: center;margin-bottom: 1rem">
+                    <h1 style="font-size: calc(0.5em + 1vmin);">เลื่อนลง</h1>
+                    <div class="scrolldown-icon flash animated infinite"><i class="fa fa-arrow-down"
+                            aria-hidden="true"></i>
+                    </div>
+                </div>
+            </div>
+
+
+
+        </section>
+
+
+        <section class="background">
+
+
+
+            <div class="row"
+                style="flex-direction: row;background-color: white;   ;width: 100%;box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.27);margin: 0">
+                <div class="col-sm-3" style="  flex: 100%;  padding-left: 0px;
+                                padding-right: 0px;">
+                    <div class="d-flex flex-column text-center" style="height: 100%;width: 100%;">
+
+                        <p style="font-size: calc(1.75em + 1vmin);;flex: 00%;margin-top: 2rem"> สวนน้ำ </p>
+
+
+
+
+
+                        <h5 style="font-size: 2rem;margin: 2rem;flex: 200%">
+                            ยินดีต้อนรับสู่สวนน้ำที่ใหญ่ที่สุดในภูมิภาคเอเชีย ที่รายล้อมไปด้วย
+                            ต้นไม้ร่มครึ้ม เหมาะสำหรับการพักผ่อนอย่างสนุกสนานกับทุกคนในครอบครัว
+                            พบกับความสนุกในสวนน้ำโซนใหม่อย่างไซ-แอมลากูน เครื่องเล่นที่
+                            เหมาะกับทุกคนในครอบครัว</h5>
+
+                        <div class="row" style="font-size: calc(1.75em + 1vmin);margin: 2rem">
+                            <i style="margin: 2rem" class="fas fa-swimmer   "></i>
+                            <i style="margin: 2rem" class="fas fa-swimming-pool    "></i>
+                            <i style="margin: 2rem" class="fas fa-gamepad    "></i>
+
+                        </div>
+                        <div class="row" style="font-size: calc(1.75em + 1vmin);margin: 2rem">
+                            <div class="card" style="border: gray;
+                                    position: relative;
+        display: -ms-flexbox;
+        display: flex;
+        -ms-flex-direction: column;
+        flex-direction: column;
+        min-width: 0;
+        word-wrap: break-word;
+        background-color: #fff;
+        background-clip: border-box;
+        border: 2px solid rgba(0,0,0,.125);
+        border-radius: .25rem;
+        font-size: calc(0.2em + 1vmin);
+        ">
+                                มีเครื่องเล่นมากมาย
+                            </div>
+
+                        </div>
+
+
+                    </div>
+
+
+
+
+
+                </div>
+                <div class="col-sm-9" style="  flex: 100%;padding-left: 0px;padding-right: 0px;height:100%;">
+                    <div class="d-flex flex-column text-center" style="height: 100%;width: 100%;">
+                        <div class="embed-responsive embed-responsive-16by9">
+                            <iframe tabindex="-3" class="embed-responsive-item" id="waterparkimage" width="100%"
+                                height="100%"
+                                src="https://www.youtube.com/embed/8tWujDVtoXI?controls=0&showinfo=0&autoplay=0&rel=0&mute=1"
+                                frameborder="0"
+                                allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
+                                allowfullscreen></iframe>
+                        </div>
+                    </div>
+
+                </div>
+
+
+            </div>
+            <div class="flex-column">
+                <div class="scrolldown"
+                    style="bottom: 0;position: fixed;width: 100%;text-align: center;margin-bottom: 1rem">
+                    <h1 style="font-size: calc(0.5em + 1vmin);">เลื่อนลง</h1>
+                    <div class="scrolldown-icon flash animated infinite"><i class="fa fa-arrow-down"
+                            aria-hidden="true"></i>
+                    </div>
+                </div>
+            </div>
+
+
+
+        </section>
+
+
+
+        <section class="background">
+
+
+
+            <div class="row"
+                style="flex-direction: row;background-color: white;   ;width: 100%;box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.27);margin: 0">
+                <div class="col-sm-3" style="  flex: 100%;  padding-left: 0px;
+                                padding-right: 0px;">
+                    <div class="d-flex flex-column text-center" style="height: 100%;width: 100%;">
+
+                        <p style="font-size: calc(1.75em + 1vmin);;flex: 00%;margin-top: 2rem"> สวนน้ำ </p>
+
+
+
+
+
+                        <h5 style="font-size: 2rem;margin: 2rem;flex: 200%">
+                            ยินดีต้อนรับสู่สวนน้ำที่ใหญ่ที่สุดในภูมิภาคเอเชีย ที่รายล้อมไปด้วย
+                            ต้นไม้ร่มครึ้ม เหมาะสำหรับการพักผ่อนอย่างสนุกสนานกับทุกคนในครอบครัว
+                            พบกับความสนุกในสวนน้ำโซนใหม่อย่างไซ-แอมลากูน เครื่องเล่นที่
+                            เหมาะกับทุกคนในครอบครัว</h5>
+
+                        <div class="row" style="font-size: calc(1.75em + 1vmin);margin: 2rem">
+                            <i style="margin: 2rem" class="fas fa-swimmer   "></i>
+                            <i style="margin: 2rem" class="fas fa-swimming-pool    "></i>
+                            <i style="margin: 2rem" class="fas fa-gamepad    "></i>
+
+                        </div>
+                        <div class="row" style="font-size: calc(1.75em + 1vmin);margin: 2rem">
+                            <div class="card" style="border: gray;
+                                    position: relative;
+        display: -ms-flexbox;
+        display: flex;
+        -ms-flex-direction: column;
+        flex-direction: column;
+        min-width: 0;
+        word-wrap: break-word;
+        background-color: #fff;
+        background-clip: border-box;
+        border: 2px solid rgba(0,0,0,.125);
+        border-radius: .25rem;
+        font-size: calc(0.2em + 1vmin);
+        ">
+                                มีเครื่องเล่นมากมาย
+                            </div>
+
+                        </div>
+
+
+                    </div>
+
+
+
+
+
+                </div>
+                <div class="col-sm-9" style="  flex: 100%;padding-left: 0px;padding-right: 0px;height:100%;">
+                    <div class="d-flex flex-column text-center" style="height: 100%;width: 100%;">
+                        <div class="embed-responsive embed-responsive-16by9">
+                            <iframe tabindex="-3" class="embed-responsive-item" id="waterparkimage" width="100%"
+                                height="100%"
+                                src="https://www.youtube.com/embed/8tWujDVtoXI?controls=0&showinfo=0&autoplay=0&rel=0&mute=1"
+                                frameborder="0"
+                                allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
+                                allowfullscreen></iframe>
+                        </div>
+                    </div>
+
+                </div>
+
+
+            </div>
+            <div class="flex-column">
+                <div class="scrolldown"
+                    style="bottom: 0;position: fixed;width: 100%;text-align: center;margin-bottom: 1rem">
+                    <h1 style="font-size: calc(0.5em + 1vmin);">เลื่อนลง</h1>
+                    <div class="scrolldown-icon flash animated infinite"><i class="fa fa-arrow-down"
+                            aria-hidden="true"></i>
+                    </div>
+                </div>
+            </div>
+
+
+
+        </section>
+
+
+
+
+    </div>
+    <script
+        src="https://static.codepen.io/assets/common/stopExecutionOnTimeout-de7e2ef6bfefd24b79a3f68b414b87b8db5b08439cac3f1012092b2290c719cd.js"></script>
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/lodash.js/3.10.1/lodash.min.js'></script>
+    <script src='https://code.jquery.com/jquery-2.1.4.min.js'></script>
+    <script id="rendered-js">
+        // ------------- VARIABLES ------------- //
+        var ticking = false;
+        var isFirefox = /Firefox/i.test(navigator.userAgent);
+        var isIe = /MSIE/i.test(navigator.userAgent) || /Trident.*rv\:11\./i.test(navigator.userAgent);
+        var scrollSensitivitySetting = 30; //Increase/decrease this number to change sensitivity to trackpad gestures (up = less sensitive; down = more sensitive) 
+        var slideDurationSetting = 600; //Amount of time for which slide is "locked"
+        var currentSlideNumber = 0;
+        var totalSlideNumber = $(".background").length;
+
+        // ------------- DETERMINE DELTA/SCROLL DIRECTION ------------- //
+        function parallaxScroll(evt) {
+            if (isFirefox) {
+                //Set delta for Firefox
+                delta = evt.detail * -120;
+            } else if (isIe) {
+                //Set delta for IE
+                delta = -evt.deltaY;
+            } else {
+                //Set delta for all other browsers
+                delta = evt.wheelDelta;
+            }
+
+            if (ticking != true) {
+                if (delta <= -scrollSensitivitySetting) {
+                    //Down scroll
+                    ticking = true;
+                    if (currentSlideNumber !== totalSlideNumber - 1) {
+                        currentSlideNumber++;
+                        nextItem();
+                    }
+                    slideDurationTimeout(slideDurationSetting);
+                }
+                if (delta >= scrollSensitivitySetting) {
+                    //Up scroll
+                    ticking = true;
+                    if (currentSlideNumber !== 0) {
+                        currentSlideNumber--;
+                    }
+                    previousItem();
+                    slideDurationTimeout(slideDurationSetting);
+                }
+            }
+        }
+
+        // ------------- SET TIMEOUT TO TEMPORARILY "LOCK" SLIDES ------------- //
+        function slideDurationTimeout(slideDuration) {
+            setTimeout(function () {
+                ticking = false;
+            }, slideDuration);
+        }
+
+        // ------------- ADD EVENT LISTENER ------------- //
+        var mousewheelEvent = isFirefox ? "DOMMouseScroll" : "wheel";
+        window.addEventListener(mousewheelEvent, _.throttle(parallaxScroll, 60), false);
+
+        // ------------- SLIDE MOTION ------------- //
+        function nextItem() {
+            var $previousSlide = $(".background").eq(currentSlideNumber - 1);
+            $previousSlide.removeClass("up-scroll").addClass("down-scroll");
+        }
+
+        function previousItem() {
+            var $currentSlide = $(".background").eq(currentSlideNumber);
+            $currentSlide.removeClass("down-scroll").addClass("up-scroll");
+        }
+      //# sourceURL=pen.js
+    </script>
+</body>
+
+</html>
