@@ -8,3 +8,14 @@ HotelRoomService/Hotelapp/migrations/__pycache__
 HotelRoomService/Hotelapp/__pycache__
 HotelRoomService/Hotelapp/migrations
 HotelRoomService/media
+*.pyc
+/env/
+__pycache__/
+.vscode/
+media/
+migrations/
+.DS_Store
+config.py
+log.html
+output.xml
+report.html
