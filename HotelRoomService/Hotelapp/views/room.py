@@ -9,4 +9,4 @@ def RoomView(request):
 
     room_list = Room.objects.all()
     
-    return render(request,'Hotelapp/Roompage.html',{'room_list':room_list})
+    return render(request,'Hotelapp/Roompage.html',{'room':room})

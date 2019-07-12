@@ -5,7 +5,7 @@ from django.urls import reverse
 # Create your tests here.
 class RoomViewTest(TestCase):
 
-    fixtures = ['room.json',]
+    fixtures = ['hotelapp.json',]
 
     def setUp(self):
         print("setUp: Run once for every test method to setup clean data.")
@@ -22,4 +22,4 @@ class RoomViewTest(TestCase):
         response = self.client.get(reverse('room'))
 
         self.assertEqual(response.status_code, 200)
-        self.assertEqual(len(response.context['room_list']), 3)     
+        self.assertEqual(len(response.context['room']), 3)     
