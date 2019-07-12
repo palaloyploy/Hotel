@@ -1,5 +1,5 @@
 from django.contrib import admin
-from .models import Room , Option , RoomOption
+from Hotelapp.model.models import Room , Option , RoomOption
 
 # Register your models here.
 class RoomAdmin(admin.ModelAdmin):
