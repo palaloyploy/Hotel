@@ -1,7 +1,8 @@
 from django.shortcuts import render
 from django.http import HttpResponse
 from django.template import loader
-from Hotelapp.models import Room , Option
+
+from Hotelapp.model.models import Room , Option , RoomOption
 # Create your views here.
 def room(request):
 
