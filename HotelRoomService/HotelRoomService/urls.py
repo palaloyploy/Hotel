@@ -22,13 +22,14 @@ from django.conf.urls.static import static
 from Hotelapp.views.index import IndexView
 from Hotelapp.views.room import RoomView
 from Hotelapp.views.fitness import FitnessViews
+from Hotelapp.views.spa import SpaViews
 
 urlpatterns = [
     path('', IndexView, name='home'),
     path('room/',RoomView, name = 'room'),
     path('<room_id>/detail/',views.roomdetail, name = 'roomdetail'),
     path('fitness/',FitnessViews, name = 'fitness'),
-    path('spa/',views.spa, name = 'spa'),
+    path('spa/',SpaViews, name = 'spa'),
     path('waterpark/',views.waterpark, name = 'waterpark'),
     path('admin/', admin.site.urls),
 ]
