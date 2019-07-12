@@ -16,9 +16,9 @@ class RoomViewTest(TestCase):
         self.assertEqual(response.status_code, 200)
         self.assertTemplateUsed(response, 'Hotelapp/Roomdetail.html')
 
-    # def test_view_room_GET_list_is_3item(self):
+    def test_view_room_GET_list_is_1item(self):
         
-    #     response = self.client.get(reverse('room'))
+        response = self.client.get(reverse('roomdetail', kwargs={'room_id':3}))
 
-    #     self.assertEqual(response.status_code, 200)
-    #     self.assertEqual(len(response.context['room_list']), 3)     
+        self.assertEqual(response.status_code, 200)
+        self.assertEqual(len(response.context['room']), 1)     

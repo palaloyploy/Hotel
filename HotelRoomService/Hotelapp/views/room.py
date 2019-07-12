@@ -7,6 +7,6 @@ from Hotelapp.model.models import Room
 # Create your views here.
 def RoomView(request):
 
-    room_list = Room.objects.all()
+    room = Room.objects.all()
     
     return render(request,'Hotelapp/Roompage.html',{'room':room})
