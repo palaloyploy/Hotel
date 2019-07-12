@@ -19,17 +19,17 @@ from django.urls import path
 from HotelRoomService import views
 from django.conf import settings
 from django.conf.urls.static import static
+from Hotelapp.views.index import IndexView
+from Hotelapp.views.room import RoomView
+from Hotelapp.views.fitness import FitnessViews
 
 urlpatterns = [
-    path('', views.index, name='home'),
-    path('room/',views.room, name = 'room'),
+    path('', IndexView, name='home'),
+    path('room/',RoomView, name = 'room'),
     path('<room_id>/detail/',views.roomdetail, name = 'roomdetail'),
-    path('fitness/',views.fitness, name = 'fitness'),
+    path('fitness/',FitnessViews, name = 'fitness'),
     path('spa/',views.spa, name = 'spa'),
     path('waterpark/',views.waterpark, name = 'waterpark'),
-    path('boat/',views.boat, name = 'boat'),
-    path('meeting/',views.meeting, name = 'meeting'),
-    path('karaoke/',views.karaoke, name = 'karaoke'),
     path('admin/', admin.site.urls),
 ]
 urlpatterns += static(settings.STATIC_URL,document_root=settings.STATIC_ROOT)
