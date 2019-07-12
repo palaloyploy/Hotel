@@ -13,8 +13,7 @@
     
 
     
-
-    <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css'>
+  <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css'>
     <script>
         $(document).ready(function () {
             // Activate Carousel with a specified interval
@@ -38,15 +37,125 @@
             $(".carousel-control-next").click(function () {
                 $("#banner").carousel("next");
             });
+            var $animation_elements = $('.slideshow');
+            var $window = $(window);
+            function check_if_in_view() {
+                var window_height = $window.height();
+                var window_top_position = $window.scrollTop();
+                var window_bottom_position = (window_top_position + window_height);
+                $.each($animation_elements, function() {
+                    var $element = $(this);
+                    var element_height = $element.outerHeight();
+                    var element_top_position = $element.offset().top;
+                    var element_bottom_position = (element_top_position + element_height);
+                    if ((element_bottom_position >= window_top_position) &&
+                        (element_top_position <= window_bottom_position)) $element.addClass('hasSlid');
+                    else $element.removeClass('hasSlid');
+            });
+            }
+            $window.on('scroll resize', check_if_in_view);
         });
     </script>
-
-    <title>สปา</title>
 
 </head>
 
 <body>
     <style>
+        section.module h2 {
+            margin-bottom: 40px;
+            font-size: 30px;
+        }
+        section.module p {
+            margin-bottom: 40px;
+            font-size: 16px;
+            font-weight: 300;
+        }
+        section.module.content {
+            padding: 40px 0;
+        }
+        section.module.parallax {
+            height: 600px;
+            background-position: 50% 50%;
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+            background-size: cover;
+        }
+        section.module.parallax h1 {
+            color: rgba(255, 255, 255, 0.8);
+            font-size: 40px;
+            line-height: 600px;
+            font-weight: 700;
+            text-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+        }
+        section.module.parallax-1 {
+            background-image: url("https://inwfile.com/s-de/pbx3es.jpg");
+        }
+        section.module.parallax-2 {
+            background-image: url("https://www.dasgerstl.com/fileadmin/user_upload/entspannung-wellness-spa/saunen/lehmsauna/lehm-gerstensauna_2.jpg");
+        }
+        section.module.parallax-3 {
+            background-image: url("https://travel.mthai.com/app/uploads/2018/09/YunomoriOnsen.jpg");
+        }
+        section.module.parallax-4 {
+            background-image: url("https://www.sakuraspathailand.com/wp-content/uploads/2015/12/Body-Massage-040.jpg");
+        }
+        section.module.parallax-5 {
+            background-image: url("https://www.sakuraspathailand.com/wp-content/uploads/2015/12/Body-Massage-023.jpg");
+        }
+        section.module.parallax-6 {
+            background-image: url("https://odishasuntimes.com/wp-content/uploads/2017/11/Body-massage.jpg");
+        }
+
+        @media all and (min-width: 600px) {
+            section.module h2 {
+                font-size: 42px;
+            }
+            section.module p {
+                font-size: 20px;
+            }
+            section.module.parallax h1 {
+                        font-size: 96px;
+            }
+        }
+        @media all and (min-width: 960px) {
+        section.module.parallax h1 {
+            font-size: 160px;
+        }
+        }
+
+        .slideshow {
+            opacity: 0;
+            -moz-transition: all 500ms linear;
+            -webkit-transition: all 500ms linear;
+            -o-transition: all 500ms linear;
+            transition: all 500ms linear;
+            -moz-transform: translate3d(-100px, 0px, 0px);
+            -webkit-transform: translate3d(-100px, 0px, 0px);
+            -o-transform: translate(-100px, 0px);
+            -ms-transform: translate(-100px, 0px);
+            transform: translate3d(-100px, 0px, 0px);
+        }
+
+        .hasSlid {
+            opacity: 1;
+            -moz-transform: translate3d(0px, 0px, 0px);
+            -webkit-transform: translate3d(0px, 0px, 0px);
+            -o-transform: translate(0px, 0px);
+            -ms-transform: translate(0px, 0px);
+            transform: translate3d(0px, 0px, 0px);
+        }
+
+        .padding-enlarge {
+            -moz-transition: padding-top .15s ease-in-out, padding-bottom .15s ease-in-out;
+            -o-transition: padding-top  .15s ease-in-out, padding-bottom .15s ease-in-out;
+            -webkit-transition: padding-top  .15s ease-in-out, padding-bottom .15s ease-in-out;
+            transition: padding-top  .15s ease-in-out, padding-bottom .15s ease-in-out;
+        }
+
+        .padding-enlarge:hover {
+            padding-top: 15px;
+            padding-bottom: 15px;
+        }
         .centered {
             position: absolute;
             top: 160px;
@@ -60,7 +169,7 @@
             background-attachment: fixed;
             background-position: center;
             background-repeat: no-repeat;
-            background-size: cover;
+            background-size: cover; 
         }
     </style>
     <div style="margin-top: 55px;margin-bottom: 250px;background-color: white;box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.27);">
@@ -76,7 +185,7 @@
             </div>
             <div>
                 <div id="spaimage">
-                    <div id="banner" class="carousel slide" style="width: 70%;margin-left: auto; margin-right: auto; margin-top: 15px; margin-bottom: 15px;">
+                    <div id="banner" class="carousel slide" style="width: 85%;margin-left: auto; margin-right: auto; margin-top: 15px; margin-bottom: 15px;">
         
                         <!-- Indicators -->
                         <ul class="carousel-indicators">
@@ -108,92 +217,115 @@
                             <span class="carousel-control-next-icon"></span>
                         </a>
                     </div>
-                    <h1 class="text-center" style="color: #58320f; font-weight: bold">Service</h1>
-                    <div id="spaservice" class="text-center" style="margin:5rem;margin-top: 1rem">
-                        <div id="transection" class="card flex-row" style="flex: 100%">
-                            <div class="card" style="flex: 100%;">
-                                <div class="card-body p-0">
-                                    <img src="https://cf.lnwfile.com/_/cf/_raw/dj/js/mx.jpg" style="width:100%;height:270px;">
-                                    <h5 class="card-title pt-3">นวดหน้า</h5>
-                                    <p class="text-left pr-2 pl-2">การนวดหน้า เป็นการช่วยให้ระบบเลือดไหลเวียนได้ดี ทำให้ผิวดูสดใสเปล่งปลั่ง ดูอ่อนกว่าวัย นอกจากนี้การนวดหน้ายังมีหลากหลายแบบให้ได้เลือก ทั้งการนวดหน้าให้เรียว นวดกระตุ้นน้ำเหลือง นวดกดจุด นวดผ่อนคลาย
-                                    </p>
-                                </div>
+                    <h1 class="text-center" style="color: #58320f; font-weight: bold;font-size: 5rem;">Service</h1>
+                    <div id="spaservice">
+                        <section class="module parallax parallax-1">
+                            <div class="container text-center">
+                                <h1>นวดหน้า</h1>
                             </div>
-        
-                            <div class="card" style="flex: 100%">
-                                <div class="card-body p-0">
-                                    <img src="https://www.thairath.co.th/media/CiHZjUdJ5HPNXJ92GRi8dgy2RZKHf8bqNH.jpg"
-                                        style="width:100%;height:270px;">
-                                    <h5 class="card-title pt-3">อบซาวน่า</h5>
-                                    <p class="text-left pr-2 pl-2">ความร้อนจากซาวน่ากระตุ้นระบบโลหิตใต้ผิวหนัง ให้หมุนเวียนสูบฉีดว่องไว จัดสรรอาหารและออกซิเจนเข้าสู่เซลส์ผิวอย่างมากมาย ภาวะที่ต้องนั่งทำงานนิ่ง ๆ นาน ๆ ในออฟฟิศ โลหิตใต้ผิวจะหมุนเวียนเฉื่อยชาลง ส่งผลให้เกิดริ้วรอยเหี่ยวย่นถึงการสะสมของเซลลูไลต์
-                                    </p>
-                                </div>
+                        </section>
+                        <section class="module content">
+                            <div class="container padding-enlarge" >
+                                <h2 class="slideshow" style="color: #58320f">นวดหน้า</h2>
+                                <p class="slideshow">ช่วยให้ระบบเลือดไหลเวียนได้ดี 
+                                        ทำให้ผิวดูสดใสเปล่งปลั่ง ดูอ่อนกว่าวัย นอกจากนี้การนวดหน้ายังมีหลากหลายแบบให้ได้เลือก 
+                                        ทั้งการนวดหน้าให้เรียว นวดกระตุ้นน้ำเหลือง นวดกดจุด นวดผ่อนคลาย</p>
                             </div>
-        
-                            <div class="card" style="flex: 100%">
-                                <div class="card-body p-0">
-                                    <img src="https://travel.mthai.com/app/uploads/2018/09/YunomoriOnsen.jpg"
-                                        style="width:100%;height:270px;">
-                                    <h5 class="card-title pt-3">แช่ออนเซ็น</h5>
-                                    <p class="text-left pr-2 pl-2">การแช่ออนเซนนั้นมีประโยชน์มากมายนับไม่ถ้วน อาทิเช่น ทำให้ผิวพรรณเปล่งปลั่ง ระบบการหมุนเวียนของเลือดดีขึ้น การบรรเทาอาการปวดเมื่อยต่างๆ 
-                                    </p>
-                                </div>
+                        </section>
+                                  
+                        <section class="module parallax parallax-2">
+                            <div class="container text-center">
+                                <h1 id="animation">อบซาวน่า</h1>
                             </div>
-        
-                        </div>
-        
-        
-                        <div id="adver" class="card flex-row" style="flex: 100%;margin-top: 2rem;">
-        
-                            <div class="card" style="flex: 100%">
-        
-                                <div class="card-body p-0">
-                                    <img src="http://www.panaspagroup.com/wp-content/uploads/2015/10/Spa_picture_02.jpg"
-                                        style="width:100%;height:270px;">
-                                    <h5 class="card-title pt-3">นวดแผนไทย</h5>
-                                    <p class="text-left pr-2 pl-2">การนวดแผนไทยเป็นการผ่อนคลายกล้ามเนื้อ กล้ามเนื้อบริเวณที่ใช้งานหนักจะเกิดการเกร็งตัว และมีสารเคมีคั่งค้างอยู่ ทำให้เลือดมาหล่อเลี่ยงไม่สะดวก เกิดอาการปวดเมื่อยตามมา การนวดช่วยให้หายปวดเมื่อย เพราะไปคล้ายกล้ามเนื้อที่เกร็งให้ผ่อนคลายลง
-                                    </p>
-                                </div>
+                        </section>
+                        <section class="module content">
+                            <div class="container padding-enlarge">
+                                <h2 class="slideshow" style="color: #58320f">อบซาวน่า</h2>
+                                <p class="slideshow">ความร้อนจากซาวน่ากระตุ้นระบบโลหิตใต้ผิวหนัง 
+                                        ให้หมุนเวียนสูบฉีดว่องไว จัดสรรอาหารและออกซิเจนเข้าสู่เซลส์ผิวอย่างมากมาย 
+                                        ภาวะที่ต้องนั่งทำงานนิ่ง ๆ นาน ๆ ในออฟฟิศ โลหิตใต้ผิวจะหมุนเวียนเฉื่อยชาลง 
+                                        ส่งผลให้เกิดริ้วรอยเหี่ยวย่นถึงการสะสมของเซลลูไลต์</p>
                             </div>
-        
-                            <div class="card" style="flex: 100%">
-                                <div class="card-body p-0">
-                                    <img src="https://www.sakuraspathailand.com/wp-content/uploads/2015/12/Body-Massage-023.jpg"
-                                        style="width:100%;height:270px;">
-                                    <h5 class="card-title pt-3">นวดน้ำมัน</h5>
-                                    <p class="text-left pr-2 pl-2">การนวดน้ำมันเป็นวิธีที่ถือว่ามีประสิทธิภาพมาก เพราะเป็นการช่วยให้ผิวหนังดูดซึมคุณประโยชน์ของสารสกัดในน้ำมันได้เป็นอย่างดี เพียงเลือกให้เหมาะกับสภาพผิวพรรณ และอารมณ์ของผู้ใช้ แล้วใช้นิ้วมือนวดน้ำมันบนผิวเบาๆ เป็นวงกลม เท่านี้ก็จะทำให้น้ำมันซึมซาบเข้าบำรุงผิวบริเวณนั้นๆ ได้แล้ว
-                                    </p>
-                                </div>
+                        </section>
+
+                        <section class="module parallax parallax-3">
+                            <div class="container text-center">
+                                <h1>แช่ออนเซ็น</h1>
                             </div>
-        
-                            <div class="card" style="flex: 100%">
-                                <div class="card-body p-0">
-                                    <img src="http://www.ladyissue.com/wp-content/uploads/2018/05/SCSP2.jpg"
-                                        style="width:100%;height:270px;">
-                                    <h5 class="card-title pt-3">ขัดตัว</h5>
-                                    <p class="text-left pr-2 pl-2">การปฎิบัติบำรุงผิวด้วยการขัดผิวควบคู่กับการนวด เป็นการผ่อนคลายและพักผ่อนอย่างล้ำลึก ช่วยลดความกังวล  ความเครียด พร้อมทั้งบำรุงผิวพรรณที่ดีควบคู่กับการมีสุขภาพดีไปพร้อมๆกัน ผลิตภัณฑ์สครับที่เหมาะสมจึงเป็นสครัปที่มีส่วนผสมของน้ำมันหอมระเหย เช่น ลาเวนเดอร์
-                                    </p>
-                                </div>
+                        </section>
+                        <section class="module content">
+                            <div class="container padding-enlarge">
+                                <h2 class="slideshow" style="color: #58320f">แช่ออนเซ็น</h2>
+                                <p class="slideshow">การแช่ออนเซ็นนั้นมีประโยชน์มากมายนับไม่ถ้วน 
+                                        อาทิเช่น ทำให้ผิวพรรณเปล่งปลั่ง ระบบการหมุนเวียนของเลือดดีขึ้น 
+                                        การบรรเทาอาการปวดเมื่อยต่างๆ </p>
                             </div>
-                        </div>
-        
+                        </section>
+
+                        <section class="module parallax parallax-4">
+                            <div class="container text-center">
+                                <h1 id="animation">ขัดตัว</h1>
+                            </div>
+                        </section>
+                        <section class="module content">
+                            <div class="container padding-enlarge">
+                                <h2 class="slideshow" style="color: #58320f">ขัดตัว</h2>
+                                <p class="slideshow">การปฎิบัติบำรุงผิวด้วยการขัดผิวควบคู่กับการนวด 
+                                        เป็นการผ่อนคลายและพักผ่อนอย่างล้ำลึก ช่วยลดความกังวล  ความเครียด 
+                                        พร้อมทั้งบำรุงผิวพรรณที่ดีควบคู่กับการมีสุขภาพดีไปพร้อมๆกัน 
+                                        ผลิตภัณฑ์สครับที่เหมาะสมจึงเป็นสครัปที่มีส่วนผสมของน้ำมันหอมระเหย เช่น ลาเวนเดอร์</p>
+                            </div>
+                        </section>
+
+                        <section class="module parallax parallax-5">
+                            <div class="container text-center">
+                                <h1 id="animation">นวดน้ำมัน</h1>
+                            </div>
+                        </section>
+                        <section class="module content">
+                            <div class="container padding-enlarge">
+                                <h2 class="slideshow" style="color: #58320f">นวดน้ำมัน</h2>
+                                <p class="slideshow">การนวดน้ำมันเป็นวิธีที่ถือว่ามีประสิทธิภาพมาก 
+                                        เพราะเป็นการช่วยให้ผิวหนังดูดซึมคุณประโยชน์ของสารสกัดในน้ำมันได้เป็นอย่างดี 
+                                        เพียงเลือกให้เหมาะกับสภาพผิวพรรณ และอารมณ์ของผู้ใช้ แล้วใช้นิ้วมือนวดน้ำมันบนผิวเบาๆ 
+                                        เป็นวงกลม เท่านี้ก็จะทำให้น้ำมันซึมซาบเข้าบำรุงผิวบริเวณนั้นๆ ได้แล้ว</p>
+                            </div>
+                        </section>
+
+                        <section class="module parallax parallax-6">
+                            <div class="container text-center">
+                                <h1 id="animation">นวดแผนไทย</h1>
+                            </div>
+                        </section>
+                        <section class="module content">
+                            <div class="container padding-enlarge">
+                                <h2 class="slideshow" style="color: #58320f">นวดแผนไทย</h2>
+                                <p class="slideshow">การนวดแผนไทยเป็นการผ่อนคลายกล้ามเนื้อ 
+                                        กล้ามเนื้อบริเวณที่ใช้งานหนักจะเกิดการเกร็งตัว และมีสารเคมีคั่งค้างอยู่ 
+                                        ทำให้เลือดมาหล่อเลี่ยงไม่สะดวก เกิดอาการปวดเมื่อยตามมา การนวดช่วยให้หายปวดเมื่อย 
+                                        เพราะไปคล้ายกล้ามเนื้อที่เกร็งให้ผ่อนคลายลง</p>
+                            </div>
+                        </section>
                     </div>
                     <div id="detail">
                         <footer class="page-footer font-small teal pt-4 text-center" style="background-color: #e2d7b2">
                             <div class="col-12 text-center">
                                 <div class="row">
-                                    <div class="col-md-6 mt-md-0 mt-3" style="width: 100%; margin: 0">
-                                        <div class="row text-center">
-                                            <h5 class="text-uppercase font-weight-bold mr-3 ml-5 text-center">เวลาเปิด-ปิด</h5>
+                                    <div class="col-sm-6 mt-md-0 mt-3" style="width: 100%; margin: 0">
+                                        <div class="row">
+                                            <h5 class="text-uppercase font-weight-bold mr-3 ml-5">เวลาเปิด-ปิด:</h5>
                                             <p>07:00 AM - 10:00 PM</p>
                                         </div>
                                     </div>
-                                    <div class="col-md-6 mb-md-0 mb-3 row text-center" style="width: 100%; margin: 0">
-                                        <h5 class="text-uppercase font-weight-bold mr-3 ml-5">สถานที่</h5>
-                                        <p>ชั้น 5</p>
+                                    <div class="col-sm-6 mb-md-0 mb-3 row text-center" style="width: 100%; margin: 0">
+                                        <div class="row">
+                                            <h5 class="text-uppercase font-weight-bold mr-3 ml-5">สถานที่:</h5>
+                                            <p>ชั้น 5</p>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
+                        </footer>
                     </div>
                 </div>
             </div>
