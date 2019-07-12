@@ -21,4 +21,11 @@ class RoomViewTest(TestCase):
         response = self.client.get(reverse('roomdetail', kwargs={'room_id':3}))
 
         self.assertEqual(response.status_code, 200)
-        self.assertEqual(len(response.context['room']), 1)     
+        self.assertEqual(response.context['room'].id,(3))  
+
+    def test_view_room_GET_list_is_1item(self):
+        
+        response = self.client.get(reverse('roomdetail', kwargs={'room_id':3}))
+
+        self.assertEqual(response.status_code, 200)
+        self.assertEqual(len(response.context['option']),(11))
