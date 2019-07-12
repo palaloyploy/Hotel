@@ -1,0 +1,48 @@
+[
+    {
+        "model": "Hotelapp.room",
+        "pk": 1,
+        "fields": {
+            "name": "room1",
+            "des": "saddsf",
+            "people": 1,
+            "price": "2500",
+            "image1": "",
+            "image2": "",
+            "image3": "",
+            "image4": "",
+            "image5": ""
+        }
+    },
+    {
+        "model": "Hotelapp.room",
+        "pk": 2,
+        "fields": {
+            "name": "room2",
+            "des": "saddsf",
+            "people": 2,
+            "price": "2500",
+            "image1": "",
+            "image2": "",
+            "image3": "",
+            "image4": "",
+            "image5": ""
+        }
+    },
+    {
+        "model": "Hotelapp.room",
+        "pk": 3,
+        "fields": {
+            "name": "room2",
+            "des": "saddsf",
+            "people": 2,
+            "price": "2500",
+            "image1": "",
+            "image2": "",
+            "image3": "",
+            "image4": "",
+            "image5": ""
+        }
+    }
+
+]
