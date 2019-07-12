@@ -9,68 +9,245 @@
 
 {% endblock %}
 {% block content %}
-<div style="margin-top: 55px;margin-bottom: 250px;background-color: white;box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.27);">
-    <div id="banner">
-        <img src="https://assets.hyatt.com/content/dam/hyatt/hyattdam/images/2018/12/07/0900/Grand-Hyatt-Erawan-Bangkok-P425-Grand-Room.jpg/Grand-Hyatt-Erawan-Bangkok-P425-Grand-Room.jpg?imwidth=1920" alt="Snow" style="width:100%;height: 450px;">
-            <div class="centered">
-                    <p>ฟิตเนส</p>
+<script>
+        $('.img-parallax').each(function(){
+      var img = $(this);
+      var imgParent = $(this).parent();
+      function parallaxImg () {
+        var speed = img.data('speed');
+        var imgY = imgParent.offset().top;
+        var winY = $(this).scrollTop();
+        var winH = $(this).height();
+        var parentH = imgParent.innerHeight();
+    
+    
+        // The next pixel to show on screen      
+        var winBottom = winY + winH;
+    
+        // If block is shown on screen
+        if (winBottom > imgY && winY < imgY + parentH) {
+          // Number of pixels shown after block appear
+          var imgBottom = ((winBottom - imgY) * speed);
+          // Max number of pixels until block disappear
+          var imgTop = winH + parentH;
+          // Porcentage between start showing until disappearing
+          var imgPercent = ((imgBottom / imgTop) * 100) + (50 - (speed * 50));
+        }
+        img.css({
+          top: imgPercent + '%',
+          transform: 'translate(-50%, -' + imgPercent + '%)'
+        });
+      }
+      $(document).on({
+        scroll: function () {
+          parallaxImg();
+        }, ready: function () {
+          parallaxImg();
+        }
+      });
+    });
+    </script>
+    <body>
+        <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    
+    body {
+      color: #333;
+      font-size: 18px;
+    }
+    
+    .parallax {
+      height: 450px;
+      background-position: center;
+      background-size: cover;
+      background-repeat: no-repeat;
+      background-attachment: fixed;
+    }
+    
+    .parallax1 {
+      background-image: url('https://dou3uzl0r1qje.cloudfront.net/wp-content/uploads/sites/2/2018/06/fitness-girl.jpg');
+    }
+    
+    .parallax2 {
+      background-image: url('https://cdn.pixabay.com/photo/2018/04/05/17/21/kettlebell-3293475_960_720.jpg');
+    }
+    .parallax3 {
+      background-image: url('https://cdn.pixabay.com/photo/2018/04/05/17/22/kettlebell-3293481_960_720.jpg');
+    }
+    
+    .text {
+      /* background-color: black; */
+      background-image: url("https://img.heypik.com/background-image/20190122/psd-black-gorgeous-background-template-heypik-8GU4443.jpg?x-oss-process=image/quality,q_70/watermark,image_c2h1aXlpbl9uZXcucG5n,g_center");
+      width: 100%;
+      padding: 40px 20%;
+      color: azure;
+      z-index:5;
+    }
+    
+    @media only screen and (max-device-width: 1366px) {
+      .parallax {
+        background-attachment: scroll;
+      }
+    }
+        </style>
+    <div style="margin-top: 55px;margin-bottom: 250px;background-color: white;box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.27);">
+        <div id="banner">
+            <img src="https://www.estopolis.com/files/article/3x/59f89a7d15f020743e6847d2_5a02e98315f0204614042021.jpg"  alt="Snow" style="width:100%;height: 450px;">
+                <div class="centered">
+                    <div class="card" style="background-color: darkgrey;">
+                        <p style="color: white;font-size: 5rem;margin-left: 2rem;margin-right: 2rem;">ฟิตเนส</p>
+                    </div>
+                </div>
+        </div>
+                <div class="parallax parallax1"></div>
+        <div class="text" style="background-color: #7e5353; opacity: 0.9;
+        filter: alpha(opacity=90); z-index: 10;">
+          <p>
+                เราเป็นที่หนึ่งในเรื่องคลาส กว่า 4,000 คลาสต่อเดือน 
+                และคลาสพิเศษ​ในทุกๆ เดือน ที่สมาชิกของ วี ฟิตเนส 
+                สามารถเข้าร่วมกิจกรรมสนุกๆได้ตลอดทั้งเดือน พร้อมทั้ง 
+                คลาสออกกำลังกายลิขสิทธิ์ ที่เราคัดสรรจากแบรนด์ชั้นนำทั่วโลก
+          </p>
+        </div>
+        <div class="parallax parallax2"></div>
+        <div class="text">
+          <p>
+                โปรแกรมการออกกำลังกาย ที่จะช่วยให้คุณได้เริ่มต้นการสร้างสุขภาพที่ดี 
+                โดยเป็นการเข้าคลาสออกกำลังกายทั้งหมด 11 คลาส และออกกำลังกายโดยมีผู้ฝึกสอนออกกำลังกาย 3 คลาส
+                รวมทั้ง ยังสามารถออกกำลังกายด้วยตัวเองได้อีก 4 ครั้ง โดยใช้เวลาทั้งหมด 6 สัปดาห์
+          </p>
+        </div>
+        <div class="parallax parallax3"></div>
+        <div class="text">
+          <p>
+                โปรแกรมการออกกำลังกาย ที่จะช่วยให้คุณได้เริ่มต้นการสร้างสุขภาพที่ดี 
+                โดยเป็นการเข้าคลาสออกกำลังกายทั้งหมด 11 คลาส และออกกำลังกายโดยมีผู้ฝึกสอนออกกำลังกาย 3 คลาส
+                รวมทั้ง ยังสามารถออกกำลังกายด้วยตัวเองได้อีก 4 ครั้ง โดยใช้เวลาทั้งหมด 6 สัปดาห์
+          </p>
+        </div>
+        <!-- <div class="container-fluid" style="padding: 0" >
+            <div class="row justify-content-center align-items-center" style="border: slategrey">
+                <div class="col-sm-8" style="padding: 0">
+                    <div class="card " style="flex: 100%">   
+                        <img id="fitnessimage" src="https://dou3uzl0r1qje.cloudfront.net/wp-content/uploads/sites/2/2018/06/fitness-girl.jpg" alt="Snow" style="width:100%;height: auto;">
+                    </div>            
+                </div>
+                <div id="listadvantage" class="col-sm-4 mx-auto " style="width: 100%;height: 100%; padding: 0">
+                    <div class="card text-center" style="width:100%;height: auto; border: none">
+                        <div style="width:100%;height: auto;">
+                            <p  style="font-size: 2rem;"> WE HEALTHY LIFE SIX WEEKS PROGRAM </p>
+                            <h5 style="margin: 2rem;margin-top: 0%;">
+                                โปรแกรมการออกกำลังกาย ที่จะช่วยให้คุณได้เริ่มต้นการสร้างสุขภาพที่ดี 
+                                โดยเป็นการเข้าคลาสออกกำลังกายทั้งหมด 11 คลาส และออกกำลังกายโดยมีผู้ฝึกสอนออกกำลังกาย 3 คลาส
+                                รวมทั้ง ยังสามารถออกกำลังกายด้วยตัวเองได้อีก 4 ครั้ง โดยใช้เวลาทั้งหมด 6 สัปดาห์
+                            </h5>
+                        </div>   
+                    </div>
                 </div>
             </div>
+            <div class="row justify-content-center align-items-center" style="border: slategrey">
+                <div class="col-sm-8" style="padding: 0">
+                    <div class="card" style="flex: 100%">   
+                        <img id="fitnessimage" src="https://cdn.pixabay.com/photo/2018/04/05/17/21/kettlebell-3293475_960_720.jpg" alt="Snow" style="width:100%;height: auto;">
+                    </div>            
+                </div>
+                <div id="listadvantage" class="col-sm-4 mx-auto " style="width: 100%;height: 100%; padding: 0">
+                    <div class="card text-center" style="width:100%;height: auto; border: none">
+                        <div style="width:100%;height: auto;">
+                            <p  style="font-size: 2rem;"> SPECIAL SELECTED </p>
+                            <h5 style="margin: 2rem;margin-top: 0%;">
+                                สมัครสมาชิก WE FITNESS SOCIETY วันนี้ แบบ 12 เดือน 
+                                รับผลิตภัณฑ์จาก UnderArmour ทันที 
+                                เลือก UA UNDERNIABLE SACKPACK มูลค่า 1,190 บาท
+                                หรือ UA MEN’S BLANK CHINO CAP มูลค่า 790 บาท
+                            </h5>
+                        </div>   
+                    </div>
+                </div>
+            </div>
+            <div class="row justify-content-center align-items-center" style="border: slategrey">
+                <div class="col-sm-8" style="padding: 0">
+                    <div class="card" style="flex: 100%">   
+                        <img id="fitnessimage" src="https://cdn.pixabay.com/photo/2018/04/05/17/22/kettlebell-3293481_960_720.jpg" alt="Snow" style="width:100%;height: auto;">
+                    </div>            
+                </div>
+                <div id="listadvantage" class="col-sm-4 mx-auto " style="width: 100%;height: 100%; padding: 0">
+                    <div class="card text-center" style="width:100%;height: auto; border: none">
+                        <div style="width:100%;height: auto;">
+                            <p  style="font-size: 2rem;"> WE FITNESS CLASSES </p>
+                            <h5 style="margin: 2rem;margin-top: 0%;">
+                                เราเป็นที่หนึ่งในเรื่องคลาส กว่า 4,000 คลาสต่อเดือน 
+                                และคลาสพิเศษ​ในทุกๆ เดือน ที่สมาชิกของ วี ฟิตเนส 
+                                สามารถเข้าร่วมกิจกรรมสนุกๆได้ตลอดทั้งเดือน พร้อมทั้ง 
+                                คลาสออกกำลังกายลิขสิทธิ์ ที่เราคัดสรรจากแบรนด์ชั้นนำทั่วโลก
+                            </h5>
+                        </div>   
+                    </div>
+                </div>
+            </div>              -->
+            <div id="fitnessclass" style="padding:20px 20px 20px 50px; background-color: darkgrey; margin-top: 20px; margin-bottom: 20px">
+                <h1>Class เรียน</h1>
+            </div>
+            <div class="row">
+                <div class="col-sm">
+                    <div id="listfitnessclass" class="text-center" style="margin:5rem;margin-top: 1rem; margin-bottom: 2rem">
+                        <div class="card" style="flex: 100%;">
+                            <div class="card-body p-0">
+                                <img src="http://www.nekofitness.com/wp-content/uploads/2019/06/ab1-300x222.jpg"
+                                    style="width:100%;height:270px;">
+                                <h5 class="card-title pt-3">AERO BOXING</h5>
+                                <p class="text-left pr-2 pl-2">Aero Boxing คือ การออกกำลังกาย แอโรบ็อกซิ่ง โดยใช้ทักษะการป้องกันตัวต่างๆ มาประยุกต์ใช้ซึ่งเป็น การบริหารหัวใจ เสริมสร้างกล้ามเนื้อ และเผาผลาญไขมัน โดยนำเพลงประกอบจังหวะการเต้น สามารถเผาผลาญแคลอรีได้ถึง 500-700 แคลอรี
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm">
+                    <div id="listfitnessclass" class="text-center" style="margin:5rem;margin-top: 1rem; margin-bottom: 2rem">
+                        <div class="card" style="flex: 100%">
+                            <div class="card-body p-0">
+                                <img src="http://www.nekofitness.com/wp-content/uploads/2019/06/pilates-300x206.jpg"
+                                    style="width:100%;height:270px;">
+                                <h5 class="card-title pt-3">PILATES</h5>
+                                <p class="text-left pr-2 pl-2">พิลาทิส (Pilates) คือการออกกำลังกายที่เน้นการสร้างความแข็งแรงให้กับร่างกาย โดยเน้นความแข็งแรงของแกนกลางของลำตัว (บริเวณหน้าท้อง) สร้างความแข็งแรงให้กระดูกสันหลัง เพิ่มความแข็งแรงทั่วร่างกาย
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm">
+                    <div id="listfitnessclass" class="text-center" style="margin:5rem;margin-top: 1rem; margin-bottom: 2rem">
+                        <div class="card" style="flex: 100%">
+                            <div class="card-body p-0">
+                                <img src="http://www.nekofitness.com/wp-content/uploads/2019/06/ZUMBA.jpg"
+                                    style="width:100%;height:270px;">
+                                <h5 class="card-title pt-3">ZUMBA</h5>
+                                <p class="text-left pr-2 pl-2">การออกกำลังกายด้วยเสียงเพลง จังหวะสนุกๆ Zumba ซุมบ้าเป็นการเต้นแอโรบิคชนิดหนึ่งที่ใช้จังหวะการเต้นเป็นจังหวะเพลง Latin ทำให้ผู้เต้นรู้สึกสนุก เต้นซุมบ้ายังช่วยเบิร์นไขมันได้ดี และกระชับได้ทุกสัดส่วน สามารถเผาผลาญแคลอรีได้ถึง 500-700 แคลอรี 
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-6 text-center" style="padding: 0">
+                    <div style="flex: 100%">
+                        <h4 id="time">เวลาเปิด-ปิด</h4>
+                        <h5>9.00 น. - 10.00 น.</h5>
+                    </div>
+                </div>
+                <div class="col-6 text-center" style="padding: 0">
+                    <div style="flex: 100%">
+                        <h4 id="location">สถานที่</h4>
+                        <h5 style="margin-bottom: 2rem;">ชั้น 20</h5>
+                    </div>
+                </div>
+            </div>
+        </div>  
     </div>
-    <div id="listadvantage">
-        <div>
-            <p>อุปกรณ์ทันสมัย</p>
-            <h5>xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx</h5>
-            <div id="fitnessimage" >
-                <img style="width: 50%" src="https://assets.hyatt.com/content/dam/hyatt/hyattdam/images/2018/12/07/0900/Grand-Hyatt-Erawan-Bangkok-P425-Grand-Room.jpg/Grand-Hyatt-Erawan-Bangkok-P425-Grand-Room.jpg?imwidth=1920" alt="Snow" style="width:100%;height: 450px;">
-            </div>
-        </div>
-        <div>
-            <p>บรรยากาศดี</p>
-            <h5>xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx</h5>
-            <div id="fitnessimage" >
-                <img style="width: 50%" src="https://assets.hyatt.com/content/dam/hyatt/hyattdam/images/2018/12/07/0900/Grand-Hyatt-Erawan-Bangkok-P425-Grand-Room.jpg/Grand-Hyatt-Erawan-Bangkok-P425-Grand-Room.jpg?imwidth=1920" alt="Snow" style="width:100%;height: 450px;">
-            </div>
-        </div>
-        <div>
-            <p>แอร์เย็น</p>
-            <h5>xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx</h5>
-            <div id="fitnessimage" >
-                <img style="width: 50%" src="https://assets.hyatt.com/content/dam/hyatt/hyattdam/images/2018/12/07/0900/Grand-Hyatt-Erawan-Bangkok-P425-Grand-Room.jpg/Grand-Hyatt-Erawan-Bangkok-P425-Grand-Room.jpg?imwidth=1920" alt="Snow" style="width:100%;height: 450px;">
-            </div>
-        </div>
-    </div>
-    <div id="fitnessclass">
-        <p>Class เรียน</p>
-    </div>
-    <div id="listfitnessclass">
-        <div class="card" style="width: 18rem;">
-            <img class="card-img-top" src="..." alt="Card image cap">
-            <div class="card-body">
-                <h5 class="card-title">คาร์ดิโอ</h5>
-                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-            </div>
-        </div>
-        <div class="card" style="width: 18rem;">
-            <img class="card-img-top" src="..." alt="Card image cap">
-            <div class="card-body">
-                <h5 class="card-title">เต้น</h5>
-                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-            </div>
-        </div>
-        <div class="card" style="width: 18rem;">
-            <img class="card-img-top" src="..." alt="Card image cap">
-            <div class="card-body">
-                <h5 class="card-title">มายด์&บอดี้</h5>
-                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-            </div>
-        </div>
-    </div>
-    <div>
-        <h1 id="time">เวลาเปิด-ปิด</h1>
-        <h5>9.00 น. - 10.00 น.</h5>
-        <h1 id="location">สถานที่</h1>
-        <h5>ชั้น 20</h5>
-    </div>   
-</div>
+</body>
     {% endblock %}

@@ -27,6 +27,9 @@ urlpatterns = [
     path('fitness/',views.fitness, name = 'fitness'),
     path('spa/',views.spa, name = 'spa'),
     path('waterpark/',views.waterpark, name = 'waterpark'),
+    path('boat/',views.boat, name = 'boat'),
+    path('meeting/',views.meeting, name = 'meeting'),
+    path('karaoke/',views.karaoke, name = 'karaoke'),
     path('admin/', admin.site.urls),
 ]
 urlpatterns += static(settings.STATIC_URL,document_root=settings.STATIC_ROOT)
