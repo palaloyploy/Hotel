@@ -10,7 +10,7 @@ class SpaViewTest(TestCase):
         print("setUp: Run once for every test method to setup clean data.")
         pass
 
-    def test_view_room_GET_status_is_200(self):
+    def test_view_spa_GET_status_is_200(self):
         
         response = self.client.get(reverse('spa'))
         self.assertEqual(response.status_code, 200)
