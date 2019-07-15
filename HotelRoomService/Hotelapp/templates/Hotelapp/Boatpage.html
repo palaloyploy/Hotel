@@ -1,0 +1,74 @@
+{% extends "base.html" %}
+{% load staticfiles %}
+{% block metadescription %}
+
+{% endblock %}
+{% block title %}
+
+เช่าเรือ
+
+{% endblock %}
+{% block content %}
+<div style="margin-top: 55px;margin-bottom: 250px;background-color: white;box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.27);">
+    <div id="bannerboat"  style="width: 100%;">
+        <img src="http://www.zeasailingphuket.com/wp-content/uploads/2016/08/featured-slide-01.jpg" alt="Snow" style="width:100%;height: 450px;">
+        <div class="centered">
+            <div class="card" style="background-color: darkgrey;opacity: 0.9">
+                <p style="color: white;font-size: 5rem;margin-left: 2rem;margin-right: 2rem;">เช่าเหมาเรือ</p>
+            </div>
+        </div>
+    </div>
+    <div id="listboat">
+        {% for boat in boat %}
+        {% if boat.id == 1 %}
+        <div class="d-flex flex-row text-center" style="width: 100%;">
+            <div class="card" style="flex: 50%">
+                <div class="d-flex flex-column" style="height: 100%">
+                    <p id="boatname"  style="font-size: 2rem;flex: 200%;margin-top: 2rem">{{boat.name}}{{boat.id}}</p>
+                    <h5 id="boatdescription" style="margin: 2rem;margin-top: 0%;flex: 200%">{{boat.des}}</h5>                                                                                   
+                    <a style="box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.27);flex: 20%;margin: 3rem" class="btn btn-dark"  type="button" id="bookingnow{{boat.id}}">จองเลย</a>
+                </div>
+            </div>
+            <div class="card" style="flex: 100%">
+                <div id="boatimage">    
+                    <div >
+                        <img style="width: 100%;height: 350px;"  src="{{boat.image1.url}}" style="width:100%;height: 450px;">
+                    </div>
+                    <div class="d-flex flex-row">
+                        <img style="width: 50%" src="{{boat.image2.url}}" style="width:100%;height: 450px;">
+                        <img style="width: 50%"  src="{{boat.image3.url}}" style="width:100%;height: 450px;">
+                    </div>
+                </div>
+            </div>
+        </div>
+        {% endif %}  
+
+        {% if boat.id == 2 %}
+        <div class="d-flex flex-row text-center" style="width: 100%;">
+            <div class="card" style="flex: 100%">
+                <div id="imageboat">    
+                    <div >
+                        <img style="width: 100%;height:350px;"  src="{{boat.image1.url}}" alt="Snow" style="width:100%;height: 450px;">
+                    </div>
+                    <div class="d-flex flex-row">
+                        <img style="width: 50%" src="{{boat.image2.url}}" alt="Snow" style="width:100%;height: 450px;">
+                        <img style="width: 50%"  src="{{boat.image3.url}}" alt="Snow" style="width:100%;height: 450px;">
+                    </div>
+                </div>
+            </div>
+        <div class="card" style="flex: 50%">
+            <div class="d-flex flex-column" style="height: 100%">
+                <p  style="font-size: 2rem;flex: 200%;margin-top: 2rem">{{boat.name}}</p>
+                <h5 style="margin: 2rem;margin-top: 0%;flex: 200%">{{boat.des}}</h5>
+                <a style="box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.27);flex: 20%;margin: 3rem" class="btn btn-dark"  type="button" id="bookingnow{{boat.id}}">จองเลย</a>
+            </div>
+           
+        </div>
+    </div>
+{% endif %}
+{% endfor %}
+        <div id="bookingnow"></div>
+    </div>
+</div>
+
+{% endblock %}
