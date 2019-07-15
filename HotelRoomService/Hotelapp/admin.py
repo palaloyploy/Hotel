@@ -1,5 +1,5 @@
 from django.contrib import admin
-from Hotelapp.model.models import Room , Option , RoomOption
+from Hotelapp.model.models import Room,Option,RoomOption,Karaoke
 
 # Register your models here.
 class RoomAdmin(admin.ModelAdmin):
@@ -24,5 +24,12 @@ class RoomOptionAdmin(admin.ModelAdmin):
 
 
 admin.site.register(RoomOption, RoomOptionAdmin)
+
+class KaraokeAdmin(admin.ModelAdmin):
+    list_display = ['id', 'name', 'des','price','image1','image2','image3','image4','image5']
+    list_editable = ['name', 'des','price','image1','image2','image3','image4','image5']
+
+
+admin.site.register(Karaoke, KaraokeAdmin)
 
 

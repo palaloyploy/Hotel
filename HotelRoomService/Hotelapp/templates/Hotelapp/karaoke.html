@@ -1,0 +1,94 @@
+{% extends "base.html" %}
+{% load staticfiles %}
+{% block metadescription %}
+
+{% endblock %}
+{% block title %}
+
+ห้องคาราโอเกะ
+
+{% endblock %}
+{% block content %}
+<div style="margin-top: 55px;margin-bottom: 250px;background-color: white;box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.27);">
+    <div id="banner"  style="width: 100%;">
+        <img src="https://assets.hyatt.com/content/dam/hyatt/hyattdam/images/2018/12/07/0900/Grand-Hyatt-Erawan-Bangkok-P425-Grand-Room.jpg/Grand-Hyatt-Erawan-Bangkok-P425-Grand-Room.jpg?imwidth=1920" alt="Snow" style="width:100%;height: 450px;">
+        <div class="centered">
+            <div class="card" style="background-color: darkgrey;opacity: 0.9">
+                <p style="color: white;font-size: 5rem;margin-left: 2rem;margin-right: 2rem;">บริการห้องคาราโอเกะ</p>
+            </div>
+        </div>
+    </div>
+    <div id="listkaraokeroom">
+            {% for karaoke in karaoke %}
+        {% if karaoke.id == 1 %}
+        <div class="d-flex flex-row text-center" style="width: 100%;">
+            <div class="card" style="flex: 50%">
+                <div class="d-flex flex-column" style="height: 100%">
+                    <p id="karaokeroomname"  style="font-size: 2rem;flex: 200%;margin-top: 2rem">{{karaoke.name}}</p>
+                    <h5 id="karaokedescription" style="margin: 2rem;margin-top: 0%;flex: 200%">{{karaoke.des}}</h5>                                                                                   
+                    <a style="box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.27);flex: 20%;margin: 3rem" class="btn btn-dark"  type="button" id="bookingnow1">จองเลย</a>
+                </div>
+            </div>
+            <div class="card" style="flex: 100%">
+                <div id="karaokeimage">    
+                    <div >
+                        <img style="width: 100%;height: 350px;"  src="{{karaoke.image1.url}}" alt="Snow" style="width:100%;height: 450px;">
+                    </div>
+                    <div class="d-flex flex-row">
+                        <img style="width: 50%" src="{{karaoke.image2.url}}" alt="Snow" style="width:100%;height: 450px;">
+                        <img style="width: 50%"  src="{{karaoke.image3.url}}" alt="Snow" style="width:100%;height: 450px;">
+                    </div>
+                </div>
+            </div>
+        </div>
+        {% endif %}
+        {% if karaoke.id == 2 %}
+        <div class="d-flex flex-row text-center" style="width: 100%;">
+            <div class="card" style="flex: 100%">
+                <div>    
+                    <div >
+                        <img style="width: 100%;height:350px;"  src="{{karaoke.image1.url}}" alt="Snow" style="width:100%;height: 450px;">
+                    </div>
+                    <div class="d-flex flex-row">
+                        <img style="width: 50%" src="{{karaoke.image2.url}}" alt="Snow" style="width:100%;height: 450px;">
+                        <img style="width: 50%"  src="{{karaoke.image3.url}}" alt="Snow" style="width:100%;height: 450px;">
+                    </div>
+                </div>
+            </div>
+            <div class="card" style="flex: 50%">
+                <div class="d-flex flex-column" style="height: 100%">
+                    <p  style="font-size: 2rem;flex: 200%;margin-top: 2rem">{{karaoke.name}}</p>
+                    <h5 style="margin: 2rem;margin-top: 0%;flex: 200%">{{karaoke.des}}</h5>
+                    <a style="box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.27);flex: 20%;margin: 3rem" class="btn btn-dark"  type="button" id="bookingnow1">จองเลย</a>
+                </div>
+            </div>
+        </div>
+{% endif %}
+
+{% if karaoke.id == 3 %}
+        <div class="d-flex flex-row text-center" style="width: 100%;">
+            <div class="card" style="flex: 50%">
+                <div class="d-flex flex-column" style="height: 100%">
+                    <p  style="font-size: 2rem;flex: 200%;margin-top: 2rem">{{karaoke.name}}{{karaoke.id}}</p>
+                    <h5 style="margin: 2rem;margin-top: 0%;flex: 200%">{{karaoke.des}}</h5>
+                    <a style="box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.27);flex: 20%;margin: 3rem" class="btn btn-dark"  type="button" id="bookingnow1">จองเลย</a>
+                </div>
+            </div>
+            <div class="card" style="flex: 100%">
+                <div>    
+                    <div >
+                        <img style="width: 100%;height: 350px;"  src="{{karaoke.image1.url}}" alt="Snow" style="width:100%;height: 450px;">
+                    </div>
+                    <div class="d-flex flex-row">
+                        <img style="width: 50%" src="{{karaoke.image2.url}}" alt="Snow" style="width:100%;height: 450px;">
+                        <img style="width: 50%"  src="{{karaoke.image3.url}}" alt="Snow" style="width:100%;height: 450px;">
+                    </div>
+                </div>
+            </div>
+        </div>
+{% endif %}
+
+        {% endfor %} 
+    </div>
+</div>
+{% endblock %}
