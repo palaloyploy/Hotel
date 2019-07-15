@@ -116,21 +116,21 @@
             return true
         }
     }
-    // function checkemail(email){
-    //     document.getElementById("alertemail").innerHTML = ""
-    //     var str = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
-    //     if(email=== undefined || email === ''){
-    //         document.getElementById("alertemail").innerHTML = "กรุณากรอกอีเมล"
-    //         return false
-    //     }
-    //     else if(!str.test(String(email).toLowerCase())){
-    //         document.getElementById("alertemail").innerHTML = "กรุณากรอกอีเมลให้ถูกต้อง"
-    //         return false
-    //     }
-    //     else{
-    //         return true
-    //     }
-    // }
+    function checkemail(email){
+        document.getElementById("alertemail").innerHTML = ""
+        var str = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+        if(email=== undefined || email === ''){
+            document.getElementById("alertemail").innerHTML = "กรุณากรอกอีเมล"
+            return false
+        }
+        else if(!str.test(String(email).toLowerCase())){
+            document.getElementById("alertemail").innerHTML = "กรุณากรอกอีเมลให้ถูกต้อง"
+            return false
+        }
+        else{
+            return true
+        }
+    }
     function checkphonenumber(phonenumber){
         document.getElementById("alertphonenumber").innerHTML = ""
         var phoneno = /^\d{10}$/;
