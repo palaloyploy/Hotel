@@ -25,6 +25,7 @@ from Hotelapp.views.fitness import FitnessViews
 from Hotelapp.views.spa import SpaViews
 from Hotelapp.views.waterpark import WaterparkView
 from Hotelapp.views.roomdetail import RoomdetailView
+
 from Hotelapp.views.meetroom import MeetroomView
 
 urlpatterns = [
