@@ -25,6 +25,7 @@ from Hotelapp.views.fitness import FitnessViews
 from Hotelapp.views.spa import SpaViews
 from Hotelapp.views.waterpark import WaterparkView
 from Hotelapp.views.roomdetail import RoomdetailView
+from Hotelapp.views.karaoke import KaraokeView
 
 urlpatterns = [
     path('', IndexView, name='home'),
@@ -34,6 +35,7 @@ urlpatterns = [
     path('spa/',SpaViews, name = 'spa'),
     path('waterpark/',WaterparkView, name = 'waterpark'),
     path('admin/', admin.site.urls),
+    path('karaoke/',KaraokeView, name = 'karaoke'),
 ]
 urlpatterns += static(settings.STATIC_URL,document_root=settings.STATIC_ROOT)
 urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
