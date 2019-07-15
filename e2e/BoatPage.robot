@@ -44,19 +44,29 @@ Test2 ทดสอบการเข้าหน้ารายละเอี�
     Wait Until Element Contains         id:optionboat       สิ่งอำนวยความสะดวก         #พบข้อความ สิ่งอำนวยความสะดวก
     Wait Until Page Contains Element    id:optionboat                 #พบสิ่งอำนวยความสะดวก
     Wait Until Element Contains         id:detail      กรอกรายละเอียด        #พบข้อความ ข้อมูลติดต่อ
-    # Wait Until Element Contains         id:detail      ชื่อ-นามสกุล       #พบข้อความ ชื่อ-นามสกุล
-    # Wait Until Page Contains Element    id:name                         #พบอินพุต ชื่อ-นามสกุล
-    # Wait Until Element Contains         id:detail      อีเมล             #พบข้อความ อีเมล
-    # Wait Until Page Contains Element    id:email                        #พบอินพุต อีเมล
-    # Wait Until Element Contains         id:detail      เบอร์โทรติดต่อ      #พบข้อความ เบอร์โทรติดต่อ
-    # Wait Until Page Contains Element    id:phonenumber                  #พบอินพุต เบอร์โทรติดต่อ
-    # Wait Until Element Contains         id:detail      วันที่เช่า         #พบข้อความ วันที่เช่า
-    # Wait Until Page Contains Element    id:checkin                      #พบปฏิทิน วันที่เช่า
-    # Wait Until Element Contains         id:detail      เวลา         #พบข้อความ เวลา
-    # Wait Until Page Contains Element    id:time                   #พบดรอปดาวเวลา
-    # Wait Until Element Contains         id:detail      จำนวนคน          #พบข้อความ จำนวนคน
-    # Wait Until Page Contains Element    id:amountpeople                 #พบดรอปดาวจำนวนคน
-    # Wait Until Element Contains         id:booking     จอง                #พบปุ่มจอง
+    Wait Until Element Contains         id:detail      ชื่อ-นามสกุล       #พบข้อความ ชื่อ-นามสกุล
+    Wait Until Page Contains Element    id:name                         #พบอินพุต ชื่อ-นามสกุล
+    Wait Until Element Contains         id:detail      อีเมล             #พบข้อความ อีเมล
+    Wait Until Page Contains Element    id:email                        #พบอินพุต อีเมล
+    Wait Until Element Contains         id:detail      เบอร์โทรติดต่อ      #พบข้อความ เบอร์โทรติดต่อ
+    Wait Until Page Contains Element    id:phonenumber                  #พบอินพุต เบอร์โทรติดต่อ
+    Wait Until Element Contains         id:detail      วันที่เช่า         #พบข้อความ วันที่เช่า
+    Wait Until Page Contains Element    id:checkin                      #พบปฏิทิน วันที่เช่า
+    Wait Until Element Contains         id:detail      เวลา         #พบข้อความ เวลา
+    Wait Until Page Contains Element    id:time                   #พบดรอปดาวเวลา
+    Wait Until Element Contains         id:detail      จำนวนคน          #พบข้อความ จำนวนคน
+    Wait Until Page Contains Element    id:amountpeople                 #พบดรอปดาวจำนวนคน
+    Wait Until Element Contains         id:booking     จอง                #พบปุ่มจอง
+
+TesT3 ทดสอบการกดปุ่มนำทาง รายละเอียด
+    # TestStep
+    เลือกเมนูเช่าเรือ
+    Wait Until Page Contains Element    id:bookingnow1
+    Click Element                       id:bookingnow1  #เลือกห้อง
+    Wait Until Page Contains Element    id:des_button
+    Click Element                       id:des_button   #กดปุ่มนำทางจอง
+    ${url}=   Get Location
+    Should Be Equal     ${url}      http://127.0.0.1:8000/1/boatdetail/#boatname
 
 
 *** Keywords ***
