@@ -5,11 +5,11 @@ class Karaoke(models.Model):
     name = models.CharField(max_length=250)
     des = models.CharField(max_length=1000)
     price = models.CharField(max_length=250)
-    image1 = models.ImageField(upload_to='karaokeimage', blank=True, null=True)
-    image2 = models.ImageField(upload_to='karaokeimage', blank=True, null=True)
-    image3 = models.ImageField(upload_to='karaokeimage', blank=True, null=True)
-    image4 = models.ImageField(upload_to='karaokeimage', blank=True, null=True)
-    image5 = models.ImageField(upload_to='karaokeimage', blank=True, null=True)
+    image1 = models.ImageField(upload_to='imagekaraoke', blank=True, null=True)
+    image2 = models.ImageField(upload_to='imagekaraoke', blank=True, null=True)
+    image3 = models.ImageField(upload_to='imagekaraoke', blank=True, null=True)
+    image4 = models.ImageField(upload_to='imagekaraoke', blank=True, null=True)
+    image5 = models.ImageField(upload_to='imagekaraoke', blank=True, null=True)
 
 
     class Meta:
@@ -19,4 +19,3 @@ class Karaoke(models.Model):
 
     def __str__(self):
         return '{}'.format(self.name)
-
