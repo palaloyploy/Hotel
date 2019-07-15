@@ -31,11 +31,13 @@ urlpatterns = [
     path('', IndexView, name='home'),
     path('room/',RoomView, name = 'room'),
     path('<room_id>/detail/',RoomdetailView, name = 'roomdetail'),
-    path('meetroom/',MeetroomView, name = 'meetroom'),
+
     path('fitness/',FitnessViews, name = 'fitness'),
     path('spa/',SpaViews, name = 'spa'),
     path('waterpark/',WaterparkView, name = 'waterpark'),
     path('admin/', admin.site.urls),
+
+    path('meetroom/',MeetroomView, name = 'meetroom'),
 ]
 urlpatterns += static(settings.STATIC_URL,document_root=settings.STATIC_ROOT)
 urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
