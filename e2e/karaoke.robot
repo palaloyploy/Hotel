@@ -38,7 +38,7 @@ Test2 ทดสอบการเข้าหน้ารายละเอี�
     Click Element                        id:bookingnow1
     # ExpectResult
     Title Should Be             DetailKaraoke
-    Wait Until Page Contains Element    id:karaokeroomname                     #พบชื่อห้อง
+    Wait Until Page Contains Element    id:karaokeroomname                     #พบชื่อห้องคาราโอเกะ
     Wait Until Page Contains Element    id:navbutton                    #พบปุ่มนำทาง
     Wait Until Page Contains Element    id:karaokeimage                    #พบรูปห้องพัก
     Wait Until Element Contains         id:karaokedescription    รายละเอียด                #พบข้อความ รายละเอียด
@@ -55,7 +55,7 @@ Test2 ทดสอบการเข้าหน้ารายละเอี�
     Wait Until Element Contains         id:detail      เบอร์โทรติดต่อ      #พบข้อความ เบอร์โทรติดต่อ
     Wait Until Page Contains Element    id:phonenumber                  #พบอินพุต เบอร์โทรติดต่อ
     Wait Until Element Contains         id:detail      หมายเหตุ         #พบข้อความ หมายเหตุ
-    Wait Until Page Contains Element    id:remark                  #พบอินพุต หมายเหตุ
+    Wait Until Page Contains Element    id:remark                       #พบอินพุต หมายเหตุ
     Wait Until Element Contains         id:booking     จอง                #พบปุ่มจอง
 
 # TesT3 ทดสอบการกดปุ่มนำทาง รายละเอียด
