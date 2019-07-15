@@ -60,8 +60,14 @@
     });
     
     $('#booking').click(function(){
-        
+        checkname(name)
     });
+    function checkname(name){
+        document.getElementById("alertname").innerHTML = ""
+        if(name === undefined || name === ''){
+            document.getElementById("alertname").innerHTML = "กรุณากรอกชื่อ-นามสกุล"
+        }
+    }
     });
     $(document).ready(function () {
         // Activate Carousel with a specified interval
