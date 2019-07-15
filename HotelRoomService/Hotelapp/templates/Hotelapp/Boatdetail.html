@@ -61,6 +61,7 @@
     $('#booking').click(function(){
         checkname($('name').val())
         checkemail($('email').val())
+        checkphonenumber($('phonenumber').val())
     });
     function checkname(name){
         document.getElementById("alertname").innerHTML = ""
@@ -72,6 +73,12 @@
         document.getElementById("alertemail").innerHTML = ""
         if(email=== undefined || email === ''){
             document.getElementById("alertemail").innerHTML = "กรุณากรอกอีเมล"
+        }
+    }
+    function checkphonenumber(phonenumber){
+        document.getElementById("alertphonenumber").innerHTML = ""
+        if(phonenumber=== undefined || phonenumber === ''){
+            document.getElementById("alertphonenumber").innerHTML = "กรุณากรอกเบอร์โทรติดต่อ"
         }
     }
     });
