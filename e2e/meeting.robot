@@ -1,7 +1,7 @@
 *** Settings ***
 Library          Selenium2Library
-Library          OperatingSystem
-Suite Setup      SetUpdb
+# Library        OperatingSystem
+# Suite Setup    SetUpdb
 Test Setup       เปิดหน้าหลัก
 Test Teardown    Close All Browsers
 Resource         ${EXECDIR}/e2e/Keywords.robot

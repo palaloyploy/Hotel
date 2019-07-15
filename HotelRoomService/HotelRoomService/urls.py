@@ -25,11 +25,13 @@ from Hotelapp.views.fitness import FitnessViews
 from Hotelapp.views.spa import SpaViews
 from Hotelapp.views.waterpark import WaterparkView
 from Hotelapp.views.roomdetail import RoomdetailView
+from Hotelapp.views.meetroom import MeetroomView
 
 urlpatterns = [
     path('', IndexView, name='home'),
     path('room/',RoomView, name = 'room'),
     path('<room_id>/detail/',RoomdetailView, name = 'roomdetail'),
+    path('meetroom/',MeetroomView, name = 'meetroom'),
     path('fitness/',FitnessViews, name = 'fitness'),
     path('spa/',SpaViews, name = 'spa'),
     path('waterpark/',WaterparkView, name = 'waterpark'),
