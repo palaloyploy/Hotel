@@ -27,6 +27,7 @@ from Hotelapp.views.waterpark import WaterparkView
 from Hotelapp.views.roomdetail import RoomdetailView
 from Hotelapp.views.karaoke import KaraokeView
 from Hotelapp.views.boat import BoatView
+from Hotelapp.views.boatdetail import BoatdetailView
 
 urlpatterns = [
     path('', IndexView, name='home'),
@@ -36,6 +37,7 @@ urlpatterns = [
     path('spa/',SpaViews, name = 'spa'),
     path('waterpark/',WaterparkView, name = 'waterpark'),
     path('boat/',BoatView, name = 'boat'),
+    path('<boat_id>/boatdetail/',BoatdetailView, name = 'boatdetail'),
     path('admin/', admin.site.urls),
     path('karaoke/',KaraokeView, name = 'karaoke'),
 ]

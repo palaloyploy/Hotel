@@ -1,0 +1,75 @@
+{% extends "base.html" %}
+{% load staticfiles %}
+{% block metadescription %}
+
+{% endblock %}
+{% block title %}
+
+DetailBoat
+
+{% endblock %}
+{% block content %}
+
+<div id="boatname"></div>
+<div id="navbutton"></div>
+<div id="boatimage"></div>
+<div id="boatdescription">
+    รายละเอียด
+</div>
+<div id="optionboat">
+    สิ่งอำนวยความสะดวก
+</div>
+<div id="detail">
+    กรอกรายละเอียด
+    <form style="padding-left: 10%">
+        <div class="form-group">
+            <label>ชื่อ-นามสกุล</label>
+            <input class="form-control" id="name" placeholder="ชื่อ-นามสกุล" style="width:40%">
+            <!-- <p id="alertname" style="color: red"></p> -->
+        </div>
+        <div class="form-group">
+            <label>อีเมล</label>
+            <input class="form-control" id="email" placeholder="อีเมล" style="width:40%">
+            <p id="alertemail" style="color: red"></p>
+        </div>
+        <div class="form-group">
+            <label>เบอร์โทรติดต่อ</label>
+            <input class="form-control" id="phonenumber" placeholder="เบอร์โทรติดต่อ" style="width:40%">
+            <p id="alertphonenumber" style="color: red"></p>
+        </div>
+        <div class="row" style="margin-bottom: 20px">
+            <div class="col-md-5 mt-md-0 mt-3">
+                <div id="checkin">
+                    <label>check-in</label>
+                    <div class="input-group date">
+                        <input id="datepickercheckin" data-date-format="dd-mm-yyyy"  class="form-control form-control clickable input-md" type="text"/>
+                        <span class="input-group-addon"><i class="glyphicon glyphicon-calendar"></i></span>
+                    </div>
+                    <p id="alertcheckin" style="color: red"></p>
+                </div>
+            </div>
+            <div class="col-md-5 mt-md-0 mt-3">
+                <div id="checkout">
+                    <label>check-out</label>
+                    <div class="input-group date" >
+                        <input id="datepickercheckout" data-date-format="dd-mm-yyyy" class="form-control form-control clickable input-md" type="text" />
+                        <span class="input-group-addon"><i class="glyphicon glyphicon-calendar"></i></span>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row" style="margin-bottom: 20px">
+            <div class="col-md-5 mt-md-0 mt-3">
+                <label>จำนวนห้อง</label>
+                <div id="room"></div>
+            </div>
+            <div class="col-md-5 mt-md-0 mt-3">
+                <label>จำนวนคน</label>
+                <div id="people"></div>
+            </div>
+        </div>
+        <button type="button" id="booking" class="btn btn-info" style="float:right; margin-right: 50px">จอง</button>
+    </form>
+</div>
+
+{% endblock %}
