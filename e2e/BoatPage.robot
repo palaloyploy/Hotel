@@ -153,6 +153,26 @@ Test8 ทดสอบการจองไม่สำเร็จเมื่�
     Click Element                       id:booking
     Wait Until Element Contains         id:alertcheckin      กรุณาเลือกวันที่เช่า          #พบข้อความ กรุณาเลือกวันที่เช่า
 
+Test9 ทดสอบการกรอกอีเมลผิดรูปแบบ
+    # TestStep
+    เลือกเมนูเช่าเรือ
+    Wait Until Page Contains Element    id:bookingnow1
+    Click Element                       id:bookingnow1  #เลือกประเภทเรือ
+    Wait Until Page Contains Element    id:booking_button
+    Click Element                       id:booking_button   #กดปุ่มนำทางจอง     
+    Input Text                          //*[@id="name"]          สมชาย นคร    #กรอกชื่อ-นามสกุล
+    Input Text                          //*[@id="email"]         email     #กรอกอีเมล
+    Input Text                          //*[@id="phonenumber"]          0812345678    #กรอกเบอร์โทรติดต่อ
+    Wait Until Page Contains Element    //*[@id="datepickercheckin"]
+    Input Text    //*[@id="datepickercheckin"]       18-07-2019
+    Wait Until Page Contains Element    //*[@id="time"]/option[1]
+    Click Element                       //*[@id="time"]/option[1]
+    Wait Until Page Contains Element    //*[@id="amountpeople"]/option[1]
+    Click Element                       //*[@id="amountpeople"]/option[1]
+    Wait Until Page Contains Element    id:booking
+    Click Element                       id:booking
+    Wait Until Element Contains         id:alertemail      กรุณากรอกอีเมลให้ถูกต้อง          #พบข้อความ กรุณากรอกอีเมลให้ถูกต้อง
+
 *** Keywords ***
 เลือกเมนูเช่าเรือ
     Wait Until Page Contains Element        id:boat
