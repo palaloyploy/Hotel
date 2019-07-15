@@ -68,6 +68,16 @@ TesT3 ทดสอบการกดปุ่มนำทาง รายละ�
     ${url}=   Get Location
     Should Be Equal     ${url}      http://127.0.0.1:8000/1/boatdetail/#boatname
 
+TesT4 ทดสอบการกดปุ่มนำทาง จอง
+    # TestStep
+    เลือกเมนูเช่าเรือ
+    Wait Until Page Contains Element    id:bookingnow1
+    Click Element                       id:bookingnow1  #เลือกห้อง
+    Wait Until Page Contains Element    id:booking_button
+    Click Element                       id:booking_button   #กดปุ่มนำทางจอง
+    ${url}=   Get Location
+    Should Be Equal     ${url}      http://127.0.0.1:8000/1/boatdetail/#detail
+
 
 *** Keywords ***
 เลือกเมนูเช่าเรือ
