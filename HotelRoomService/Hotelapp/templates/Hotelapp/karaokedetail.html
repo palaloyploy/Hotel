@@ -106,16 +106,16 @@
         }
         
     });
-    // function checkname(name){
-    //     document.getElementById("alertname").innerHTML = ""
-    //     if(name === undefined || name === ''){
-    //         document.getElementById("alertname").innerHTML = "กรุณากรอกชื่อ-นามสกุล"
-    //         return false
-    //     }
-    //     else{
-    //         return true
-    //     }
-    // }
+    function checkname(name){
+        document.getElementById("alertname").innerHTML = ""
+        if(name === undefined || name === ''){
+            document.getElementById("alertname").innerHTML = "กรุณากรอกชื่อ-นามสกุล"
+            return false
+        }
+        else{
+            return true
+        }
+    }
     function checkemail(email){
         document.getElementById("alertemail").innerHTML = ""
         var str = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
