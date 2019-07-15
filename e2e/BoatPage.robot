@@ -78,6 +78,25 @@ TesT4 ทดสอบการกดปุ่มนำทาง จอง
     ${url}=   Get Location
     Should Be Equal     ${url}      http://127.0.0.1:8000/1/boatdetail/#detail
 
+Test5 ทดสอบการจองไม่สำเร็จหากไม่กรอกชื่อ-นามสกุล เพียงอย่างเดียว
+    # TestStep
+    เลือกเมนูเช่าเรือ
+    Wait Until Page Contains Element    id:bookingnow1
+    Click Element                       id:bookingnow1  #เลือกประเภทเรือ
+    Wait Until Page Contains Element    id:booking_button
+    Click Element                       id:booking_button   #กดปุ่มนำทางจอง
+    Input Text                          //*[@id="email"]                email@email.com     #กรอกอีเมล 
+    Input Text                          //*[@id="phonenumber"]          0812345678    #กรอกเบอร์โทรติดต่อ
+    Wait Until Page Contains Element    //*[@id="datepickercheckin"]
+    Input Text    //*[@id="datepickercheckin"]       18-07-2019
+    Wait Until Page Contains Element    //*[@id="time"]/option[1]
+    Click Element                       //*[@id="time"]/option[1]
+    Wait Until Page Contains Element    //*[@id="amountpeople"]/option[1]
+    Click Element                       //*[@id="amountpeople"]/option[1]
+    Wait Until Page Contains Element    id:booking
+    Click Element                       id:booking
+    Wait Until Element Contains         id:alertname      กรุณากรอกชื่อ-นามสกุล          #พบข้อความ กรุณากรอกชื่อ-นามสกุล
+
 
 *** Keywords ***
 เลือกเมนูเช่าเรือ
