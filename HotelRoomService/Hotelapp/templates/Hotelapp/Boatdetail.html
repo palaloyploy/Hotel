@@ -25,7 +25,6 @@
     <script src='https://cdn.jsdelivr.net/npm/sweetalert2'></script>
   <script>
   $( function() {
-    var name , email , phonenumber
     var peopleperboat = "{{boat.peoplefull}}"
     peoples = []
     for(i=1;i<=peopleperboat;i++){
@@ -60,12 +59,19 @@
     });
     
     $('#booking').click(function(){
-        checkname(name)
+        checkname($('name').val())
+        checkemail($('email').val())
     });
     function checkname(name){
         document.getElementById("alertname").innerHTML = ""
         if(name === undefined || name === ''){
             document.getElementById("alertname").innerHTML = "กรุณากรอกชื่อ-นามสกุล"
+        }
+    }
+    function checkemail(email){
+        document.getElementById("alertemail").innerHTML = ""
+        if(email=== undefined || email === ''){
+            document.getElementById("alertemail").innerHTML = "กรุณากรอกอีเมล"
         }
     }
     });
