@@ -24,7 +24,7 @@ Test1 ทดสอบการเข้าหน้าห้องประช�
     # ExpectResult
     Title Should Be                     ห้องประชุม
     Wait Until Page Contains            บริการห้องประชุม     #พบข้อความ บริการห้องประชุม
-    Wait Until Page Contains Element    id:banner            #พบแบนเนอร์
+    Wait Until Page Contains Element    id:myCarousel        #พบแบนเนอร์
     Wait Until Page Contains Element    id:meetroomlist      #พบรายการห้องประขุม
     Wait Until Page Contains Element    id:meetroomname      #พบชื่อห้องประชุม
     Wait Until Page Contains Element    id:meetroomdes       #พบรายละเอียดห้อง
