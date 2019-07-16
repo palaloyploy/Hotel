@@ -239,6 +239,22 @@
 
 
 
+$(function() {
+   $("#booking").click(function() {
+       if($("#name").val() =="")  {
+        document.getElementById("alertname").innerHTML = "กรุณากรอกชื่อ-นามสกุล"
+       }
+
+       else 
+        document.getElementById("alertname").innerHTML = ""
+        
+
+    
+  
+
+   });
+});
+
 
 
 
