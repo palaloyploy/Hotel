@@ -241,6 +241,11 @@
 
 $(function() {
    $("#booking").click(function() {
+
+
+    var mailformat = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
+
+
        if($("#name").val() =="")  {
         document.getElementById("alertname").innerHTML = "กรุณากรอกชื่อ-นามสกุล"
        }
@@ -251,8 +256,17 @@ $(function() {
         if($("#email").val() =="")  {
         document.getElementById("alertemail").innerHTML = "กรุณากรอกอีเมล"
         }
-        else 
-        document.getElementById("alertemail").innerHTML = ""
+        
+       else if (!document.getElementById("email").value.match(mailformat))
+        {
+
+      document.getElementById("alertemail").innerHTML = "กรุณากรอกอีเมลให้ถูกต้อง"
+      }
+    else
+    document.getElementById("alertemail").innerHTML = "" 
+        
+      
+        
         
         if($("#phone").val() =="")  {
         document.getElementById("alertphone").innerHTML = "กรุณากรอกเบอร์โทรศัพท์"
@@ -278,8 +292,12 @@ $(function() {
   
        }
         else 
-        document.getElementById("alertdate").innerHTML = ""
-                
+        document.getElementById("alerttypetime").innerHTML = ""
+
+     
+     
+
+
 
    });
 });
