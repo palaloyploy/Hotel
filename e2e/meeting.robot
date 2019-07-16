@@ -220,7 +220,39 @@ ${URL}           http://127.0.0.1:8000/
 #     Wait Until Element Contains         id:alertphone                     กรุณากรอกเบอร์โทรศัพท์ให้ถูกต้อง    #พบข้อความ กรุณากรอกชื่อ-นามสกุล
 
 
-Test12 ทดสอบการเข้าหน้ายืนยันการจองสำเร็จ
+# Test12 ทดสอบการเข้าหน้ายืนยันการจองสำเร็จ
+#     # TestStep
+#     # Set Selenium Speed          1
+#     เลือกเมนูห้องประชุม
+#     Wait Until Page Contains Element    id:meetroomdetail1
+#     Click Element                       id:meetroomdetail1               #เลือกห้อง
+#     Wait Until Page Contains Element    id:book_button
+#     Click Element                       id:book_button                   #กดปุ่มนำทางจอง
+#     Input Text                          //*[@id="name"]                  testname
+#     Input Text                          //*[@id="email"]                 email@email.com     #กรอกอีเมล
+#     Input Text                          //*[@id="phone"]                 1234567891          #กรอกเบอร์โทรติดต่อ
+#     Wait Until Page Contains Element    //*[@id="dateDefault"]
+#     Input Text                          //*[@id="dateDefault"]         18-07-2019
+#     Wait Until Page Contains Element    //*[@id="typetime"]/option[2]
+#     Click Element                       //*[@id="typetime"]/option[2]
+#     Wait Until Page Contains Element    id:booking
+#     Click Element                       id:booking
+#     # ExpectResult
+#     Wait Until Element Is Visible       id:popupbooking
+#     Wait Until Element Contains         id:popupbooking         ยืนยันการจอง
+#     Wait Until Element Contains         id:popupbooking         ชื่อผู้จอง
+#     Wait Until Element Contains         id:popupbooking         อีเมล
+#     Wait Until Element Contains         id:popupbooking         เบอร์โทรศัพท์
+#     Wait Until Element Contains         id:popupbooking         ประเภทห้อง
+    
+#     Wait Until Element Contains         id:popupbooking         วันที่
+#     Wait Until Element Contains         id:popupbooking         ประเภทการจอง
+#     Wait Until Element Contains         id:popupbooking         ราคารวม
+#     Wait Until Element Is Visible            id:cancelbooking
+#     Wait Until Element Is Visible            id:confirm
+
+
+Test12 ทดสอบการยืนยันการจองไม่สำเร็จหากกดปุ่มยกเลิก
     # TestStep
     # Set Selenium Speed          1
     เลือกเมนูห้องประชุม
@@ -238,18 +270,11 @@ Test12 ทดสอบการเข้าหน้ายืนยันกา�
     Wait Until Page Contains Element    id:booking
     Click Element                       id:booking
     # ExpectResult
-    Wait Until Element Is Visible       id:popupbooking
-    Wait Until Element Contains         id:popupbooking         ยืนยันการจอง
-    Wait Until Element Contains         id:popupbooking         ชื่อผู้จอง
-    Wait Until Element Contains         id:popupbooking         อีเมล
-    Wait Until Element Contains         id:popupbooking         เบอร์โทรศัพท์
-    Wait Until Element Contains         id:popupbooking         ประเภทห้อง
-    
-    Wait Until Element Contains         id:popupbooking         วันที่
-    Wait Until Element Contains         id:popupbooking         ประเภทการจอง
-    Wait Until Element Contains         id:popupbooking         ราคารวม
+
     Wait Until Element Is Visible            id:cancelbooking
-    Wait Until Element Is Visible            id:confirm
+    Click Element                       id:cancelbooking
+    Wait Until Element Is Not Visible        id:popupbooking
+    Element Should Not Be Visible           id:popupsuccess
 
 
 *** Keywords ***
