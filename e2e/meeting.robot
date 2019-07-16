@@ -23,19 +23,51 @@ Test1 ทดสอบการเข้าหน้าห้องประช�
     เลือกเมนูห้องประชุม
     # ExpectResult
     Title Should Be                     ห้องประชุม
-    Wait Until Page Contains            บริการห้องประชุม     #พบข้อความ บริการห้องประชุม
-    Wait Until Page Contains Element    id:myCarousel        #พบแบนเนอร์
-    Wait Until Page Contains Element    id:meetroomlist      #พบรายการห้องประขุม
-    Wait Until Page Contains Element    id:meetroomname      #พบชื่อห้องประชุม
-    Wait Until Page Contains Element    id:meetroomdes       #พบรายละเอียดห้อง
-    Wait Until Page Contains Element    id:meetroomimage     #พบรูปห้องประชุม
-    Wait Until Page Contains Element    id:meetroomdetail    #พบปุ่มดูเพิ่มเติม
+    Wait Until Page Contains            บริการห้องประชุม        #พบข้อความ บริการห้องประชุม
+    Wait Until Page Contains Element    id:myCarousel           #พบแบนเนอร์
+    Wait Until Page Contains Element    id:meetroomlist         #พบรายการห้องประขุม
+    Wait Until Page Contains Element    id:meetroomname         #พบชื่อห้องประชุม
+    Wait Until Page Contains Element    id:meetroomdes          #พบรายละเอียดห้อง
+    Wait Until Page Contains Element    id:meetroomimage        #พบรูปห้องประชุม
+    Wait Until Page Contains Element    id:meetroomdetail       #พบปุ่มดูเพิ่มเติม
+
+
+Test2 ทดสอบการเข้าหน้ารายละเอียดห้องพัก
+    # TestStep
+    เลือกเมนูห้องประชุม
+    Wait Until Page Contains Element    id:meetroomdetail
+    Click Element                       id:meetroomdetail
+    # ExpectResult
+    Title Should Be                     รายละเอียดห้องประชุม
+    Wait Until Page Contains Element    id:meetroomname         #พบชื่อห้อง
+    Wait Until Page Contains Element    id:navbutton            #พบปุ่มนำทาง
+    Wait Until Page Contains Element    id:meetroomimage        #พบรูปห้องพัก
+    Wait Until Element Contains         id:meetroomdes          รายละเอียด            #พบข้อความ รายละเอียด
+    Wait Until Page Contains Element    id:meetroomdes          #พบรายละเอียดห้องพัก
+    Wait Until Element Contains         id:meetroomoption       สิ่งอำนวยความสะดวก    #พบข้อความ สิ่งอำนวยความสะดวก
+    Wait Until Page Contains Element    id:meetroomoption       #พบสิ่งอำนวยความสะดวก
+    Wait Until Element Contains         id:meetroomaddress      ข้อมูลติดต่อ          #พบข้อความ ข้อมูลติดต่อ
+    Wait Until Element Contains         id:meetroomaddress      ชื่อ-นามสกุล          #พบข้อความ ชื่อ-นามสกุล
+    Wait Until Page Contains Element    id:name                 #พบอินพุต ชื่อ-นามสกุล
+    Wait Until Element Contains         id:meetroomaddress      อีเมล                 #พบข้อความ อีเมล
+    Wait Until Page Contains Element    id:email                #พบอินพุต อีเมล
+    Wait Until Element Contains         id:meetroomaddress      เบอร์โทรติดต่อ        #พบข้อความ เบอร์โทรติดต่อ
+    Wait Until Page Contains Element    id:phonenumber          #พบอินพุต เบอร์โทรติดต่อ
+    Wait Until Element Contains         id:meetroomaddress      วันที่จอง             #พบข้อความ check-in
+    Wait Until Page Contains Element    id:date                 #พบปฏิทิน check-in
+    Wait Until Element Contains         id:meetroomaddress      เวลา                  #พบข้อความ check-out
+    Wait Until Page Contains Element    id:time                 #พบปฏิทิน check-out
+    Wait Until Element Contains         id:meetroomaddress      จำนวนห้อง             #พบข้อความ จำนวนห้อง
+    Wait Until Page Contains Element    id:amountroom           #พบดรอปดาวจำนวนห้อง
+    Wait Until Element Contains         id:meetroomaddress      จำนวนคน               #พบข้อความ จำนวนคน
+    Wait Until Page Contains Element    id:amountpeople         #พบดรอปดาวจำนวนคน
+    Wait Until Element Contains         id:booking              จอง                   #พบปุ่มจอง
 
 
 
 *** Keywords ***
 เลือกเมนูห้องประชุม
     Wait Until Page Contains Element    id:meetroom
-    Click Element                       id:meetroom          #เลือกเมนูห้องประชุม
+    Click Element                       id:meetroom             #เลือกเมนูห้องประชุม
 
 
