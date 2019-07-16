@@ -27,6 +27,8 @@ from Hotelapp.views.waterpark import WaterparkView
 from Hotelapp.views.roomdetail import RoomdetailView
 
 from Hotelapp.views.meetroom import MeetroomView
+from Hotelapp.views.meetroomdetail import MeetroomdetailView
+
 
 urlpatterns = [
     path('', IndexView, name='home'),
@@ -39,6 +41,7 @@ urlpatterns = [
     path('admin/', admin.site.urls),
 
     path('meetroom/',MeetroomView, name = 'meetroom'),
+    path('detail/',MeetroomdetailView, name = 'meetroomdetail'),
 ]
 urlpatterns += static(settings.STATIC_URL,document_root=settings.STATIC_ROOT)
 urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
