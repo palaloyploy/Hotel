@@ -159,7 +159,27 @@ ${URL}           http://127.0.0.1:8000/
 #     Click Element                       id:booking
 #     Wait Until Element Contains         id:alertdate                     กรุณาเลือกวันที่    #พบข้อความ กรุณากรอกชื่อ-นามสกุล
 
-Test9 ทดสอบการจองไม่สำเร็จเมื่อไม่เลือกประเภทการจอง เพียงอย่างเดียว
+# Test9 ทดสอบการจองไม่สำเร็จเมื่อไม่เลือกประเภทการจอง เพียงอย่างเดียว
+#     # TestStep
+#     # Set Selenium Speed          1
+#     เลือกเมนูห้องประชุม
+#     Wait Until Page Contains Element    id:meetroomdetail1
+#     Click Element                       id:meetroomdetail1               #เลือกห้อง
+#     Wait Until Page Contains Element    id:book_button
+#     Click Element                       id:book_button                   #กดปุ่มนำทางจอง
+#     Input Text                          //*[@id="name"]                  testname
+#     Input Text                          //*[@id="email"]                 email@email.com     #กรอกอีเมล
+#     Input Text                          //*[@id="phone"]                 0812345678          #กรอกเบอร์โทรติดต่อ
+#     Wait Until Page Contains Element    //*[@id="dateDefault"]
+#     Input Text                          //*[@id="dateDefault"]         18-07-2019
+#     Clear Element Text                  //*[@id="dateDefault"]
+#     # Wait Until Page Contains Element    //*[@id="typetime"]/option[2]
+#     # Click Element                       //*[@id="typetime"]/option[2]
+#     Wait Until Page Contains Element    id:booking
+#     Click Element                       id:booking
+#     Wait Until Element Contains         id:alerttypetime                     กรุณาเลือกประเภทการจอง    #พบข้อความ กรุณากรอกชื่อ-นามสกุล
+
+Test10 ทดสอบการกรอกอีเมลผิดรูปแบบ
     # TestStep
     # Set Selenium Speed          1
     เลือกเมนูห้องประชุม
@@ -168,16 +188,16 @@ Test9 ทดสอบการจองไม่สำเร็จเมื่�
     Wait Until Page Contains Element    id:book_button
     Click Element                       id:book_button                   #กดปุ่มนำทางจอง
     Input Text                          //*[@id="name"]                  testname
-    Input Text                          //*[@id="email"]                 email@email.com     #กรอกอีเมล
+    Input Text                          //*[@id="email"]                 email     #กรอกอีเมล
     Input Text                          //*[@id="phone"]                 0812345678          #กรอกเบอร์โทรติดต่อ
     Wait Until Page Contains Element    //*[@id="dateDefault"]
     Input Text                          //*[@id="dateDefault"]         18-07-2019
     Clear Element Text                  //*[@id="dateDefault"]
-    # Wait Until Page Contains Element    //*[@id="typetime"]/option[2]
-    # Click Element                       //*[@id="typetime"]/option[2]
+    Wait Until Page Contains Element    //*[@id="typetime"]/option[2]
+    Click Element                       //*[@id="typetime"]/option[2]
     Wait Until Page Contains Element    id:booking
     Click Element                       id:booking
-    Wait Until Element Contains         id:alerttypetime                     กรุณาเลือกประเภทการจอง    #พบข้อความ กรุณากรอกชื่อ-นามสกุล
+    Wait Until Element Contains         id:alertemail                     กรุณากรอกอีเมลให้ถูกต้อง    #พบข้อความ กรุณากรอกชื่อ-นามสกุล
 
 
 *** Keywords ***
