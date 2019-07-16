@@ -240,15 +240,16 @@ Test12 ทดสอบการเข้าหน้ายืนยันกา�
     # ExpectResult
     Wait Until Element Is Visible       id:popupbooking
     Wait Until Element Contains         id:popupbooking         ยืนยันการจอง
-    Wait Until Element Contains         id:popupbooking         ประเภทห้อง
-    Wait Until Element Contains         id:popupbooking         ชื่อ-นามสกุล
+    Wait Until Element Contains         id:popupbooking         ชื่อผู้จอง
     Wait Until Element Contains         id:popupbooking         อีเมล
     Wait Until Element Contains         id:popupbooking         เบอร์โทรศัพท์
+    Wait Until Element Contains         id:popupbooking         ประเภทห้อง
+    
     Wait Until Element Contains         id:popupbooking         วันที่
     Wait Until Element Contains         id:popupbooking         ประเภทการจอง
     Wait Until Element Contains         id:popupbooking         ราคารวม
     Wait Until Element Is Visible            id:cancelbooking
-    Wait Until Element Is Visible            id:confirmbooking
+    Wait Until Element Is Visible            id:confirm
 
 
 *** Keywords ***

@@ -212,7 +212,47 @@
 
 
 
+     
+    <div class="modal" tabindex="-1" id="option_contact" role="dialog">
+        <div id="popupbooking" class="modal-dialog" role="document">
+          <div class="modal-content">
+            <div class="">
+            ยืนยันการจอง
 
+
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+            <div class="modal-body row">
+                    <h5>ชื่อผู้จอง : <h5 id="modalname"></h5></h5>
+            </div>
+            <div class="modal-body row">
+                    <h5>อีเมล : <h5 id="modalemail"></h5></h5>
+            </div>
+            <div class="modal-body row">
+                    <h5>เบอร์โทรศัพท์ : <h5 id="modalphone"></h5></h5>
+            </div>
+            <div class="modal-body row">
+                <h5>ประเภทห้อง : <h5 id="modaltime"></h5></h5>
+        </div>
+            <div class="modal-body row">
+                    <h5>วันที่ : <h5 id="modaldate"></h5></h5>
+            </div>
+            <div class="modal-body row">
+                    <h5>ประเภทการจอง : <h5 id="modaltime"></h5></h5>
+            </div>
+            <div class="modal-body row">
+                <h5>ราคารวม : <h5 id="modaltime"></h5></h5>
+        </div>
+            <div class="modal-footer">
+                    <button id="cancelbooking" type="button" class="btn btn-secondary" data-dismiss="modal">ยกเลิก</button>
+              <button type="button" id="confirm" class="btn btn-primary">ยืนยัน</button>
+              
+            </div>
+          </div>
+        </div>
+      </div>
 
 
 
@@ -294,7 +334,7 @@ $(function() {
        }
         else 
         document.getElementById("alerttypetime").innerHTML = ""
-
+        $('#option_contact').modal('show');
      
      
 
