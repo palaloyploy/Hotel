@@ -242,7 +242,7 @@
 $(function() {
    $("#booking").click(function() {
 
-
+    var phoneno = /^\d{10}$/;
     var mailformat = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
 
 
@@ -262,17 +262,18 @@ $(function() {
 
       document.getElementById("alertemail").innerHTML = "กรุณากรอกอีเมลให้ถูกต้อง"
       }
-    else
-    document.getElementById("alertemail").innerHTML = "" 
+      else
+        document.getElementById("alertemail").innerHTML = "" 
         
-      
-        
-        
-        if($("#phone").val() =="")  {
+   
+      if($("#phone").val() =="")  {
         document.getElementById("alertphone").innerHTML = "กรุณากรอกเบอร์โทรศัพท์"
     
-  
        }
+       else if((!document.getElementById("phone").value.match(phoneno)))
+       {
+          document.getElementById("alertphone").innerHTML = "กรุณากรอกเบอร์โทรศัพท์ให้ถูกต้อง"
+        }
         else 
         document.getElementById("alertphone").innerHTML = ""
   
