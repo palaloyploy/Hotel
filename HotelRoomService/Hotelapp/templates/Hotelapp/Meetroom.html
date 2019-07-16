@@ -120,23 +120,18 @@
         <!-- /.row -->
 
         <!-- START THE FEATURETTES -->
-
-        <hr class="featurette-divider" />
-
+        {% for meetroomlist in meetroomlist %} {% if meetroomlist.id == 1 %}
         <div class="row featurette">
           <div class="col-md-5 align-self-center">
             <h2 id="meetroomname" class="">
-              ห้องประชุมรองรับสำหรับ 10 คน
-              <span class="text-muted">It’ll blow your mind.</span>
+              {{ meetroomlist.name }}
             </h2>
             <p id="meetroomdes" class="lead">
-              ห้องประชุมให้เช่าทั้งหมด ถูกออกแบบและตกแต่งมาอย่างดี
-              เราใช้เฟอร์นิเจอร์ที่มีสไตล์ สถานอยู่ใกล้ สถานีรถไฟฟ้าศาลาแดง
-              และสถานีรถไฟใต้ดินสีลม ทำให้ที่นี่เป็นสถานที่จัดประชุมที่ดีที่สุด
+              {{ meetroomlist.des }}
             </p>
             <a
-              id="meetroomdetail"
-              href="{% url 'meetroomdetail' %}"
+              id="meetroomdetail{{ meetroomlist.id }}"
+              href="{% url 'meetroomdetail' meetroomlist.id %}"
               class="btn btn-dark "
               >จองห้องประชุม</a
             >
@@ -145,7 +140,7 @@
             <img
               id="meetroomimage"
               class="card-img"
-              src="https://www.theworkloft.com/wp-content/uploads/2019/03/Meeting-Room-Rental-1-1.jpg"
+              src="{{ meetroomlist.image1.url }}"
               alt=""
             />
           </div>
@@ -153,51 +148,47 @@
 
         <hr class="featurette-divider" />
 
+        {% endif %} {% if meetroomlist.id == 2 %}
         <div class="row featurette">
           <div class="col-md-5 order-md-2 align-self-center">
-            <h2 class="">
-              ห้องประชุมรองรับสำหรับ 10 คน
-              <span class="text-muted">It’ll blow your mind.</span>
-            </h2>
+            <h2>{{ meetroomlist.name }}</h2>
             <p class="lead">
-              ห้องประชุมให้เช่าทั้งหมด ถูกออกแบบและตกแต่งมาอย่างดี
-              เราใช้เฟอร์นิเจอร์ที่มีสไตล์ สถานอยู่ใกล้ สถานีรถไฟฟ้าศาลาแดง
-              และสถานีรถไฟใต้ดินสีลม ทำให้ที่นี่เป็นสถานที่จัดประชุมที่ดีที่สุด
+              {{ meetroomlist.des }}
             </p>
-            <a id="meetroomdetail" href="" class="btn btn-dark "
+            <a
+              id="meetroomdetail{{ meetroomlist.id }}"
+              href="{% url 'meetroomdetail' meetroomlist.id %}"
+              class="btn btn-dark "
               >จองห้องประชุม</a
             >
           </div>
           <div class="col-md-7 order-md-1">
-            <img
-              class="card-img"
-              src="https://www.theworkloft.com/wp-content/uploads/2019/03/Meeting-Room-Rental-1-1.jpg"
-              alt=""
-            />
+            <img class="card-img" src="{{ meetroomlist.image1.url }}" alt="" />
           </div>
         </div>
 
         <hr class="featurette-divider" />
-
+        {% endif %} {% if meetroomlist.id == 3 %}
         <div class="row featurette">
           <div class="col-md-5 align-self-center">
-            <h2 class="">
-              ห้องประชุมรองรับสำหรับ 10 คน
-              <span class="text-muted">It’ll blow your mind.</span>
+            <h2 id="meetroomname" class="">
+              {{ meetroomlist.name }}
             </h2>
-            <p class="lead">
-              ห้องประชุมให้เช่าทั้งหมด ถูกออกแบบและตกแต่งมาอย่างดี
-              เราใช้เฟอร์นิเจอร์ที่มีสไตล์ สถานอยู่ใกล้ สถานีรถไฟฟ้าศาลาแดง
-              และสถานีรถไฟใต้ดินสีลม ทำให้ที่นี่เป็นสถานที่จัดประชุมที่ดีที่สุด
+            <p id="meetroomdes" class="lead">
+              {{ meetroomlist.des }}
             </p>
-            <a id="meetroomdetail" href="" class="btn btn-dark "
+            <a
+              id="meetroomdetail{{ meetroomlist.id }}"
+              href="{% url 'meetroomdetail' meetroomlist.id %}"
+              class="btn btn-dark "
               >จองห้องประชุม</a
             >
           </div>
           <div class="col-md-7">
             <img
+              id="meetroomimage"
               class="card-img"
-              src="https://www.theworkloft.com/wp-content/uploads/2019/03/Meeting-Room-Rental-1-1.jpg"
+              src="{{ meetroomlist.image1.url }}"
               alt=""
             />
           </div>
@@ -205,18 +196,8 @@
 
         <hr class="featurette-divider" />
 
-        <!-- /END THE FEATURETTES -->
+        {% endif %} {% endfor %}
       </div>
-      <!-- /.container -->
-
-      <!-- FOOTER -->
-      <footer class="container">
-        <p class="float-right"><a href="#">Back to top</a></p>
-        <p>
-          &copy; 2017-2019 Company, Inc. &middot;
-          <a href="#">Privacy</a> &middot; <a href="#">Terms</a>
-        </p>
-      </footer>
     </main>
     <script
       src="https://code.jquery.com/jquery-3.3.1.slim.min.js"

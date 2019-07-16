@@ -27,8 +27,8 @@ admin.site.register(RoomOption, RoomOptionAdmin)
 
 
 class MeetroomAdmin(admin.ModelAdmin):
-    list_display = ['id', 'name', 'des','price','image1','image2','image3','image4','image5']
-    list_editable = ['name', 'des','price','image1','image2','image3','image4','image5']
+    list_display = ['id', 'name', 'des','pricehalf','pricefull','image1','image2','image3','image4']
+    list_editable = ['name', 'des','pricehalf','pricefull','image1','image2','image3','image4']
 
 
 admin.site.register(Meetroom, MeetroomAdmin)

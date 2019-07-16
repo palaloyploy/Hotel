@@ -52,12 +52,10 @@
   <body>
     <main role="main">
             <div id="navbutton" class="list-group text-center shadow border border-secondary" style="right: 50px; top:50px; width:130px; float: right; position: fixed;z-index: 99;">
-                    <a id="des_button" class="list-group-item list-group-item-action " href="#meetroomlist">รายละเอียด</a>
-                    <a id="booking_button" class="list-group-item list-group-item-action" href="#meetroombook">จอง</a>
-            </div>
+                  </div>
       <div id="meetroomlist" class="container marketing">
         <!-- Three columns of text below the carousel -->
-        <h1>ห้องขนาดเล็ก</h1>
+        <h1>{{meetroom.name}}</h1>
         <!-- /.row -->
 
         <!-- START THE FEATURETTES -->
@@ -67,13 +65,11 @@
         <div class="row featurette">
           <div class="col-md-5 align-self-center">
             <h2 id="meetroomname" class="">
-              ห้องประชุมรองรับสำหรับ 10 คน
+              {{meetroom.name}}
              
             </h2>
             <p id="meetroomdes" class="lead">
-                ห้องประชุมให้เช่าทั้งหมด ถูกออกแบบและตกแต่งมาอย่างดี
-                เราใช้เฟอร์นิเจอร์ที่มีสไตล์ สถานอยู่ใกล้ สถานีรถไฟฟ้าศาลาแดง
-                และสถานีรถไฟใต้ดินสีลม ทำให้ที่นี่เป็นสถานที่จัดประชุมที่ดีที่สุด
+                {{meetroom.des}}
             </p>
            
           </div>
@@ -81,7 +77,7 @@
             <img
               id="meetroomimage"
               class="card-img"
-              src="https://www.theworkloft.com/wp-content/uploads/2019/03/Meeting-Room-Rental-1-1.jpg"
+              src="{{meetroom.image1.url}}"
               alt=""
             />
           </div>
@@ -112,7 +108,7 @@
           <div class="col-md-7 order-md-1">
             <img
               class="card-img"
-              src="https://www.theworkloft.com/wp-content/uploads/2019/03/Meeting-Room-Rental-1-1.jpg"
+              src="{{meetroom.image2.url}}"
               alt=""
             />
           </div>
@@ -144,7 +140,7 @@
           <div class="col-md-7">
             <img
               class="card-img"
-              src="https://www.theworkloft.com/wp-content/uploads/2019/03/Meeting-Room-Rental-1-1.jpg"
+              src="{{meetroom.image3.url}}"
               alt=""
             />
           </div>
@@ -152,72 +148,105 @@
 
         <hr class="featurette-divider" />
 
+
+    
         <!-- /END THE FEATURETTES -->
       </div>
 
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
   
       <div id="meetroombook" class="container marketing card border border-dark m-auto">
-            <h3>แบบฟอร์มจองห้องประชุม</h3>
-        <form action="" method="post">
+          <h3>แบบฟอร์มจองห้องประชุม</h3>
+      <form action="" method="post">
+          {% csrf_token %}
+          <div class="form-group m-2">
+            <label for="">ชื่อ-นามสกุล</label>
+            <input type="text" class="form-control"   name="" id="name" aria-describedby="helpId" placeholder="กรอกชื่อ-นามสกุล">
+            <label id="alertname" class="error text-danger"></label>
+            <small id="helpId" class="form-text text-muted">Help text</small>
+          </div>
+          <div class="form-group m-2">
+            <label for="">อีเมล</label>
+            <input type="email" class="form-control"  name="" id="email" aria-describedby="emailHelpId" placeholder="กรอกอีเมลติดต่อ">
+            <label id="alertemail" class="error text-danger"></label>
+            <small id="emailHelpId" class="form-text text-muted">Help text</small>
+          </div>
             <div class="form-group m-2">
-              <label for="">ชื่อ-นามสกุล</label>
-              <input type="text" class="form-control" name="" id="name" aria-describedby="helpId" placeholder="กรอกชื่อ-นามสกุล">
+              <label for="">เบอร์โทร</label>
+              <input type="text" class="form-control" name="" id="phone" aria-describedby="helpId" placeholder="กรอกเบอร์โทรติดต่อ">
+              <label id="alertphone" class="error text-danger"></label>
               <small id="helpId" class="form-text text-muted">Help text</small>
             </div>
             <div class="form-group m-2">
-              <label for="">อีเมล</label>
-              <input type="email" class="form-control" name="" id="email" aria-describedby="emailHelpId" placeholder="กรอกอีเมลติดต่อ">
-              <small id="emailHelpId" class="form-text text-muted">Help text</small>
+              <label for="">วันที่</label>
+              <input type="date" class="form-control" name="" id="dateDefault" aria-describedby="helpId" placeholder="">
+              <label id="alertdate" class="error text-danger"></label>
+              <small id="helpId" class="form-text text-muted">Help text</small>
             </div>
-              <div class="form-group m-2">
-                <label for="">เบอร์โทร</label>
-                <input type="text" class="form-control" name="" id="phone" aria-describedby="helpId" placeholder="กรอกเบอร์โทรติดต่อ">
-                <small id="helpId" class="form-text text-muted">Help text</small>
-              </div>
-              <div class="form-group m-2">
-                <label for="">วันที่</label>
-                <input type="date" class="form-control" name="" id="dateDefault" aria-describedby="helpId" placeholder="">
-                <small id="helpId" class="form-text text-muted">Help text</small>
-              </div>
 
-              
-              
-              <div id="typetime" class="form-group m-2">
-                  <label for="my-select">เวลา</label>
-                  <select id="my-select" class="form-control" name="">
-                        <option>เลือกเวลา</option>
-                      <option>ครึ่งวันเช้า</option>
-                      <option>ครึ่งวันบ่าย</option>
-                      <option>เต็มวัน</option>
-                  </select>
-              </div>
+            
+            
+            <div  class="form-group m-2">
+                <label for="my-select">เวลา</label>
+                <select id="typetime" class="form-control" name="">
+                      <option value="">เลือกเวลา</option>
+                    <option value="ครึ่งวันเช้า">ครึ่งวันเช้า</option>
+                    <option value="ครึ่งวันบ่าย">ครึ่งวันบ่าย</option>
+                    <option value="เต็มวัน">เต็มวัน</option>
+                </select>
+                <label id="alerttypetime" class="error text-danger"></label>
+            </div>
 
 
-              <button id="booking" class="btn btn-secondary w-100 m-2" type="button">จอง</button>
-        </form>
-      </div>
+            <button id="booking" type="button"    class="btn btn-secondary w-100 m-2" type="button">จอง</button>
+      </form>
+    </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
     </main>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
 
+    <script src="/scripts/snippet-javascript-console.min.js?v=1"></script>
+
+ <script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+ </script>
+    <script src='https://cdn.jsdelivr.net/npm/sweetalert2'></script>
     <script>
    function setInputDate(_id){
     var _dat = document.querySelector(_id);
@@ -250,8 +279,7 @@ setInputDate("#dateDefault");
       window.jQuery ||
         document.write(
           '<script src="https://getbootstrap.com/docs/4.3/assets/js/vendor/jquery-slim.min.js"><\/script>'
-        );</script
-    ><script
+        );</script><script
       src="https://getbootstrap.com/docs/4.3/dist/js/bootstrap.bundle.min.js"
       integrity="sha384-xrRywqdh3PHs8keKZN+8zzc5TX0GRTLCcmivcbNJWm2rs5C8PRhcEn3czEjhAO9o"
       crossorigin="anonymous"
