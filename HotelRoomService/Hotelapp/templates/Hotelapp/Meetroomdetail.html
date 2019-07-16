@@ -57,7 +57,7 @@
             </div>
       <div id="meetroomlist" class="container marketing">
         <!-- Three columns of text below the carousel -->
-        <h1>{{meetroom.name}}</h1>
+        <h1 id="meetroomname">{{meetroom.name}}</h1>
         <!-- /.row -->
 
         <!-- START THE FEATURETTES -->
@@ -234,16 +234,16 @@
                     <h5>เบอร์โทรศัพท์ : <h5 id="modalphone"></h5></h5>
             </div>
             <div class="modal-body row">
-                <h5>ประเภทห้อง : <h5 id="modaltime"></h5></h5>
+                <h5>ประเภทห้อง : <h5 id="modaltyperoom"></h5></h5>
         </div>
             <div class="modal-body row">
                     <h5>วันที่ : <h5 id="modaldate"></h5></h5>
             </div>
             <div class="modal-body row">
-                    <h5>ประเภทการจอง : <h5 id="modaltime"></h5></h5>
+                    <h5>ประเภทการจอง : <h5 id="modaltypetime"></h5></h5>
             </div>
             <div class="modal-body row">
-                <h5>ราคารวม : <h5 id="modaltime"></h5></h5>
+                <h5>ราคารวม : <h5 id="modalprice"></h5></h5>
         </div>
             <div class="modal-footer">
                     <button id="cancelbooking" type="button" class="btn btn-secondary" data-dismiss="modal">ยกเลิก</button>
@@ -284,6 +284,7 @@ $(function() {
 
     var phoneno = /^\d{10}$/;
     var mailformat = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
+
 
 
        if($("#name").val() =="")  {
@@ -336,13 +337,38 @@ $(function() {
         document.getElementById("alerttypetime").innerHTML = ""
         $('#option_contact').modal('show');
      
-     
+        document.getElementById("modalname").innerHTML = document.getElementById("name").value;
 
+document.getElementById("modalemail").innerHTML = document.getElementById("email").value;
+document.getElementById("modalphone").innerHTML = document.getElementById("phone").value;
+document.getElementById("modaltyperoom").innerHTML = $('#meetroomname').text()
+document.getElementById("modaldate").innerHTML = document.getElementById("dateDefault").value;
+document.getElementById("modaltypetime").innerHTML = document.getElementById("typetime").value;
+if ($("#typetime").val() == "เต็มวัน") {
+document.getElementById("modalprice").innerHTML = '4000'
+}
+else
+document.getElementById("modalprice").innerHTML = '2800'
 
 
    });
 });
-
+$("#confirm").click(function() {
+    Swal.fire({
+           
+            position: 'center',
+            type: 'success',
+            title: 'จองสำเร็จ',
+            showConfirmButton: false,
+            timer: 1500,
+            html:"<button id='success' ></button>"
+        })
+       
+    window.setTimeout(function(){
+     $('#option_contact').modal('hide');
+     window.location.replace('/meetroom')
+  }, 2000);
+});
 
 
 

@@ -297,8 +297,8 @@ Test13 ทดสอบการยืนยันการจองสำเร�
 
     Wait Until Element Is Visible       id:confirm
     Click Element                       id:confirm
+    Wait Until Element Is Visible       id:success
 
-    Wait Until Element Is Visible       id:popupsuccess
 
 
 *** Keywords ***
