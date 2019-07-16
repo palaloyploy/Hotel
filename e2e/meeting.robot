@@ -80,27 +80,46 @@ ${URL}           http://127.0.0.1:8000/
 #     Should Be Equal                     ${url}                               http://127.0.0.1:8000/1/meetroomdetail/#meetroombook
 
 
-Test5 ทดสอบการจองไม่สำเร็จหากไม่กรอกชื่อ-นามสกุล เพียงอย่างเดียว
-    # TestStep
-    # Set Selenium Speed          1
-    เลือกเมนูห้องประชุม
-    Wait Until Page Contains Element    id:meetroomdetail1
-    Click Element                       id:meetroomdetail1                   #เลือกห้อง
-    Wait Until Page Contains Element    id:book_button
-    Click Element                       id:book_button                       #กดปุ่มนำทางจอง
-        # Input Text                          //*[@id="name"]                     email@email.com  
-    Input Text                          //*[@id="email"]                     email@email.com                                         #กรอกอีเมล
-    Input Text                          //*[@id="phone"]                     0812345678                                              #กรอกเบอร์โทรติดต่อ
-    Wait Until Page Contains Element    //*[@id="dateDefault"]
-    Input Text                          //*[@id="dateDefault"]         18-07-2019
-    Wait Until Page Contains Element    //*[@id="typetime"]/option[2]
-    Click Element                       //*[@id="typetime"]/option[2]
-    Wait Until Page Contains Element    id:booking
-    Click Element                       id:booking
-    Wait Until Element Contains         id:alertname                         กรุณากรอกชื่อ-นามสกุล                                   #พบข้อความ กรุณากรอกชื่อ-นามสกุล
+# Test5 ทดสอบการจองไม่สำเร็จหากไม่กรอกชื่อ-นามสกุล เพียงอย่างเดียว
+#     # TestStep
+#     # Set Selenium Speed          1
+#     เลือกเมนูห้องประชุม
+#     Wait Until Page Contains Element    id:meetroomdetail1
+#     Click Element                       id:meetroomdetail1                   #เลือกห้อง
+#     Wait Until Page Contains Element    id:book_button
+#     Click Element                       id:book_button                       #กดปุ่มนำทางจอง
+#         # Input Text                          //*[@id="name"]                     email@email.com  
+#     Input Text                          //*[@id="email"]                     email@email.com                                         #กรอกอีเมล
+#     Input Text                          //*[@id="phone"]                     0812345678                                              #กรอกเบอร์โทรติดต่อ
+#     Wait Until Page Contains Element    //*[@id="dateDefault"]
+#     Input Text                          //*[@id="dateDefault"]         18-07-2019
+#     Wait Until Page Contains Element    //*[@id="typetime"]/option[2]
+#     Click Element                       //*[@id="typetime"]/option[2]
+#     Wait Until Page Contains Element    id:booking
+#     Click Element                       id:booking
+#     Wait Until Element Contains         id:alertname                         กรุณากรอกชื่อ-นามสกุล                                   #พบข้อความ กรุณากรอกชื่อ-นามสกุล
 
 
-Test6 ทดสอบการจองไม่สำเร็จเมื่อไม่กรอกอีเมล เพียงอย่างเดียว
+# Test6 ทดสอบการจองไม่สำเร็จเมื่อไม่กรอกอีเมล เพียงอย่างเดียว
+#     # TestStep
+#     # Set Selenium Speed          1
+#     เลือกเมนูห้องประชุม
+#     Wait Until Page Contains Element    id:meetroomdetail1
+#     Click Element                       id:meetroomdetail1                   #เลือกห้อง
+#     Wait Until Page Contains Element    id:book_button
+#     Click Element                       id:book_button                       #กดปุ่มนำทางจอง
+#         Input Text                          //*[@id="name"]                     testname 
+#     # Input Text                          //*[@id="email"]                     email@email.com                                         #กรอกอีเมล
+#     Input Text                          //*[@id="phone"]                     0812345678                                              #กรอกเบอร์โทรติดต่อ
+#     Wait Until Page Contains Element    //*[@id="dateDefault"]
+#     Input Text                          //*[@id="dateDefault"]         18-07-2019
+#     Wait Until Page Contains Element    //*[@id="typetime"]/option[2]
+#     Click Element                       //*[@id="typetime"]/option[2]
+#     Wait Until Page Contains Element    id:booking
+#     Click Element                       id:booking
+#     Wait Until Element Contains         id:alertemail                         กรุณากรอกอีเมล                                  #พบข้อความ กรุณากรอกชื่อ-นามสกุล
+
+Test7 ทดสอบการจองไม่สำเร็จเมื่อไม่กรอกเบอร์โทรศัพท์ เพียงอย่างเดียว
     # TestStep
     # Set Selenium Speed          1
     เลือกเมนูห้องประชุม
@@ -109,15 +128,15 @@ Test6 ทดสอบการจองไม่สำเร็จเมื่�
     Wait Until Page Contains Element    id:book_button
     Click Element                       id:book_button                       #กดปุ่มนำทางจอง
         Input Text                          //*[@id="name"]                     testname 
-    # Input Text                          //*[@id="email"]                     email@email.com                                         #กรอกอีเมล
-    Input Text                          //*[@id="phone"]                     0812345678                                              #กรอกเบอร์โทรติดต่อ
+    Input Text                          //*[@id="email"]                     email@email.com                                         #กรอกอีเมล
+    # Input Text                          //*[@id="phone"]                     0812345678                                              #กรอกเบอร์โทรติดต่อ
     Wait Until Page Contains Element    //*[@id="dateDefault"]
     Input Text                          //*[@id="dateDefault"]         18-07-2019
     Wait Until Page Contains Element    //*[@id="typetime"]/option[2]
     Click Element                       //*[@id="typetime"]/option[2]
     Wait Until Page Contains Element    id:booking
     Click Element                       id:booking
-    Wait Until Element Contains         id:alertemail                         กรุณากรอกอีเมล                                  #พบข้อความ กรุณากรอกชื่อ-นามสกุล
+    Wait Until Element Contains         id:alertphone                         กรุณากรอกเบอร์โทรศัพท์                                  #พบข้อความ กรุณากรอกชื่อ-นามสกุล
 
 
 
