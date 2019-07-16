@@ -26,8 +26,13 @@
       integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
       crossorigin="anonymous"
     />
-
+    <link href="https://fonts.googleapis.com/css?family=Kanit&display=swap" rel="stylesheet">
     <style>
+
+html,body {
+           
+            font-family: 'Kanit', sans-serif;
+        }
       .bd-placeholder-img {
         font-size: 1.125rem;
         text-anchor: middle;
@@ -51,13 +56,18 @@
   </head>
   <body>
     <main role="main">
-      <div id="myCarousel" class="carousel slide" data-ride="carousel">
-        <ol class="carousel-indicators">
+      <div
+        id="myCarousel"
+        class="carousel slide h-auto"
+        data-ride="carousel"
+        style="box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.27);"
+      >
+        <ol class="carousel-indicators h-auto">
           <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
           <li data-target="#myCarousel" data-slide-to="1"></li>
           <li data-target="#myCarousel" data-slide-to="2"></li>
         </ol>
-        <div class="carousel-inner ">
+        <div class="carousel-inner h-auto">
           <div class="carousel-item active">
             <img class="w-100" src="/static/image/meetroom/banner.jpg" alt="" />
           </div>
@@ -116,13 +126,16 @@
 
       <div id="meetroomlist" class="container marketing">
         <!-- Three columns of text below the carousel -->
-        <h1>บริการห้องประชุม</h1>
+        <span style="font-size: calc(16px + 1vw);">บริการห้องประชุม</span>
         <!-- /.row -->
 
         <!-- START THE FEATURETTES -->
         {% for meetroomlist in meetroomlist %} {% if meetroomlist.id == 1 %}
-        <div class="row featurette">
-          <div class="col-md-5 align-self-center">
+        <div
+          class="row featurette"
+          style="box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.27);"
+        >
+          <div class="col-md-5 align-self-center ">
             <h2 id="meetroomname" class="">
               {{ meetroomlist.name }}
             </h2>
@@ -136,7 +149,7 @@
               >จองห้องประชุม</a
             >
           </div>
-          <div class="col-md-7">
+          <div class="col-md-7" style="padding-left: 0;padding-right: 0;">
             <img
               id="meetroomimage"
               class="card-img"
@@ -149,7 +162,10 @@
         <hr class="featurette-divider" />
 
         {% endif %} {% if meetroomlist.id == 2 %}
-        <div class="row featurette">
+        <div
+          class="row featurette"
+          style="box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.27);"
+        >
           <div class="col-md-5 order-md-2 align-self-center">
             <h2>{{ meetroomlist.name }}</h2>
             <p class="lead">
@@ -162,14 +178,20 @@
               >จองห้องประชุม</a
             >
           </div>
-          <div class="col-md-7 order-md-1">
+          <div
+            class="col-md-7 order-md-1"
+            style="padding-left: 0;padding-right: 0;"
+          >
             <img class="card-img" src="{{ meetroomlist.image1.url }}" alt="" />
           </div>
         </div>
 
         <hr class="featurette-divider" />
         {% endif %} {% if meetroomlist.id == 3 %}
-        <div class="row featurette">
+        <div
+          class="row featurette"
+          style="box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.27);"
+        >
           <div class="col-md-5 align-self-center">
             <h2 id="meetroomname" class="">
               {{ meetroomlist.name }}
@@ -184,7 +206,7 @@
               >จองห้องประชุม</a
             >
           </div>
-          <div class="col-md-7">
+          <div class="col-md-7" style="padding-left: 0;padding-right: 0;">
             <img
               id="meetroomimage"
               class="card-img"

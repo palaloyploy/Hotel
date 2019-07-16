@@ -13,6 +13,14 @@
     />
     <meta name="generator" content="Jekyll v3.8.5" />
     <title>รายละเอียดห้องประชุม</title>
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css"
+        integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous">
+
+    <link rel="mask-icon" type=""
+        href="https://static.codepen.io/assets/favicon/logo-pin-8f3771b1072e3c38bd662872f6b673a722f4b3ca2421637d5596661b4e2132cc.svg"
+        color="#111" />
+
+    <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css'>
 
     <link
       rel="canonical"
@@ -26,8 +34,13 @@
       integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
       crossorigin="anonymous"
     />
-
+    <link href="https://fonts.googleapis.com/css?family=Kanit&display=swap" rel="stylesheet">
     <style>
+
+html,body {
+           
+            font-family: 'Kanit', sans-serif;
+        }
       .bd-placeholder-img {
         font-size: 1.125rem;
         text-anchor: middle;
@@ -51,23 +64,24 @@
   </head>
   <body>
     <main role="main">
-            <div id="navbutton" class="list-group text-center shadow border border-secondary" style="right: 50px; top:50px; width:130px; float: right; position: fixed;z-index: 99;">
+            <div id="navbutton" class=" list-group text-center   " style="right: 50px; top:120px;right: 10px;; width:100px; float: right; position: fixed;z-index: 99;box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.27);">
                     <a id="list_button" class="list-group-item list-group-item-action " href="#meetroomlist">รายละเอียด</a>
                     <a id="book_button" class="list-group-item list-group-item-action" href="#meetroombook">จอง</a>
             </div>
       <div id="meetroomlist" class="container marketing">
         <!-- Three columns of text below the carousel -->
-        <h1 id="meetroomname">{{meetroom.name}}</h1>
+        <h1 id="meetroomname">{{meetroom.name}} <a style="box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.27);flex: 20%;margin: 3rem" class="btn btn-dark"  type="button"  href="{% url 'meetroom'%}">ย้อนกลับ</a></h1>
         <!-- /.row -->
 
         <!-- START THE FEATURETTES -->
 
         <hr class="featurette-divider" />
 
-        <div class="row featurette">
+        <div class="row featurette " style="box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.27);">
           <div class="col-md-5 align-self-center">
             <h2 id="meetroomname" class="">
-              {{meetroom.name}}
+              {{meetroom.name}}  
+                        
              
             </h2>
             <p id="meetroomdes" class="lead">
@@ -75,10 +89,11 @@
             </p>
            
           </div>
-          <div class="col-md-7">
+          <div class="col-md-7" style="padding-left: 0;padding-right: 0;">
             <img
+              
               id="meetroomimage"
-              class="card-img"
+              class="card-img "
               src="{{meetroom.image1.url}}"
               alt=""
             />
@@ -87,7 +102,7 @@
 
         <hr class="featurette-divider" />
 
-        <div class="row featurette">
+        <div class="row featurette" style="box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.27);">
           <div id="meetroomoption" class="col-md-5 order-md-2 align-self-center">
             <h2 class="">
                 สิ่งอำนวยความสะดวก
@@ -97,17 +112,17 @@
             
               <ul class="list-group">
                
-                <li class="list-group-item disabled" aria-disabled="true">Disabled item</li>
-                <li class="list-group-item disabled" aria-disabled="true">Disabled item</li>
-                <li class="list-group-item disabled" aria-disabled="true">Disabled item</li>
-                <li class="list-group-item disabled" aria-disabled="true">Disabled item</li>
-                <li class="list-group-item disabled" aria-disabled="true">Disabled item</li>
-                <li class="list-group-item disabled" aria-disabled="true">Disabled item</li>
+                <li class="list-group-item disabled" aria-disabled="true"><i class="fa fa-television" aria-hidden="true"></i> ทีวี</li>
+                <li class="list-group-item disabled" aria-disabled="true"><i class="fa fa-desktop" aria-hidden="true"></i> คอมพิวเตอร์</li>
+                <li class="list-group-item disabled" aria-disabled="true"><i class="fa fa-tablet" aria-hidden="true"></i> แท็บเล็ต</li>
+                <li class="list-group-item disabled" aria-disabled="true"><i class="fa fa-audio-description" aria-hidden="true"></i> โฮมเทียร์เตอร์</li>
+                <li class="list-group-item disabled" aria-disabled="true"><i class="fa fa-coffee" aria-hidden="true"></i> กาแฟ</li>
+                <li class="list-group-item disabled" aria-disabled="true"><i class="fa fa-video-camera" aria-hidden="true"></i> วีดีโอคอนเฟอเรนท์</li>
             </ul>
             </p>
            
           </div>
-          <div class="col-md-7 order-md-1">
+          <div class="col-md-7 order-md-1" style="padding-left: 0;padding-right: 0;">
             <img
               class="card-img"
               src="{{meetroom.image2.url}}"
@@ -118,7 +133,7 @@
 
         <hr class="featurette-divider" />
 
-        <div class="row featurette">
+        <div class="row featurette" style="box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.27);">
           <div class="col-md-5 align-self-center">
             <h2 class="">
                 อัตราค่าเช่าห้องสำหรับบุคคลทั่วไป
@@ -139,7 +154,7 @@
                 </div>
             </div>
           </div>
-          <div class="col-md-7">
+          <div class="col-md-7" style="padding-left: 0;padding-right: 0;">
             <img
               class="card-img"
               src="{{meetroom.image3.url}}"
@@ -159,7 +174,7 @@
 
 
   
-      <div id="meetroombook" class="container marketing card border border-dark m-auto">
+      <div id="meetroombook" class="container marketing card border border-dark m-auto" style="box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.27);">
           <h3>แบบฟอร์มจองห้องประชุม</h3>
       <form action="" method="post">
           {% csrf_token %}
@@ -271,7 +286,7 @@
     </main>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
 
-    <script src="/scripts/snippet-javascript-console.min.js?v=1"></script>
+    <script src="https://stacksnippets.net/scripts/snippet-javascript-console.min.js?v=1"></script>
 
  <script>
 
@@ -287,7 +302,7 @@ $(function() {
 
 
 
-       if($("#name").val() =="")  {
+       if($("#name").val() == "")  {
         document.getElementById("alertname").innerHTML = "กรุณากรอกชื่อ-นามสกุล"
        }
 
@@ -335,21 +350,31 @@ $(function() {
        }
         else 
         document.getElementById("alerttypetime").innerHTML = ""
-        $('#option_contact').modal('show');
+        
+
+
+        if ($("#name").val() != "" && $("#email").val() != "" && $("#phone").val() != "" && $("#dateDefault").val() != "" && $("#typetime").val() != "") {
+
+
+          $('#option_contact').modal('show');
      
-        document.getElementById("modalname").innerHTML = document.getElementById("name").value;
+          document.getElementById("modalname").innerHTML = document.getElementById("name").value;
 
-document.getElementById("modalemail").innerHTML = document.getElementById("email").value;
-document.getElementById("modalphone").innerHTML = document.getElementById("phone").value;
-document.getElementById("modaltyperoom").innerHTML = $('#meetroomname').text()
-document.getElementById("modaldate").innerHTML = document.getElementById("dateDefault").value;
-document.getElementById("modaltypetime").innerHTML = document.getElementById("typetime").value;
-if ($("#typetime").val() == "เต็มวัน") {
-document.getElementById("modalprice").innerHTML = '4000'
-}
-else
-document.getElementById("modalprice").innerHTML = '2800'
-
+      document.getElementById("modalemail").innerHTML = document.getElementById("email").value;
+      document.getElementById("modalphone").innerHTML = document.getElementById("phone").value;
+      document.getElementById("modaltyperoom").innerHTML = $('#meetroomname').text()
+      document.getElementById("modaldate").innerHTML = document.getElementById("dateDefault").value;
+      document.getElementById("modaltypetime").innerHTML = document.getElementById("typetime").value;
+        if ($("#typetime").val() == "เต็มวัน") {
+        document.getElementById("modalprice").innerHTML = '4000'
+        }
+        else {
+        document.getElementById("modalprice").innerHTML = '2800'
+      }
+     
+        }
+      
+       
 
    });
 });
