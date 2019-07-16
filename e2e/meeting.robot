@@ -69,6 +69,16 @@ TesT3 ทดสอบการกดปุ่มนำทาง รายละ�
     ${url}=                             Get Location
     Should Be Equal                     ${url}                  http://127.0.0.1:8000/1/meetroomdetail/#meetroomlist
 
+TesT4 ทดสอบการกดปุ่มนำทาง จอง
+    # TestStep
+    เลือกเมนูห้องประชุม
+    Wait Until Page Contains Element    id:meetroomdetail1
+    Click Element                       id:meetroomdetail1  #เลือกห้อง
+    Wait Until Page Contains Element    id:book_button
+    Click Element                       id:book_button   #กดปุ่มนำทางจอง
+    ${url}=   Get Location
+    Should Be Equal     ${url}      http://127.0.0.1:8000/1/meetroomdetail/#meetroombook
+
 
 *** Keywords ***
 เลือกเมนูห้องประชุม
